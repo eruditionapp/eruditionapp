@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: eruditionapp_production
-  username: eruditionapp
+  username: qdwotuenwhpuky
   password: <%= ENV['ERUDITIONAPP_DATABASE_PASSWORD'] %>
