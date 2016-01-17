@@ -1,3 +1,11 @@
-Future home of a mind-blowing app
-<br/>
-<%= image_tag 'https://media.giphy.com/media/EldfH1VJdbrwY/giphy.gif' %>
+Erudition
+</br>
+</br>
+<% if !user_signed_in? %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+  </br>
+  <%= link_to 'Log in', new_user_session_path %>
+<% end %>
+<% if user_signed_in? %>
+  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+<% end %>
