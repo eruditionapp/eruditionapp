@@ -6,6 +6,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
+# Use bootstrap-sass. Read more: https://github.com/twbs/bootstrap-sass#a-ruby-on-rails
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
