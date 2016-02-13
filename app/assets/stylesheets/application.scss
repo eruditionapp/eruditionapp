@@ -11,5 +11,16 @@
  * file per style scope.
  */
 
+// Bootstrap
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Core variables, Bootstrap overrides
+@import "core/variables";
+@import "core/bootstrap-overrides";
+
+// Reusable components
+@import "components/footer";
+
+// Static pages
+@import "static/home";

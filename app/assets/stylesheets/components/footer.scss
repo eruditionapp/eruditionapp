@@ -1,0 +1,13 @@
+// ==========================
+// Main footer
+// ==========================
+.main-footer {
+  font-size: 12px;
+  color: $color-grey-medium;
+  background: $color-grey-dark;
+}
+.main-footer .row {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 0;
+}

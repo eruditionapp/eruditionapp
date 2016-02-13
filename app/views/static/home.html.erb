@@ -1,11 +1,102 @@
-Erudition
-</br>
-</br>
-<% if !user_signed_in? %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  </br>
-  <%= link_to 'Log in', new_user_session_path %>
-<% end %>
-<% if user_signed_in? %>
-  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-<% end %>
+<div class="page page-home">
+	
+	<header>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#home-navbar-collapse" aria-expanded="false">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="/">Erudition</a>
+		    </div><!-- /.navbar-header -->
+
+		    <!-- Group login form for mobile toggling -->
+		    <div class="collapse navbar-collapse" id="home-navbar-collapse">
+					<form class="navbar-form navbar-right" role="search">
+		        <div class="form-group">
+		        	<label for="inputEmail">Email</label>
+		          <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+		          <div class="checkbox">
+						    <label>
+						      <input type="checkbox"> Keep me logged in
+						    </label>
+						  </div>
+		        </div>
+		        <div class="form-group">
+		        	<label for="inputPassword">Password</label>
+		          <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+		          <p class="help-block">Forgot your password?</p>
+		        </div>
+		        <button type="submit" class="btn btn-default">Log In</button>
+		      </form>
+		    </div><!-- /.navbar-collapse -->
+
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</header>
+
+	<div class="cover full-window">
+		<div class="cover-image" style="background-image: url(<%= asset_path 'home/home-cover-01.jpg' %>)"></div>
+		<div class="cover-text">
+			<div class="cover-text__top">Discover the greatest works of art ever painted.</div>
+			<div class="cover-text__bottom">Supercharge your study session with curated lesson plans designed to help you learn things faster and remember them even longer.</div>
+		</div>
+	</div>
+
+	<section class="container-fluid grid home-section">
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<%= image_tag('home/home-screenshot-01.jpg', class: 'home-section__thumb') %>
+			</div>
+	  	<div class="col-xs-12 col-md-6">
+	  		<h2 class="home-section__text">
+	  			<small>Section One</small>
+	  			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+	  		</h2>
+	  	</div>
+		</div>
+	</section>
+
+	<section class="container-fluid grid home-section home-section--grey">
+		<div class="row">
+	  	<div class="col-xs-12 col-md-6">
+	  		<h2 class="home-section__text">
+	  			<small>Section One</small>
+	  			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+	  		</h2>
+	  	</div>
+	  	<div class="col-xs-12 col-md-6">
+				<%= image_tag('home/home-screenshot-02.jpg', class: 'home-section__thumb') %>
+			</div>
+		</div>
+	</section>
+
+	<footer class="main-footer">
+		<div class="container">
+			<div class="row">
+				<ul class="nav nav-pills nav-justified">
+				  <li class="active">Home</a></li>
+				  <li><a href="#">About</a></li>
+				  <li><a href="#">FAQ</a></li>
+				  <li><a href="#">Contact</a></li>
+				  <li><a href="#">Jobs</a></li>
+				</ul>	
+			</div>
+		</div>
+	</footer>
+
+<!--
+	<% if !user_signed_in? %>
+	  <%= link_to 'Sign up', new_user_registration_path %>
+	  </br>
+	  <%= link_to 'Log in', new_user_session_path %>
+	<% end %>
+	<% if user_signed_in? %>
+	  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+	<% end %>
+-->
+
+</div> <!-- /.page-home -->
