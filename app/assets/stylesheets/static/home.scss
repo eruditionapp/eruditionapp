@@ -203,14 +203,11 @@
 // Responsive
 // ==========================
 @media (max-width: $screen-md-min) {
-
   .cover {
     height: auto;
   }
   .cover .container {
-    max-width: 600px;
     margin: 60px auto;
-    padding: 0 30px;
   }
   .cover-text {
     padding: 0;
@@ -220,6 +217,7 @@
   }
   .cover-text__bottom {
     font-size: 19px;
+    max-width: auto;
     margin-bottom: 30px;
   }
 
@@ -243,5 +241,10 @@
     margin: 0;
     padding: 45px 0 0 0;
   }
+}
 
+@media (max-width: $screen-sm-min) {
+  .cover .container {
+    padding: 0 30px;
+  }
 }
