@@ -1,102 +1,187 @@
 <div class="page page-home">
-	
-	<header>
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
 
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#home-navbar-collapse" aria-expanded="false">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="/">Erudition</a>
-		    </div><!-- /.navbar-header -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Erudition</a>
+      </div>
+      <div class="navbar-header navbar-right">
+        <% if !user_signed_in? %>
+          <%= link_to 'Log in', new_user_session_path, class: 'btn btn-default navbar-btn nav-pills' %>
+        <% end %>
+        <% if user_signed_in? %>
+          <p class="navbar-text">Signed in as email@email.com</p>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn' %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
 
-		    <!-- Group login form for mobile toggling -->
-		    <div class="collapse navbar-collapse" id="home-navbar-collapse">
-					<form class="navbar-form navbar-right" role="search">
-		        <div class="form-group">
-		        	<label for="inputEmail">Email</label>
-		          <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-		          <div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Keep me logged in
-						    </label>
-						  </div>
-		        </div>
-		        <div class="form-group">
-		        	<label for="inputPassword">Password</label>
-		          <input type="text" class="form-control" id="inputPassword" placeholder="Password">
-		          <p class="help-block">Forgot your password?</p>
-		        </div>
-		        <button type="submit" class="btn btn-default">Log In</button>
-		      </form>
-		    </div><!-- /.navbar-collapse -->
+  <div class="cover">
+    <div class="cover-image" style="background-image: url(<%= asset_path 'static/home-cover-04.jpg' %>)"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-7">
+          <div class="cover-text">
+            <h1 class="cover-text__top">Discover the greatest works of art ever painted.</h1>
+            <h2 class="cover-text__bottom">Supercharge your study session with curated lesson plans designed to help you learn things faster and remember them even longer.</h2>
+          </div>
+        </div>
+        <div class="visible-xs col-xs-12 signup-form">
+          <div class="form-group">
+            <button type="submit" class="btn btn-default btn-block">Signup for Free</button>
+          </div>
+          <div calss="form-group">
+            <div class="hr-label">
+              <span class="hr-label__text">or</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default btn-block">Signup for Free with Facebook</button>
+          </div>
+        </div>
+        <div class="hidden-xs col-xs-12 col-sm-5">
+          <h3 class="signup-text">Sign up</h3>
+          <form class="form-horizontal signup-form cover-signup-form">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <input class="form-control" placeholder="Full Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 col-md-6">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> I agree to the <a class="privacy-link"href="#">Erudition Terms</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-default btn-block">Signup for Free</button>
+              </div>
+            </div>
+            <div calss="form-group">
+              <div class="col-xs-12 hr-label">
+                <span class="hr-label__text">or</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-default btn-block">Signup for Free with Facebook</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-		  </div><!-- /.container-fluid -->
-		</nav>
-	</header>
+  <section class="home-section home-section--gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5">
+          <div class="home-section__thumb">
+            <%= image_tag('static/home-screenshot-01.jpg') %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+          <h2 class="home-section__text">
+            <small>Section One</small>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<div class="cover full-window">
-		<div class="cover-image" style="background-image: url(<%= asset_path 'home/home-cover-01.jpg' %>)"></div>
-		<div class="cover-text">
-			<div class="cover-text__top">Discover the greatest works of art ever painted.</div>
-			<div class="cover-text__bottom">Supercharge your study session with curated lesson plans designed to help you learn things faster and remember them even longer.</div>
-		</div>
-	</div>
+  <section class="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-5 col-sm-push-7">
+          <div class="home-section__thumb">
+            <%= image_tag('static/home-screenshot-02.jpg') %>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-sm-pull-5">
+          <h2 class="home-section__text">
+            <small>Section Two</small>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section class="container-fluid grid home-section">
-		<div class="row">
-			<div class="col-xs-12 col-md-6">
-				<%= image_tag('home/home-screenshot-01.jpg', class: 'home-section__thumb') %>
-			</div>
-	  	<div class="col-xs-12 col-md-6">
-	  		<h2 class="home-section__text">
-	  			<small>Section One</small>
-	  			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-	  		</h2>
-	  	</div>
-		</div>
-	</section>
+  <section class="home-section home-section--gray home-section--form">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <h3 class="text-center signup-text signup-text--bottom">Start learning now</h3>
+          <form class="form-horizontal signup-form signup-form--bottom">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <input class="form-control" placeholder="Full Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 col-md-6">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> I agree to the <a class="privacy-link"href="#">Erudition Terms</a>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-default btn-block">Signup for Free</button>
+              </div>
+            </div>
+            <div calss="form-group">
+              <div class="col-xs-12 hr-label">
+                <span class="hr-label__text">or</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button type="submit" class="btn btn-default btn-block">Signup for Free with Facebook</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section class="container-fluid grid home-section home-section--grey">
-		<div class="row">
-	  	<div class="col-xs-12 col-md-6">
-	  		<h2 class="home-section__text">
-	  			<small>Section One</small>
-	  			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
-	  		</h2>
-	  	</div>
-	  	<div class="col-xs-12 col-md-6">
-				<%= image_tag('home/home-screenshot-02.jpg', class: 'home-section__thumb') %>
-			</div>
-		</div>
-	</section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <ul class="list-inline">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul> 
+      </div>
+    </div>
+  </footer>
 
-	<footer class="main-footer">
-		<div class="container">
-			<div class="row">
-				<ul class="nav nav-pills nav-justified">
-				  <li class="active">Home</a></li>
-				  <li><a href="#">About</a></li>
-				  <li><a href="#">FAQ</a></li>
-				  <li><a href="#">Contact</a></li>
-				  <li><a href="#">Jobs</a></li>
-				</ul>	
-			</div>
-		</div>
-	</footer>
-
-<!--
-	<% if !user_signed_in? %>
-	  <%= link_to 'Sign up', new_user_registration_path %>
-	  </br>
-	  <%= link_to 'Log in', new_user_session_path %>
-	<% end %>
-	<% if user_signed_in? %>
-	  <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-	<% end %>
--->
-
-</div> <!-- /.page-home -->
+</div>

@@ -1,0 +1,99 @@
+// ==========================
+// Variables
+// ==========================
+$gray-lightest: lighten($gray-base, 97.5%) !default;
+$white-base: #fff;
+$blue-base: #0054ff;
+$blue-light: lighten($blue-base, 13.5%) !default;
+$purple-base: #5e41e8;
+
+
+// ==========================
+// Body
+// ==========================
+body {
+  font-family: 'source-sans-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+// ==========================
+// Buttons
+// ==========================
+.btn {
+  color: $white-base;
+  border: 0;
+  border-radius: 3px;
+  background-color: $blue-base;
+}
+
+
+// ==========================
+// Forms
+// ==========================
+.form-control {
+  border: 0;
+  border-radius: 3px;
+}
+.form-control::-moz-placeholder {
+  color: $gray;
+}
+.form-control:-ms-input-placeholder {
+  color: $gray;
+}
+.form-control::-webkit-input-placeholder {
+  color: $gray;
+}
+
+
+// ==========================
+// Navbar
+// ==========================
+.navbar {
+  margin-bottom: 0;
+  border: 0;
+  background-color: $white-base;
+}
+.navbar .navbar-brand {
+  width: 130px;
+  height: 20px;
+  margin: 23px 0 !important;
+  padding: 0;
+  text-indent: -2222px;
+  background-image: image-url('logo-black.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.navbar .btn {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 15px 0;
+  padding: 10px 20px;
+  color: #333;
+  background-color: #e6e6e6;
+  &:hover {
+    color: $white-base;
+    background-color: $blue-base;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .container > .navbar-header {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+    &.navbar-right {
+      float: right;
+    }
+  }
+}
+
+// Bootstrap queries
+// @media (max-width: $screen-xs-max) { ... }
+// @media (min-width: $screen-sm-min) { ... }
+// @media (max-width: $screen-sm-max) { ... }
+// @media (min-width: $screen-md-min) { ... }
+// @media (max-width: $screen-md-max) { ... }
+// @media (min-width: $screen-lg-min) { ... }

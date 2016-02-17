@@ -1,13 +1,17 @@
 // ==========================
 // Main footer
 // ==========================
-.main-footer {
-  font-size: 12px;
-  color: $color-grey-medium;
-  background: $color-grey-dark;
+.footer {
+  background: $gray-dark;
+  font-weight: 600;
+  color: $gray-lighter;
 }
-.main-footer .row {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 0;
+.footer .row {
+  padding: 50px 20px 120px;
+}
+.footer a {
+  color: $gray-lighter;
+}
+.footer .list-inline > li {
+  padding: 0 15px;
 }

@@ -6,8 +6,9 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-  min-height: 480px;
-  background-color: $color-blue;
+  height: 550px;
+  color: $white-base;
+  background-color: $blue-base;
 }
 .cover-image {
   position: absolute;
@@ -15,41 +16,232 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    opacity: .5;
+    background-color: $gray-base;
+  }
 }
+
+.cover .container {
+  margin-top: 122px;
+}
+
 .cover-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 50px 20px;
-  color: $color-white;
+  max-width: 620px;
+  margin-top: 0;
+  padding-right: 50px;
 }
 .cover-text__top {
-  font-size: 50px;
+  font-family: 'adobe-garamond-pro';
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 .cover-text__bottom {
-  font-size: 20px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 425px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
+
+.signup-text {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 9px;
+}
+.signup-text--bottom {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.signup-form .form-control {
+  font-weight: 400;
+  height: 37px;
+  padding: 5px 10px;
+}
+.signup-form .btn {
+  font-weight: 600;
+  height: 40px;
+  padding: 5px 10px;
+  &:hover {
+    color: $white-base;
+    background-color: $blue-light;
+  }
+}
+.signup-form .hr-label {
+  position: relative;
+  clear: both;
+  margin-top: -9px;
+  margin-bottom: 5px;
+  text-align: center;
+  &:before,
+  &:after {
+    position: absolute;
+    top: 9px;
+    left: 2px;
+    width: calc(50% - 22px);
+    height: 1px;
+    content: '';
+    opacity: .5;
+    background-color: #fff;
+  }
+  &:after {
+    right: 2px;
+    left: auto;
+  }
+}
+.signup-form .hr-label__text {
+  position: relative;
+  display: inline-block;
+  padding: 0 12px;
+}
+.signup-form .checkbox {
+  min-height: 20px;
+  padding-top: 0;
+}
+.signup-form label {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 20px;
+}
+.signup-form .privacy-link {
+  font-weight: 400;
+  color: $white-base;
+  &:hover {
+    color: $white-base;
+  }
+}
+.signup-form .col-md-6 {
+  &:first-of-type {
+    padding-right: 7.5px;
+  }
+  &:last-of-type {
+    padding-left: 7.5px;
+  }
+}
+.signup-form--bottom .hr-label {
+  &:before,
+  &:after {
+    background-color: $gray-light;
+  }
+}
+.signup-form--bottom .form-control {
+  border: 1px solid $gray-lighter;
+}
+
 
 // ==========================
 // Homepage section
 // ==========================
 .home-section {
-  // thumb + text
-  // max-width ~800px
+  padding: 100px 0;
 }
-.home-section--grey {
-  background-color: $color-grey-light;
+.home-section .container {
+  max-width: 970px;
 }
+.home-section--gray {
+  background-color: $gray-lightest;
+  .home-section__thumb:after {
+    background-image: linear-gradient(to top, $gray-lightest 1%, rgba(249, 249, 249, 0) 40%);
+  }
+}
+.home-section--form {
+  padding: 90px 0 120px 0;
+}
+
 .home-section__thumb {
+  position: relative;
   display: block;
-  max-width: 100%;
-  height: auto;
-  padding: 20px 0;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 12px 1px 1px 1px;
+  border-radius: 4px;
+  background-color: $gray-lighter;
+  img {
+    width: 100%;
+  }
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: linear-gradient(to top, $white-base, rgba(255, 255, 255, 0) 40%);
+  }
 }
 .home-section__text {
+  font-weight: 300;
+  line-height: 1.3;
+  margin-top: 0;
+  padding: 0 15px;
   small {
+    font-size: 65%;
+    font-weight: inherit;
+    line-height: 65%;
     display: block;
+    margin-bottom: 6px;
   }
+}
+
+
+// ==========================
+// Responsive
+// ==========================
+@media (max-width: $screen-md-min) {
+
+  .cover {
+    height: auto;
+  }
+  .cover .container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 0 30px;
+  }
+  .cover-text {
+    padding: 0;
+  }
+  .cover-text__top {
+    font-size: 32px;
+  }
+  .cover-text__bottom {
+    font-size: 19px;
+    margin-bottom: 30px;
+  }
+
+  .signup-form .col-md-6 {
+    padding: 0 15px !important;
+    &:first-of-type {
+      margin-bottom: 15px;
+    }
+  }
+
+  .home-section {
+    padding: 75px 0 50px 0;
+  }
+  .home-section--form {
+    padding: 50px 0 90px 0;
+  }
+  .home-section .container {
+    padding: 0 30px;
+  }
+  .home-section__text {
+    margin: 0;
+    padding: 45px 0 0 0;
+  }
+
 }
