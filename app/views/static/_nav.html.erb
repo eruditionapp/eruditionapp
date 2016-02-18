@@ -8,7 +8,7 @@
         <%= link_to 'Log in', new_user_session_path, class: 'btn btn-default navbar-btn nav-pills' %>
       <% end %>
       <% if user_signed_in? %>
-        <p class="navbar-text">Signed in as email@email.com</p>
+        <p class="navbar-user hidden-xs"><%= current_user.email %></p>
         <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn' %>
       <% end %>
     </div>
