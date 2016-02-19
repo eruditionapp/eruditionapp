@@ -10,10 +10,12 @@
 // $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 $gray-lightest: lighten($gray-base, 97.5%) !default;
 $white-base: #fff;
-$blue-base: #0054ff;
+$blue-base: #408fec;
 $blue-light: lighten($blue-base, 13.5%) !default;
 $blue-lighter: lighten($blue-base, 20%) !default;
-$purple-base: #5e41e8;
+$purple-base: #6e5baa;
+$purple-light: lighten($purple-base, 13.5%) !default;
+$purple-lighter: lighten($purple-base, 20%) !default;
 
 
 // ==========================
@@ -34,7 +36,7 @@ body {
   color: $white-base;
   border: 0;
   border-radius: 3px;
-  background-color: $blue-base;
+  background-color: $purple-base;
 }
 
 
@@ -84,7 +86,7 @@ body {
 
   &:hover {
     color: $white-base;
-    background-color: $blue-base;
+    background-color: $purple-base;
   }
 }
 .navbar .navbar-user {
@@ -102,7 +104,7 @@ body {
   color: $white-base;
   border: 0;
   border-radius: 0;
-  background: $blue-lighter;
+  background: $purple-lighter;
 }
 
 
