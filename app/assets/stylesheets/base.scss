@@ -126,14 +126,18 @@ body {
 // ==========================
 // Alerts
 // ==========================
-.alert-notice {
+// Alert class reference:
+// .alert-notice, .alert-alert
+.alert {
   margin: 0;
+  font-weight: 600;
   text-align: center;
   color: $white-base;
   border: 0;
   border-radius: 0;
   background: $purple-lighter;
 }
+
 
 
 // ==========================
