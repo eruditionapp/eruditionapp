@@ -47,12 +47,15 @@ body {
   border: 0;
   border-radius: 3px;
 }
+
 .form-control::-moz-placeholder {
   color: $gray;
 }
+
 .form-control:-ms-input-placeholder {
   color: $gray;
 }
+
 .form-control::-webkit-input-placeholder {
   color: $gray;
 }
@@ -66,6 +69,7 @@ body {
   border: 0;
   background-color: $white-base;
 }
+
 .navbar .navbar-brand {
   width: 130px;
   height: 20px;
@@ -76,6 +80,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .navbar .btn {
   font-size: 13px;
   font-weight: 600;
@@ -89,9 +94,32 @@ body {
     background-color: $purple-base;
   }
 }
+
 .navbar .navbar-user {
   display: inline-block;
   margin-right: 15px;
+}
+
+
+// ==========================
+// Footer
+// ==========================
+.footer {
+  font-weight: 600;
+  color: $gray-lighter;
+  background: $gray-dark;
+}
+
+.footer .row {
+  padding: 50px 20px 120px;
+}
+
+.footer a {
+  color: $gray-lighter;
+}
+
+.footer .list-inline > li {
+  padding: 0 15px;
 }
 
 
@@ -108,16 +136,21 @@ body {
 }
 
 
+// ==========================
+// Scree size extra small
+// ==========================
 @media (max-width: $screen-xs-max) {
+
   .container > .navbar-header {
     float: left;
     margin-right: 0;
     margin-left: 0;
-    
+
     &.navbar-right {
       float: right;
     }
   }
+
 }
 
 

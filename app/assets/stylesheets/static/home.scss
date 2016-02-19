@@ -10,6 +10,7 @@
   color: $white-base;
   background-color: $gray-light;
 }
+
 .cover-image {
   position: absolute;
   top: 0;
@@ -19,6 +20,7 @@
   background-image: image-url('static/home-cover-04.jpg');
   background-position: top center;
   background-size: cover;
+
   &:after {
     position: absolute;
     top: 0;
@@ -40,6 +42,7 @@
   margin-top: 0;
   padding-right: 50px;
 }
+
 .cover-text__top {
   font-family: 'adobe-garamond-pro';
   font-size: 45px;
@@ -48,6 +51,7 @@
   margin-top: 0;
   margin-bottom: 15px;
 }
+
 .cover-text__bottom {
   font-size: 20px;
   font-weight: 400;
@@ -57,93 +61,29 @@
   margin-bottom: 15px;
 }
 
-.signup-text {
+.cover .signup-text {
   font-size: 25px;
-  font-weight: 400;
-  line-height: 1.3;
-  margin-top: 4px;
   margin-bottom: 9px;
 }
-.signup-text--bottom {
-  font-size: 30px;
-  margin-bottom: 30px;
+
+.cover .signup-form .form-control {
+  border: 0;
 }
 
-.signup-form .form-control {
-  font-weight: 400;
-  height: 37px;
-  padding: 5px 10px;
-}
-.signup-form .btn {
-  font-weight: 600;
-  padding: 10px 10px;
-  &:hover {
-    color: $white-base;
-    background-color: $purple-light;
-  }
-}
-.signup-form .hr-label {
-  position: relative;
-  clear: both;
-  margin-top: -9px;
-  margin-bottom: 5px;
-  text-align: center;
+.cover .signup-form .hr-label {
+
   &:before,
   &:after {
-    position: absolute;
-    top: 9px;
-    left: 2px;
-    width: calc(50% - 22px);
-    height: 1px;
-    content: '';
-    opacity: .5;
-    border-bottom: 1px dotted rgba($white-base, .5);
-  }
-  &:after {
-    right: 2px;
-    left: auto;
+    border-color: rgba($white-base, .5);
   }
 }
-.signup-form .hr-label__text {
-  position: relative;
-  display: inline-block;
-  padding: 0 12px;
-}
-.signup-form .checkbox {
-  min-height: 20px;
-  padding-top: 0;
-}
-.signup-form label {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 20px;
-}
-.signup-form .privacy-link {
-  font-weight: 600;
+
+.cover .signup-form .privacy-link {
   color: $white-base;
+
   &:hover {
     color: $white-base;
   }
-}
-.signup-form .col-md-6 {
-  &:first-of-type {
-    padding-right: 7.5px;
-  }
-  &:last-of-type {
-    padding-left: 7.5px;
-  }
-}
-.signup-form--bottom .hr-label {
-  &:before,
-  &:after {
-    border-color: rgba($gray-base, .5);
-  }
-}
-.signup-form--bottom .form-control {
-  border: 1px solid $gray-lighter;
-}
-.signup-form--bottom .privacy-link {
-  color: $gray-dark;
 }
 
 
@@ -153,15 +93,19 @@
 .home-section {
   padding: 100px 0;
 }
+
 .home-section .container {
   max-width: 970px;
 }
+
 .home-section--gray {
   background-color: $gray-lightest;
+
   .home-section__thumb:after {
     background-image: linear-gradient(to top, $gray-lightest 1%, rgba(249, 249, 249, 0) 40%);
   }
 }
+
 .home-section--form {
   padding: 90px 0 120px 0;
 }
@@ -174,9 +118,11 @@
   padding: 12px 1px 1px 1px;
   border-radius: 4px;
   background-color: $gray-lighter;
+
   img {
     width: 100%;
   }
+
   &:after {
     position: absolute;
     top: 0;
@@ -187,11 +133,13 @@
     background-image: linear-gradient(to top, $white-base, rgba(255, 255, 255, 0) 40%);
   }
 }
+
 .home-section__text {
   font-weight: 300;
   line-height: 1.3;
   margin-top: 0;
   padding: 0 15px;
+
   small {
     font-size: 65%;
     font-weight: inherit;
@@ -203,51 +151,55 @@
 
 
 // ==========================
-// Responsive
+// Screen size medium
 // ==========================
 @media (max-width: $screen-md-min) {
+  
   .cover {
     height: auto;
   }
+
   .cover .container {
     margin: 60px auto;
   }
+
   .cover-text {
     padding: 0;
   }
+
   .cover-text__top {
     font-size: 32px;
   }
+
   .cover-text__bottom {
     font-size: 19px;
     max-width: auto;
     margin-bottom: 30px;
   }
 
-  .signup-form .col-md-6 {
-    padding: 0 15px !important;
-    &:first-of-type {
-      margin-bottom: 15px;
-    }
-  }
-
   .home-section {
     padding: 75px 0 50px 0;
   }
+
   .home-section--form {
     padding: 50px 0 90px 0;
   }
+
   .home-section .container {
     padding: 0 30px;
   }
+
   .home-section__text {
     margin: 0;
     padding: 45px 0 0 0;
   }
+
 }
 
 @media (max-width: $screen-sm-min) {
+
   .cover .container {
     padding: 0 30px;
   }
+
 }
