@@ -1,0 +1,43 @@
+<section class="home-section home-section--gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-5">
+        <div class="home-section__thumb">
+          <%= image_tag 'static/home-screenshot-01.jpg' %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-7">
+        <h2 class="home-section__text">
+          <small>Section One</small>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="home-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-5 col-sm-push-7">
+        <div class="home-section__thumb">
+          <%= image_tag 'static/home-screenshot-02.jpg' %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-7 col-sm-pull-5">
+        <h2 class="home-section__text">
+          <small>Section Two</small>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="home-section home-section--gray home-section--form">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <%= render "signup_form", title: "Start learning now" %>
+      </div>
+    </div>
+  </div>
+</section>

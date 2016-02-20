@@ -13,3 +13,35 @@ We work within the Git Feature Branching Workflow, use Slack for internal commun
 * Git
 
 If you have questions installing any of these please ask.
+
+### CSS
+
+Reference: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
+
+#### File Structure
+
+```
+|-- eruditionapp
+    |-- app
+        |-- assets
+          |-- images
+          |-- javascripts
+          |-- stylesheets
+              |-- application.scss
+              |-- _base.scss
+              |-- components
+              |-- static
+```
+
+* `application.scss`
+  * Main manifest file
+* `_base.scss`
+  * For core variables and bootstrap overrides
+* `/components/..`
+  * For reusable, composable elements
+* `/static/..`
+  * For page specific code, ie 'home' or 'contact' pages
+
+### Javascript
+
+* Reference: [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript/tree/master/es5)
