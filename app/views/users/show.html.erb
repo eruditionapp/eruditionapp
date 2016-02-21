@@ -1,0 +1,17 @@
+<br>
+<br>
+<strong>email:</strong> <%= @user.email %>
+<br>
+<strong>role:</strong> <%= @user.role %>
+<br>
+<br>
+What can this user see?
+<br>
+<strong>Free content:</strong> <% if @user.is_free? %>yes<% else %>no<% end%>
+<br>
+<strong>Paid content:</strong> <% if @user.is_paid? %>yes<% else %>no<% end%>
+<br>
+<strong>Admin content:</strong> <% if @user.is_admin? %>yes<% else %>no<% end%>
+<br>
+<strong>Superadmin content:</strong> <% if @user.is_superadmin? %>yes<% else %>no<% end%>
+<br>
