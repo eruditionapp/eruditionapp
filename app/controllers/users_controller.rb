@@ -8,14 +8,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    unless (@user == current_user) || current_user.is_admin?
+      deny_access
+    end
   end
 
   private
 
   def admin_only
     unless current_user.is_admin?
-      url = request.env["HTTP_REFERER"] || user_path(current_user)
-      redirect_to url, alert: "You do not have access to this page."
+      deny_access
     end
   end
 
