@@ -14,6 +14,7 @@ $blue-base: #408fec;
 $blue-light: lighten($blue-base, 13.5%) !default;
 $blue-lighter: lighten($blue-base, 20%) !default;
 $blue-dark: darken($blue-base, 13.5%) !default;
+$blue-darker: darken($blue-base, 20%) !default;
 $purple-base: #6e5baa;
 $purple-light: lighten($purple-base, 13.5%) !default;
 $purple-lighter: lighten($purple-base, 20%) !default;
@@ -138,7 +139,7 @@ body {
   color: $white-base;
   border: 0;
   border-radius: 0;
-  background: $purple-dark;
+  background: $blue-darker;
 }
 
 

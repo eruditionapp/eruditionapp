@@ -1,5 +1,5 @@
 <h3 class="signup-text"><%= title %></h3>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'form-horizontal signup-form'}) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-horizontal signup-form'}) do |f| %>
 
   <% if is_home == false %>
     <%= devise_error_messages! %>
