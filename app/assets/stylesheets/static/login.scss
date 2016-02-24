@@ -5,7 +5,7 @@
   padding: 60px 0 100px;
   color: $white-base;
   background: linear-gradient(to bottom, $purple-darker 0%, $purple-base 100%);
-  min-height: calc(100vh - 109px);
+  min-height: calc(100vh - 268px);
 }
 
 .page-login .signup-form #error_explanation {
@@ -23,7 +23,7 @@
 }
 
 .page-login .signup-form .form-group em {
-  color: $purple-light;
+  color: $purple-base;
 }
 
 .page-login .signup-form .privacy-link {
