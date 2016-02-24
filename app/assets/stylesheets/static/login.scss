@@ -2,41 +2,29 @@
 // Login screens
 // ==========================
 .page-login {
-  padding: 60px 0 100px;
-  color: $white-base;
-  background: linear-gradient(to bottom, $purple-darker 0%, $purple-base 100%);
   min-height: calc(100vh - 268px);
+  padding: 60px 0 100px;
+  background: linear-gradient(to bottom, $gray-lighter 0%, $gray-lightest 100%);
 }
 
 .page-login .signup-form #error_explanation {
-  border: 1px solid $purple-lighter;
+  border: 1px solid rgba($gray-light, .3);
 }
 
 .page-login .devise-link {
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 10px;
-  color: $white-base;
   display: inline-block;
   float: left;
   clear: both;
-}
-
-.page-login .signup-form .form-group em {
+  margin-bottom: 10px;
   color: $purple-base;
 }
 
-.page-login .signup-form .privacy-link {
-  color: $white-base;
-  &:hover {
-    color: $white-base;
-  }
+.page-login .signup-form .form-group em {
+  color: $gray-light;
 }
 
 .page-login .signup-form .btn {
   font-size: 16px;
-  background-color: $blue-base;
-  &:hover {
-    background-color: $blue-dark;
-  }
 }

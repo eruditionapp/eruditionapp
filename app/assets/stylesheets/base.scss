@@ -13,6 +13,7 @@ $white-base: #fff;
 $blue-base: #408fec;
 $blue-light: lighten($blue-base, 13.5%) !default;
 $blue-lighter: lighten($blue-base, 20%) !default;
+$blue-lightest: lighten($blue-base, 26.5%) !default;
 $blue-dark: darken($blue-base, 13.5%) !default;
 $blue-darker: darken($blue-base, 20%) !default;
 $purple-base: #6e5baa;
@@ -20,6 +21,7 @@ $purple-light: lighten($purple-base, 13.5%) !default;
 $purple-lighter: lighten($purple-base, 20%) !default;
 $purple-dark: darken($purple-base, 13.5%) !default;
 $purple-darker: darken($purple-base, 20%) !default;
+$shadow-base: 0 1px 2px rgba(0,30,50,.15);
 
 
 // ==========================
@@ -157,7 +159,6 @@ body {
       float: right;
     }
   }
-
 }
 
 
