@@ -1,0 +1,42 @@
+<table class="footer">
+  <tr>
+    <td>
+      <table class="hr">
+        <tbody>
+          <tr>
+            <td>
+              <hr>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <%= link_to 'About', root_url, class: 'footer-button' %>
+            <%= link_to 'Contact', root_url, class: 'footer-button' %>
+            <%= link_to 'Jobs', root_url, class: 'footer-button' %>
+            <%= link_to 'Privacy', root_url, class: 'footer-button' %>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <p class="footer-copy"><%= link_to 'Click Here', root_url, class: 'footer-copy__link' %> to update your email preferences or unsubscribe. Note that even if you unsubscribe, we will send certain account-related emails, such as purchase details or requests for password resets.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="footer-copy">The email address linked to your Erudition account is <%= @email %>.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="footer-copy">Erudition App, Inc. 520 Chestnut St, Philadelphia, PA 19106</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
