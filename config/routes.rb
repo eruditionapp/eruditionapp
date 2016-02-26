@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root      'static#home'
 
+  get 'privacy' => 'static#privacy'
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
