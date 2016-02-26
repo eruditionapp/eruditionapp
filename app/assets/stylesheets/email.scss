@@ -121,8 +121,9 @@ h3 {
 // ==========================
 .footer {
   display: block;
-  padding: 0 30px 30px 30px;
+  padding: 30px;
   color: $gray-light;
+  background-color: $gray-lightest;
 }
 
 .footer-button {
