@@ -1,3 +1,7 @@
 <div><strong>email:</strong> <%= user.email %></div>
 <div><strong>role:</strong> <%= user.role %></div>
 <div><%= link_to 'go to profile', user %></div>
+<%= form_for(user) do |f| %>
+  <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+  <%= f.submit 'Change role' %>
+<% end %>
