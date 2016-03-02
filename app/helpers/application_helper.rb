@@ -1,5 +1,8 @@
 module ApplicationHelper
 
+  ##
+  ## Let Devise forms function site-wide
+
   def resource_name
     :user
   end
