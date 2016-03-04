@@ -43,9 +43,21 @@ body {
   border: 0;
   border-radius: 3px;
   background-color: $purple-base;
+
   &:hover {
     color: $white-base;
     background-color: $purple-light;
+  }
+}
+
+.btn-link {
+  font-weight: 600;
+  color: $blue-dark;
+  background-color: transparent;
+
+  &:hover {
+    color: $blue-darker;
+    background-color: transparent;
   }
 }
 
@@ -139,8 +151,8 @@ body {
 // Alert class reference:
 // .alert-notice, .alert-alert
 .alert {
-  margin: 0;
   font-weight: 600;
+  margin: 0;
   text-align: center;
   color: $white-base;
   border: 0;
@@ -163,6 +175,7 @@ body {
       float: right;
     }
   }
+  
 }
 
 
