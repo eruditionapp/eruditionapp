@@ -43,6 +43,10 @@ body {
   border: 0;
   border-radius: 3px;
   background-color: $purple-base;
+  &:hover {
+    color: $white-base;
+    background-color: $purple-light;
+  }
 }
 
 

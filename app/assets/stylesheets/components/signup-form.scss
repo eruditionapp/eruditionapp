@@ -19,11 +19,6 @@
 .signup-form .btn {
   font-weight: 600;
   padding: 10px 10px;
-
-  &:hover {
-    color: $white-base;
-    background-color: $purple-light;
-  }
 }
 
 .signup-form .form-group em {
@@ -99,7 +94,7 @@
 
 .signup-form #error_explanation {
   margin-bottom: 40px;
-  padding: 15px;
+  padding: 10px;
   border: 1px solid $gray;
   border-radius: 6px;
 }

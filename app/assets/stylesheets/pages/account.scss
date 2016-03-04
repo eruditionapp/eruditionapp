@@ -1,17 +1,17 @@
 // ==========================
 // Devise login pages
 // ==========================
-.page-login {
+.page-account {
   min-height: calc(100vh - 268px);
   padding: 60px 0 100px;
-  background: linear-gradient(to bottom, $gray-lighter 0%, $gray-lightest 100%);
+  background: linear-gradient(to bottom, $gray-lighter 0%, $gray-lightest 5px);
 }
 
-.page-login .signup-form #error_explanation {
+.page-account .signup-form #error_explanation {
   border: 1px solid rgba($gray-light, .3);
 }
 
-.page-login .devise-link {
+.page-account .devise-link {
   font-size: 13px;
   font-weight: 600;
   display: inline-block;
@@ -21,10 +21,10 @@
   color: $purple-base;
 }
 
-.page-login .signup-form .form-group em {
+.page-account .signup-form .form-group em {
   color: $gray-light;
 }
 
-.page-login .signup-form .btn {
+.page-account .signup-form .btn {
   font-size: 16px;
 }
