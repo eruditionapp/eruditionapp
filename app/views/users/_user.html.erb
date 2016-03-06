@@ -1,7 +1,29 @@
-<div><strong>email:</strong> <%= user.email %></div>
-<div><strong>role:</strong> <%= user.role %></div>
-<div><%= link_to 'go to profile', user %></div>
-<%= form_for(user) do |f| %>
-  <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-  <%= f.submit 'Change role' %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-4 card-user">
+    <%= link_to 'View Profile', user, class: 'btn btn-link' %>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Email:</th>
+          <td><%= user.email %></td>
+        </tr>
+        <tr>
+          <th>Role:</th>
+          <td><%= user.role %></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <%= form_for(user, html: {class: 'form-inline'}) do |f| %>
+      
+      <div class="form-group">
+        <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}, {}, {:class => 'form-control'}) %>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'Change role', class: 'btn btn-default' %>
+      </div>
+
+    <% end %>
+    
+  </div>
+</div>

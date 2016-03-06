@@ -1,5 +1,5 @@
 // ==========================
-// Homepage cover
+// Home page
 // ==========================
 .cover {
   position: relative;
@@ -28,7 +28,7 @@
     width: 100%;
     height: 100%;
     content: '';
-    opacity: .5;
+    opacity: .4;
     background-color: $gray-base;
   }
 }
@@ -41,6 +41,7 @@
   max-width: 620px;
   margin-top: 0;
   padding-right: 50px;
+  text-shadow: $shadow-base;
 }
 
 .cover-text__top {
@@ -196,6 +197,10 @@
 
 }
 
+
+// ==========================
+// Screen size small
+// ==========================
 @media (max-width: $screen-sm-min) {
 
   .cover .container {

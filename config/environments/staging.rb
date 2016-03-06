@@ -75,8 +75,9 @@ Rails.application.configure do
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
+  config.roadie.url_options                = { host: 'eruditionapp-staging.herokuapp.com', scheme: 'https' }
   config.action_mailer.default_url_options = { host: 'eruditionapp-staging.herokuapp.com' }
-  config.action_mailer.asset_host = 'http://eruditionapp-staging.herokuapp.com'  
+  config.action_mailer.asset_host          = nil
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

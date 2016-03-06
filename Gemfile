@@ -10,6 +10,10 @@ gem 'pg'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use roadie to inline email css
+gem 'roadie', '~> 3.1.1'
+# Use roadie-rails to generate HTML emails with roadie
+gem 'roadie-rails', '~> 1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views

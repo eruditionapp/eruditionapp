@@ -22,5 +22,14 @@ module Eruditionapp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Use email layout for Devise mailers
+    # Process Devise mailers using roadie and roadie-rails
+    config.to_prepare do
+      Devise::Mailer.layout 'email'
+      Devise::Mailer.class_eval do
+        include Roadie::Rails::Automatic
+      end
+    end
   end
 end

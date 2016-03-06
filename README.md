@@ -27,20 +27,24 @@ Reference: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
           |-- images
           |-- javascripts
           |-- stylesheets
-              |-- application.scss
-              |-- _base.scss
               |-- components
-              |-- static
+              |-- pages
+              |-- _base.scss
+              |-- application.scss
+              |-- email.scss
 ```
 
-* `application.scss`
-  * Main manifest file
-* `_base.scss`
-  * For core variables and bootstrap overrides
 * `/components/..`
   * For reusable, composable elements
-* `/static/..`
+* `/pages/..`
   * For page specific code, ie 'home' or 'contact' pages
+* `_base.scss`
+  * For core variables and bootstrap overrides
+* `application.scss`
+  * Main manifest file
+* `email.scss`
+  * For HTML emails
+
 
 ### Javascript
 

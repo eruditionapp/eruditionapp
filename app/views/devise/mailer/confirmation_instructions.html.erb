@@ -1,5 +1,27 @@
-<p>Welcome <%= @email %>!</p>
-
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<table class="section">
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>
+            <h1 class="section-header">Welcome!</h1>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <h3 class="section-subheader">You can confirm your account email through the link below:</h3>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), class: 'button' %>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

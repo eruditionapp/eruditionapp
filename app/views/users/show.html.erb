@@ -1,17 +1,42 @@
-<br>
-<br>
-<strong>email:</strong> <%= @user.email %>
-<br>
-<strong>role:</strong> <%= @user.role %>
-<br>
-<br>
-What can this user see?
-<br>
-<strong>Free content:</strong> <% if @user.is_free? %>yes<% else %>no<% end%>
-<br>
-<strong>Paid content:</strong> <% if @user.is_paid? %>yes<% else %>no<% end%>
-<br>
-<strong>Admin content:</strong> <% if @user.is_admin? %>yes<% else %>no<% end%>
-<br>
-<strong>Superadmin content:</strong> <% if @user.is_superadmin? %>yes<% else %>no<% end%>
-<br>
+<div class="page page-account">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <h4>Account Info</h4>
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <th>Email:</th>
+              <td><%= @user.email %></td>
+            </tr>
+            <tr>
+              <th>Role:</th>
+              <td><%= @user.role %></td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>What can this user see?</h4>
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <th>Free Content:</th>
+              <td><% if @user.is_free? %>Yes<% else %>No<% end%></td>
+            </tr>
+            <tr>
+              <th>Paid Content:</th>
+              <td><% if @user.is_paid? %>Yes<% else %>No<% end%></td>
+            </tr>
+            <tr>
+              <th>Admin Content:</th>
+              <td><% if @user.is_admin? %>Yes<% else %>No<% end%></td>
+            </tr>
+            <tr>
+              <th>Superadmin Content:</th>
+              <td><% if @user.is_superadmin? %>Yes<% else %>No<% end%></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

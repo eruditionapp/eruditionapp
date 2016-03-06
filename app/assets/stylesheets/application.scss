@@ -16,10 +16,12 @@
 @import "bootstrap";
 
 // Core variables, bootstrap overrides
-@import "base";
+@import "_base";
 
 // Reusable components
 @import "components/signup-form";
 
-// Static pages
-@import "static/home";
+// Page specific
+@import "pages/home";
+@import "pages/account";
+@import "pages/policy";
