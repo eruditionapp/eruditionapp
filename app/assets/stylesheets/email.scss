@@ -98,6 +98,14 @@ h3 {
 // ==========================
 // Header
 // ==========================
+.preheader {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+// ==========================
+// Header
+// ==========================
 .header {
   display: block;
   padding: 30px;
