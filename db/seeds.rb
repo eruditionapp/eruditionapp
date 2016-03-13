@@ -10,3 +10,15 @@
   user.skip_confirmation!
   user.save!
 end
+
+# Setup Decks with associated Categories
+
+5.times do |count|
+  Category.create! name: "Category #{count + 1}"
+end
+
+10.times do |count|
+  Deck.create! title: "Deck #{count + 1}", subtitle: "Subtitle #{count + 1}",
+               author: "Author #{count + 1}"
+  Deck.last.categories << Category.find(rand(1...Category.count))
+end
