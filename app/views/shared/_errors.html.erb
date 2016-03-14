@@ -1,0 +1,8 @@
+<% if resource.errors.any? %>
+  The form contains <%= pluralize(resource.errors.count, "error") %>.
+  <ul>
+    <% resource.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
