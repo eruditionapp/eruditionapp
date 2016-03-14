@@ -10,6 +10,18 @@ class DecksController < ApplicationController
   end
 
   def edit
+    @deck = Deck.find(params[:id])
+  end
+
+  def update
+    @deck = Deck.find(params[:id])
+    if @deck.update_attributes(strong_params)
+      flash[:success] = 'Deck updated.'
+      redirect_to @deck
+    else
+      flash[:error] = 'Failed to update deck.'
+      render 'edit'
+    end
   end
 
   def new
