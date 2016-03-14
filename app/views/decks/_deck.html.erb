@@ -1,7 +1,8 @@
 <br>
 Title: <%= deck.title %><br>
 Subtitle: <%= deck.subtitle %><br>
-Authorr: <%= deck.author %><br>
+Author: <%= deck.author %><br>
+Status: <%= deck.status.titleize %><br>
 Categories: <%= render 'categories', resource: deck %><br>
 <%= link_to 'Link to deck page', deck_path(deck) %><br>
 <%= link_to 'Edit deck', edit_deck_path(deck) %><br>
