@@ -1,1 +1,5 @@
-Single Deck View (see deliverable doc)
+Title: <%= @deck.title %><br>
+Subtitle: <%= @deck.subtitle %><br>
+Author: <%= @deck.author %><br>
+Categories: <%= render 'categories', resource: @deck %><br>
+<%= link_to 'Edit deck', edit_deck_path(@deck) %><br>

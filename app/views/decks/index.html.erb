@@ -1,1 +1,4 @@
-Multi Deck View (see deliverable doc)
+<%= link_to 'Create Deck', new_deck_path %><br>
+<% @decks.each do |deck| %>
+  <%= render deck %>
+<% end %>

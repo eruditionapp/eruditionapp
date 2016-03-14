@@ -20,5 +20,11 @@ end
 10.times do |count|
   Deck.create! title: "Deck #{count + 1}", subtitle: "Subtitle #{count + 1}",
                author: "Author #{count + 1}"
-  Deck.last.categories << Category.find(rand(1...Category.count))
+
+  2.times do
+    category_id = rand(1...Category.count)
+    unless Deck.last.categories.where(id: category_id).exists?
+      Deck.last.categories << Category.find(category_id)
+    end
+  end
 end
