@@ -6,16 +6,6 @@
   min-height: calc(100vh - 268px);
   padding: 60px 0 100px;
   background-color: $gray-lightest;
-
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    content: '';
-    background-image: linear-gradient(to bottom, $gray-lighter, $gray-lightest);
-  }
 }
 
 .page-account .signup-form #error_explanation {

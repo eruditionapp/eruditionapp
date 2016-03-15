@@ -1,8 +1,6 @@
-<br>
-Title: <%= deck.title %><br>
-Subtitle: <%= deck.subtitle %><br>
-Author: <%= deck.author %><br>
-Status: <%= deck.status.titleize %><br>
-Categories: <%= render 'categories', resource: deck %><br>
-<%= link_to 'Link to deck page', deck_path(deck) %><br>
-<%= link_to 'Edit deck', edit_deck_path(deck) %><br>
+<tr data-link="<%= deck_path(deck) %>" class="status-<%= deck.status %>">
+  <td><%= deck.title %></td>
+  <td><%= deck.subtitle %></td>
+  <td><%= deck.author %></td>
+  <td><%= render 'categories', resource: deck %></td>
+</tr>

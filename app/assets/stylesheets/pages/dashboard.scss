@@ -1,0 +1,72 @@
+// ==========================
+// Admin + User dashboard
+// ==========================
+.page-dashboard {
+  position: relative;
+  min-height: calc(100vh - 268px);
+}
+
+.page-dashboard .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page-dashboard .well {
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-dashboard .panel-heading {
+  font-weight: 600;
+  padding-left: 8px;
+  background-color: $purple-lightest;
+}
+
+.page-dashboard .pagination {
+  margin: 0;
+}
+
+// pagehead
+.dashboard-pagehead .breadcrumb {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  padding: 7px 15px 7px 0;
+  background-color: transparent;
+}
+
+// summary
+.dashboard-summary .list-inline {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.dashboard-summary .glyphicon {
+  font-size: 13px;
+  margin-right: 5px;
+  color: $gray-light;
+}
+
+// toolbar
+.dashboard-toolbar .input-group {
+  margin-bottom: 20px;
+}
+
+.dashboard-toolbar input {
+  height: 32px;
+}
+
+.dashboard-toolbar .btn-group {
+  margin-bottom: 20px;
+}
+
+.dashboard-toolbar .input-group-btn .btn {
+  color: #333;
+  background-color: #e6e6e6;
+  &:hover {
+    //color: $white-base;
+    background-color: $gray-lighter;
+  }
+}

@@ -19,9 +19,11 @@
 @import "_base";
 
 // Reusable components
+@import "components/nav";
 @import "components/signup-form";
 
 // Page specific
 @import "pages/home";
 @import "pages/account";
 @import "pages/policy";
+@import "pages/dashboard";

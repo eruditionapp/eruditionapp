@@ -19,6 +19,7 @@ $blue-darker: darken($blue-base, 20%) !default;
 $purple-base: #6e5baa;
 $purple-light: lighten($purple-base, 13.5%) !default;
 $purple-lighter: lighten($purple-base, 20%) !default;
+$purple-lightest: lighten($purple-base, 46.5%) !default;
 $purple-dark: darken($purple-base, 13.5%) !default;
 $purple-darker: darken($purple-base, 20%) !default;
 $shadow-base: 0 1px 2px rgba(0,30,50,.15);
@@ -34,17 +35,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+// ==========================
+// Wrappers
+// ==========================
+.wrapper {
+  border-bottom: 1px solid $gray-lighter;
+  background-color: $gray-lightest;
+}
 
 // ==========================
 // Buttons
 // ==========================
 .btn {
+  font-weight: 600;
   color: $white-base;
   border: 0;
   border-radius: 3px;
   background-color: $purple-base;
-
-  &:hover {
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
     color: $white-base;
     background-color: $purple-light;
   }
@@ -54,7 +65,6 @@ body {
   font-weight: 600;
   color: $blue-dark;
   background-color: transparent;
-
   &:hover {
     color: $blue-darker;
     background-color: transparent;
@@ -66,7 +76,7 @@ body {
 // Forms
 // ==========================
 .form-control {
-  border: 0;
+  //border: 0;
   border-radius: 3px;
 }
 
@@ -84,42 +94,39 @@ body {
 
 
 // ==========================
-// Navbar
+// Tables
 // ==========================
-.navbar {
-  margin-bottom: 0;
-  border: 0;
-  background-color: $white-base;
-}
-
-.navbar .navbar-brand {
-  width: 130px;
-  height: 20px;
-  margin: 23px 0 !important;
-  padding: 0;
-  text-indent: -2222px;
-  background-image: image-url('logo-black.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.navbar .btn {
+table {
   font-size: 13px;
-  font-weight: 600;
-  margin: 15px 0;
-  padding: 10px 20px;
-  color: #333;
-  background-color: #e6e6e6;
+}
 
+.table-hover > tbody > tr {
   &:hover {
-    color: $white-base;
-    background-color: $purple-base;
+    cursor: pointer;
   }
 }
 
-.navbar .navbar-user {
-  display: inline-block;
-  margin-right: 15px;
+
+// ==========================
+// Pagination
+// ==========================
+.pagination > li > a {
+  font-weight: 600;
+  color: $purple-base;
+}
+
+.pagination > .active > a {
+  border-color: $purple-base;
+  background-color: $purple-base;
+}
+
+
+// ==========================
+// Breadcrumb
+// ==========================
+.breadcrumb > .active {
+  font-weight: 400;
+  color: $gray-dark;
 }
 
 
@@ -157,7 +164,7 @@ body {
   color: $white-base;
   border: 0;
   border-radius: 0;
-  background: $purple-light;
+  background-color: $purple-light;
 }
 
 
@@ -165,17 +172,14 @@ body {
 // Scree size extra small
 // ==========================
 @media (max-width: $screen-xs-max) {
-
   .container > .navbar-header {
     float: left;
     margin-right: 0;
     margin-left: 0;
-
     &.navbar-right {
       float: right;
     }
   }
-  
 }
 
 
