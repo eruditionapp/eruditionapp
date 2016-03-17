@@ -5,7 +5,7 @@
   position: relative;
   min-height: calc(100vh - 268px);
   padding: 60px 0 100px;
-  background-color: $gray-lightest;
+  background-color: $gray-page-bg;
 }
 
 .page-account .signup-form #error_explanation {
@@ -19,15 +19,11 @@
   float: left;
   clear: both;
   margin-bottom: 10px;
-  color: $purple-base;
+  color: $brand-base;
 }
 
 .page-account .signup-form .form-group em {
   color: $gray-light;
-}
-
-.page-account .signup-form .btn {
-  font-size: 16px;
 }
 
 .page-account .card-user {

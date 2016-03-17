@@ -2,22 +2,20 @@
 // Signup form
 // ==========================
 .signup-text {
-  font-size: 30px;
-  font-weight: 400;
   line-height: 1.3;
-  margin-top: 4px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .signup-form .form-control {
-  border: 0;
   font-weight: 400;
   height: 37px;
   padding: 5px 10px;
+  border: 0;
   border: 1px solid $gray-lighter;
 }
 
 .signup-form .btn {
+  font-size: 16px;
   font-weight: 600;
   padding: 10px 10px;
 }
@@ -37,7 +35,6 @@
   margin-top: -9px;
   margin-bottom: 5px;
   text-align: center;
-
   &:before,
   &:after {
     position: absolute;
@@ -49,7 +46,6 @@
     opacity: .5;
     border-bottom: 1px dotted rgba($gray-base, .5);
   }
-
   &:after {
     right: 2px;
     left: auto;
@@ -76,33 +72,30 @@
 .signup-form .privacy-link {
   font-weight: 600;
   color: $gray-dark;
-
   &:hover {
     color: $gray-dark;
   }
 }
 
 .signup-form .col-md-6 {
-
   &:first-of-type {
     padding-right: 7.5px;
   }
-
   &:last-of-type {
     padding-left: 7.5px;
   }
 }
 
+// error message
 .signup-form #error_explanation {
-  margin-bottom: 40px;
-  padding: 10px;
-  border: 1px solid $gray;
+  margin-bottom: 20px;
+  padding: 5px;
+  border: 1px solid $gray-border;
   border-radius: 6px;
 }
 
 .signup-form #error_explanation h2 {
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 15px;
   margin: 10px;
 }
 
@@ -113,7 +106,6 @@
 @media (max-width: $screen-md-min) {
   .signup-form .col-md-6 {
     padding: 0 15px !important;
-    
     &:first-of-type {
       margin-bottom: 15px;
     }

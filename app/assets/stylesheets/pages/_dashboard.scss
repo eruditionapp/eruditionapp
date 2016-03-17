@@ -19,7 +19,6 @@
 .page-dashboard .panel-heading {
   font-weight: 600;
   padding-left: 8px;
-  background-color: $purple-lightest;
 }
 
 .page-dashboard .pagination {
@@ -28,18 +27,37 @@
 
 // pagehead
 .dashboard-pagehead .breadcrumb {
-  font-size: 18px;
-  font-weight: 600;
   line-height: 1;
   margin: 0;
   padding: 7px 15px 7px 0;
   background-color: transparent;
+  h4 {
+    line-height: 1;
+    margin: 0;
+  }
+  &:before {
+    display: inline-block;
+    width: 15px;
+    height: 12px;
+    margin-right: 5px;
+    content: '';
+    opacity: .7;
+    background-image: image-url('glyphicon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 // summary
 .dashboard-summary .list-inline {
   &:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+.dashboard-summary .list-inline {
+  > .list-item-label {
+    padding-right: 0;
   }
 }
 
@@ -56,6 +74,11 @@
 
 .dashboard-toolbar input {
   height: 32px;
+  border-color: $table-border-color;
+  &:focus {
+    border-color: $table-border-color;
+    box-shadow: none;
+  }
 }
 
 .dashboard-toolbar .btn-group {
@@ -63,10 +86,5 @@
 }
 
 .dashboard-toolbar .input-group-btn .btn {
-  color: #333;
-  background-color: #e6e6e6;
-  &:hover {
-    //color: $white-base;
-    background-color: $gray-lighter;
-  }
+  outline: none;
 }
