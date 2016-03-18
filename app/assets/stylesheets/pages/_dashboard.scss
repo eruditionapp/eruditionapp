@@ -3,7 +3,7 @@
 // ==========================
 .page-dashboard {
   position: relative;
-  min-height: calc(100vh - 268px);
+  min-height: calc(100vh - 273px);
 }
 
 .page-dashboard .container {
@@ -39,7 +39,7 @@
     display: inline-block;
     width: 15px;
     height: 12px;
-    margin-right: 5px;
+    margin-right: 8px;
     content: '';
     opacity: .7;
     background-image: image-url('glyphicon.png');
@@ -59,11 +59,15 @@
   > .list-item-label {
     padding-right: 0;
   }
+  strong {
+    margin-right: 5px;
+  }
 }
 
 .dashboard-summary .glyphicon {
-  font-size: 13px;
-  margin-right: 5px;
+  font-size: 11px;
+  display: none;
+  margin-right: 10px;
   color: $gray-light;
 }
 

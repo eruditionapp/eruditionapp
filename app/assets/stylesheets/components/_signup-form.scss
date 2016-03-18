@@ -11,7 +11,19 @@
   height: 37px;
   padding: 5px 10px;
   border: 0;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-border;
+}
+
+.signup-form .form-control::-moz-placeholder {
+  color: $gray;
+}
+
+.signup-form .form-control:-ms-input-placeholder {
+  color: $gray;
+}
+
+.signup-form .form-control::-webkit-input-placeholder {
+  color: $gray;
 }
 
 .signup-form .btn {

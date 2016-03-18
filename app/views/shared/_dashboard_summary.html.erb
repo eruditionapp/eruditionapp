@@ -1,0 +1,54 @@
+<div class="dashboard-summary">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="well">
+
+        <% if view == 'decks' %>
+          <ul class="list-inline">
+            <li><span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>10</strong> Decks</li>
+            <li class="list-item-label"><span class="label label-success">0 Published</span></li>
+            <li class="list-item-label"><span class="label label-warning">0 Unpublished</span></li>
+            <li class="list-item-label"><span class="label label-primary">10 Paid</span></li>
+            <li class="list-item-label"><span class="label label-info">0 Free</span></li>
+          </ul>
+          <ul class="list-inline">
+            <li><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><strong>4</strong> Categories</li>
+            <li class="list-item-label"><span class="label label-default">1 Category One</span></li>
+            <li class="list-item-label"><span class="label label-default">2 Category Two</span></li>
+            <li class="list-item-label"><span class="label label-default">1 Category Three</span></li>
+            <li class="list-item-label"><span class="label label-default">2 Category Four</span></li>
+          </ul>
+        <% elsif view == 'deck' %>
+          <ul class="list-inline">
+              <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><strong>Created At:</strong> 3/20/2015</li>
+            </ul>
+            <ul class="list-inline">
+              <li><span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>Total Cards:</strong> 10</li>
+              <li class="list-item-label"><span class="label label-success">0 Published</span></li>
+              <li class="list-item-label"><span class="label label-warning">0 Unpublished</span></li>
+              <li class="list-item-label"><span class="label label-primary">10 Paid</span></li>
+              <li class="list-item-label"><span class="label label-info">0 Free</span></li>
+            </ul>
+            <ul class="list-inline">
+              <li><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><strong>Total Categories:</strong> 4</li>
+              <li class="list-item-label"><span class="label label-default">1 Category One</span></li>
+              <li class="list-item-label"><span class="label label-default">2 Category Two</span></li>
+              <li class="list-item-label"><span class="label label-default">1 Category Three</span></li>
+              <li class="list-item-label"><span class="label label-default">2 Category Four</span></li>
+            </ul>
+            <ul class="list-inline">
+              <li><span class="glyphicon glyphicon-signal" aria-hidden="true"></span><strong>High Difficulty:</strong> 5</li>
+              <li><strong>Medium Difficulty:</strong> 5</li>
+              <li><strong>Low Difficulty:</strong> 0</li>
+            </ul>
+            <ul class="list-inline">
+              <li><span class="glyphicon glyphicon-apple" aria-hidden="true"></span><strong>Flashcard:</strong> 5</li>
+              <li><strong>Ordering:</strong> 2</li>
+              <li><strong>Fill in the Blank:</strong> 3</li>
+            </ul>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

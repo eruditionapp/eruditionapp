@@ -5,15 +5,10 @@
 
       <div class="dashboard-pagehead">
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-12">
             <ol class="breadcrumb">
-              <li class="active"><h4>Decks</h4></li>
+              <li class="active">Decks</li>
             </ol>
-          </div>
-          <div class="col-xs-6">
-            <div class="btn-group pull-right">
-              <%= link_to 'Create Deck', new_deck_path, class: 'btn btn-brand' %>
-            </div>
           </div>
         </div>
       </div>
@@ -23,28 +18,7 @@
   
   <div class="container">
 
-    <div class="dashboard-summary">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="well">
-            <ul class="list-inline">
-              <li><span class="glyphicon glyphicon-book" aria-hidden="true"></span><strong>10</strong> Decks</li>
-              <li class="list-item-label"><span class="label label-success">0 Published</span></li>
-              <li class="list-item-label"><span class="label label-warning">0 Unpublished</span></li>
-              <li class="list-item-label"><span class="label label-primary">10 Paid</span></li>
-              <li class="list-item-label"><span class="label label-info">0 Free</span></li>
-            </ul>
-            <ul class="list-inline">
-              <li><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span><strong>4</strong> Categories</li>
-              <li class="list-item-label"><span class="label label-default">Category 1</span></li>
-              <li class="list-item-label"><span class="label label-default">Category 2</span></li>
-              <li class="list-item-label"><span class="label label-default">Category 3</span></li>
-              <li class="list-item-label"><span class="label label-default">Category 4</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= render 'shared/dashboard_summary', view: 'decks' %>
     
     <div class="dashboard-toolbar">
       <div class="row">
@@ -62,6 +36,11 @@
             <input type="text" class="form-control" placeholder="Search">
           </div>
         </div>
+        <div class="col-sm-6">
+          <div class="btn-group pull-right">
+            <%= link_to 'Create Deck', new_deck_path, class: 'btn btn-brand' %>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -72,9 +51,9 @@
           <table class="table table-bordered table-hover table-links">
             <thead>
               <tr>
-                <th>Title</th>
-                <th>Subtitle</th>
-                <th>Author</th>
+                <th>Title<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Subtitle<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Author<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
                 <th>Categories</th>
               </tr>
             </thead>

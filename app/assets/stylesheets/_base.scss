@@ -50,6 +50,12 @@ h5 {
   font-weight: 600;
 }
 
+a {
+  color: $brand-base;
+  &:hover {
+    color: darken($brand-base, 15%);
+  }
+}
 
 // ==========================
 // Buttons
@@ -97,18 +103,9 @@ h5 {
 .form-control {
   border-radius: 3px;
   box-shadow: none;
-}
-
-.form-control::-moz-placeholder {
-  color: $gray;
-}
-
-.form-control:-ms-input-placeholder {
-  color: $gray;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: $gray;
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 
@@ -120,9 +117,20 @@ table {
   overflow: hidden;
 }
 
+table > thead > tr > th > a {
+  float: right;
+  font-size: 11px;
+  margin-top: 3px;
+  color: $gray-light;
+  &:hover {
+    color: $gray;
+  }
+}
+
 .table-hover > tbody > tr {
   &:hover {
     cursor: pointer;
+    background-color: $brand-lightest;
   }
 }
 
@@ -166,8 +174,12 @@ tr.status-free {
 // ==========================
 // Breadcrumb
 // ==========================
+.breadcrumb > li {
+  font-weight: 600;
+  font-size: 18px;
+}
+
 .breadcrumb > .active {
-  font-weight: 400;
   color: $gray-dark;
 }
 
@@ -175,8 +187,6 @@ tr.status-free {
 // ==========================
 // Alerts
 // ==========================
-// Alert class reference:
-// .alert-notice, .alert-alert
 .alert {
   font-weight: 600;
   margin: 0;
@@ -186,8 +196,9 @@ tr.status-free {
   border-radius: 0; 
 }
 
-.alert-notice {
-  color: $brand-base;
+.alert-notice,
+.alert-alert {
+  color: $white-base;
   background-color: $brand-lighter;
 }
 
@@ -197,9 +208,10 @@ tr.status-free {
 }
 
 .alert-error {
-  color: $alert-success-text;
-  background-color: $alert-success-bg;
+  color: $alert-danger-text;
+  background-color: $alert-danger-bg;
 }
+
 
 // ==========================
 // Scree size extra small
