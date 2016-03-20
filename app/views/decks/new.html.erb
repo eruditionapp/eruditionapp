@@ -10,5 +10,8 @@
   <%= f.label :author %>
   <%= f.text_field :author %>
 
+  <%= f.label :status %>
+  <%= f.select(:status, Deck.statuses.keys.map {|status| [status.titleize, status]}) %>
+
   <%= f.submit "Create" %>
 <% end %>

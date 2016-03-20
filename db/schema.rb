@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312215212) do
+ActiveRecord::Schema.define(version: 20160319205354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,10 +32,19 @@ ActiveRecord::Schema.define(version: 20160312215212) do
   add_index "category_deck_links", ["deck_id"], name: "index_category_deck_links_on_deck_id", using: :btree
 
   create_table "decks", force: :cascade do |t|
-    t.string "title"
-    t.string "subtitle"
-    t.string "author"
+    t.string  "title"
+    t.string  "subtitle"
+    t.string  "author"
+    t.integer "status"
+    t.integer "tier"
   end
+
+  create_table "quotes", force: :cascade do |t|
+    t.integer "deck_id"
+    t.string  "content"
+  end
+
+  add_index "quotes", ["deck_id"], name: "index_quotes_on_deck_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

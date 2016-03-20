@@ -1,0 +1,4 @@
+<%= link_to 'Create quote', new_deck_quote_path %><br>
+<% @quotes.each do |quote| %>
+  <%= render quote %>
+<% end %>

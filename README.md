@@ -14,6 +14,13 @@ We work within the Git Feature Branching Workflow, use Slack for internal commun
 
 If you have questions installing any of these please ask.
 
+### Rake Tasts
+
+```ruby
+rake db:recreate
+```
+Drops db, creates db, runs migrations, seeds db. This task will fail if the server is running locally or a `rails console` is connected to the db.
+
 ### CSS
 
 Reference: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
