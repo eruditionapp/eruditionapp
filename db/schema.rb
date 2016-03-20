@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160324002317) do
     t.integer "difficulty"
     t.integer "deck_id"
     t.integer "quote_id"
-    t.jsonb   "content",    default: {}
+    t.string  "content"
   end
 
   add_index "cards", ["card_type"], name: "index_cards_on_card_type", using: :btree
