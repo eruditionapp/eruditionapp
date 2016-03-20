@@ -3,17 +3,22 @@
   <div class="wrapper wrapper--light">
     <div class="container">
 
-      <div class="dashboard-pagehead">
+      <div class="pagehead">
         <div class="row">
           <div class="col-xs-6">
             <ol class="breadcrumb">
-              <li><%= link_to 'Decks', decks_path %></li>
+              <li><span class="glyphicon glyphicon-list" aria-hidden="true"></span><%= link_to 'Decks', decks_path %></li>
               <li class="active"><%= @deck.title %></li>
             </ol>
           </div>
           <div class="col-xs-6">
-            <div class="btn-group pull-right">
+            <div class="btn-toolbar pull-right">
+              <div class="btn-group">
               <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
+              </div>
+              <div class="btn-group">
+                <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
+              </div>
             </div>
           </div>
         </div>
@@ -26,34 +31,10 @@
 
     <%= render 'shared/dashboard_summary', view: 'deck' %>
     
-    <div class="dashboard-toolbar">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="#">Published</a></li>
-                <li><a href="#">Unpublished</a></li>
-                <li><a href="#">Paid</a></li>
-                <li><a href="#">Free</a></li>
-              </ul>
-            </div>
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="btn-group pull-right">
-            <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
-          </div>
-        </div>
-      </div>
-    </div>
-    
     <div class="row">
       <div class="col-xs-12">  
         <div class="panel panel-default">
-          <div class="panel-heading">All Decks</div>
+          <div class="panel-heading">Cards</div>
           <table class="table table-bordered table-hover table-links">
             <thead>
               <tr>
@@ -65,7 +46,7 @@
             </thead>
             <tbody>
               <% for i in 0..10 %>
-                <tr data-link="#" class="status-free">
+                <tr data-link="#" class="tier-free status-unpublished">
                   <td>Card Title</td>
                   <td>Card Subtitle</td>
                   <td>Card Author</td>

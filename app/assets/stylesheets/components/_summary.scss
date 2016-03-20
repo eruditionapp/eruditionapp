@@ -1,0 +1,52 @@
+// ==========================
+// Summary
+// ==========================
+.summary .well {
+  padding: 15px 12px;
+}
+
+.summary table {
+  margin: 0;
+}
+
+.summary .table > tbody > tr > th,
+.summary .table > tbody > tr > td {
+  border: 0;
+  padding: 8px; 
+}
+
+.summary .list-inline {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.summary .list-inline > a {
+  display: inline-block;
+  margin-right: 5px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.summary .list-item-label {
+  padding-right: 0;
+  margin-bottom: 3px;
+}
+
+.summary .label {
+  font-size: 80%;
+}
+
+.summary .label-default {
+  background-color: transparent;
+  border: 1px solid $well-border;
+  color: $gray-dark;
+}
+
+.summary .glyphicon {
+  font-size: 11px;
+  margin-right: 10px;
+  color: $gray;
+  opacity: .4;
+}

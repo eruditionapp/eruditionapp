@@ -1,25 +1,4 @@
 // ==========================
-// Variables
-// ==========================
-$white-base: #fff;
-
-$gray-btn-bg: lighten($gray-base, 90%) !default;
-$gray-btn-bg-hover: lighten($gray-base, 88%) !default;
-$gray-border: lighten($gray-base, 96%) !default;
-$gray-navbar-bg: lighten($gray-base, 96%) !default;
-$gray-page-bg: lighten($gray-base, 98%) !default;
-
-$brand-base: #6e5baa;
-$brand-light: lighten($brand-base, 13.5%) !default;
-$brand-lighter: lighten($brand-base, 20%) !default;
-$brand-lightest: lighten($brand-base, 43.5%) !default;
-$brand-dark: darken($brand-base, 13.5%) !default;
-$brand-darker: darken($brand-base, 20%) !default;
-
-$shadow-base: 0 1px 2px rgba(0,30,50,.15);
-
-
-// ==========================
 // Body
 // ==========================
 body {
@@ -130,25 +109,28 @@ table > thead > tr > th > a {
 .table-hover > tbody > tr {
   &:hover {
     cursor: pointer;
-    background-color: $brand-lightest;
   }
 }
 
 tr.status-published {
-  border-right: 10px solid $brand-success;
-}
+    border-right: 10px solid $published;
+  }
 
-tr.status-unpublished {
-  border-right: 10px solid $brand-warning;
-}
+  tr.status-unpublished {
+    border-right: 10px solid $unpublished;
+  }
 
-tr.status-paid {
-  border-right: 10px solid $brand-primary;
-}
+  tr.status-needs-review {
+    border-right: 10px solid $needs-review;
+  }
 
-tr.status-free {
-  border-right: 10px solid $brand-info;
-}
+  tr.tier-paid {
+    border-left: 10px solid $paid;
+  }
+
+  tr.tier-free {
+    border-left: 10px solid $free;
+  }
 
 
 // ==========================
@@ -166,7 +148,8 @@ tr.status-free {
   border-color: $brand-base;
   background-color: $brand-base;
   &:hover {
-    color: $brand-base;
+    color: $white-base;
+    background-color: $brand-base;
   }
 }
 
@@ -198,18 +181,39 @@ tr.status-free {
 
 .alert-notice,
 .alert-alert {
-  color: $white-base;
-  background-color: $brand-lighter;
+  background-color: $brand-base;
 }
 
 .alert-success {
-  color: $alert-success-text;
-  background-color: $alert-success-bg;
+  background-color: $published;
 }
 
 .alert-error {
-  color: $alert-danger-text;
-  background-color: $alert-danger-bg;
+  background-color: $unpublished;
+}
+
+
+// ==========================
+// Labels
+// ==========================
+.label-needs-review {
+  background-color: $needs-review;
+}
+
+.label-published {
+  background-color: $published;
+}
+
+.label-unpublished {
+  background-color: $unpublished;
+}
+
+.label-paid {
+  background-color: $paid;
+}
+
+.label-free {
+  background-color: $free;
 }
 
 
