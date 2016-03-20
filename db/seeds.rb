@@ -14,12 +14,12 @@ end
 # Setup Decks with associated Categories and Guiding Quotes
 
 5.times do |count|
-  Category.create! name: "Category #{count + 1}"
+  Category.create! name: Faker::Commerce.department(1)
 end
 
 10.times do |count|
-  Deck.create! title: "Deck #{count + 1}", subtitle: "Subtitle #{count + 1}",
-               author: "Author #{count + 1}", status: rand(0...Deck.statuses.count),
+  Deck.create! title: Faker::Book.title, subtitle: Faker::Lorem.sentence(3),
+               author: Faker::Name.name, status: rand(0...Deck.statuses.count),
                tier: rand(0...Deck.tiers.count)
 
   2.times do
