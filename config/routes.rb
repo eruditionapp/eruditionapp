@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :decks do
     resources :cards, except: :index
+    resources :quotes
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

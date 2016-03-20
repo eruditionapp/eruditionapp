@@ -54,5 +54,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'hirb'
+  gem 'faker'
 end
 
