@@ -1,12 +1,16 @@
 class DecksController < ApplicationController
 
   def index
-    @decks = Deck.all.order(:title)
+    @decks = Deck.all
+    @decks_ordered = @decks.order(:title)
+    @categories = Category.all
+    @category_deck_links = CategoryDeckLink.all
   end
 
   def show
     @deck = Deck.find(params[:id])
     @categories = @deck.categories
+    @category_deck_links = CategoryDeckLink.find(params[:id])
     @cards = @deck.cards
   end
 

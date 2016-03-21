@@ -23,7 +23,7 @@
   
   <div class="container">
 
-    <%= render 'shared/dashboard_summary', view: 'decks' %>
+    <%= render 'shared/deck_summary', resource: @decks %>
 
     <div class="row">
       <div class="col-xs-12">  
@@ -39,9 +39,11 @@
               </tr>
             </thead>
             <tbody>
-              <% @decks.each do |deck| %>
+
+              <% @decks_ordered.each do |deck| %>
                 <%= render deck %>
               <% end %>
+
             </tbody>
           </table>      
         </div>

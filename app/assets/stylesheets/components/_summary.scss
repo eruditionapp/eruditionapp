@@ -12,7 +12,7 @@
 .summary .table > tbody > tr > th,
 .summary .table > tbody > tr > td {
   border: 0;
-  padding: 8px; 
+  padding: 8px 8px 6px 8px; 
 }
 
 .summary .list-inline {
@@ -30,7 +30,7 @@
 }
 
 .summary .list-item-label {
-  padding-right: 0;
+  padding-left: 0;
   margin-bottom: 3px;
 }
 

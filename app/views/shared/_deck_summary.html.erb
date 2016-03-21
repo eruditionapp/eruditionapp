@@ -5,35 +5,44 @@
         <table class="table table-condensed table-striped">
           <tbody>
 
-            <% if view == 'decks' %>
-          
+            <% if resource == @decks  %>
+
               <tr>
                 <th><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Decks</th>
-                <td>10</td>
+                <td><%= resource.count %></td>
                 <td>
                   <ul class="list-inline">
-                    <a href="#"><li class="list-item-label"><span class="label label-published">0 Published</span></li></a>
-                    <a href="#"><li class="list-item-label"><span class="label label-unpublished">0 Unpublished</span></li></a>
-                    <a href="#"><li class="list-item-label"><span class="label label-paid">10 Paid</span></li></a>
-                    <a href="#"><li class="list-item-label"><span class="label label-free">0 Free</span></li></a>
+                    <a href="#">
+                      <li class="list-item-label"><span class="label label-published"><%= resource.where(status: 'published').count %> Published</span></li>
+                    </a>
+                    <a href="#">
+                      <li class="list-item-label"><span class="label label-unpublished"><%= resource.where(status: 'unpublished').count %> Unpublished</span></li>
+                    </a>
+                    <a href="#">
+                      <li class="list-item-label"><span class="label label-paid"><%= resource.where(tier: 'paid').count %> Paid</span></li>
+                    </a>
+                    <a href="#">
+                      <li class="list-item-label"><span class="label label-free"><%= resource.where(tier: 'free').count %> Free</span></li>
+                    </a>
                   </ul>
                 </td>
               </tr>
               <tr>
                 <th><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>Categories</th>
-                <td>10</td>
+                <td><%= @categories.count %></td>
                 <td>
                   <ul class="list-inline">
-                    <li class="list-item-label"><span class="label label-default">1 Category One</span></li>
-                    <li class="list-item-label"><span class="label label-default">2 Category Two</span></li>
-                    <li class="list-item-label"><span class="label label-default">1 Category Three</span></li>
-                    <li class="list-item-label"><span class="label label-default">2 Category Four</span></li>
+                    <% @categories.each do |category| %>
+                      <li class="list-item-label">
+                        <span class="label label-default"><%= @category_deck_links.where(category_id: category.id).count %> <%= category.name %></span>
+                      </li>
+                    <% end %>
                   </ul>
                 </td>
               </tr>
 
-            <% elsif view == 'deck' %>
-
+            <% else %>
+              
               <tr>
                 <th><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Created At</th>
                 <td>3/20/2016</td>
@@ -85,7 +94,7 @@
                   </ul>
                 </td>
               </tr>
-
+            
             <% end %>
 
           </tbody>
