@@ -63,7 +63,7 @@ a {
   &:active:hover,
   &:focus {
     color: $white-base;
-    background-color: $brand-light;
+    background-color: $brand-dark;
   }
 }
 
@@ -73,6 +73,10 @@ a {
   &:hover {
     background-color: transparent;
   }
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  padding: 3px 8px;
 }
 
 
@@ -131,6 +135,14 @@ tr.status-published {
   tr.tier-free {
     border-left: 10px solid $free;
   }
+
+
+// ==========================
+// Panels
+// ==========================
+.panel-table .panel-heading {
+  padding-left: 8px;
+}
 
 
 // ==========================

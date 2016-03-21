@@ -1,33 +1,29 @@
 <div class="page page-dashboard">
-  
   <div class="wrapper wrapper--light">
     <div class="container">
-
       <div class="pagehead">
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-sm-6">
             <ol class="breadcrumb">
-              <li class="active"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Decks</li>
+              <li class="active">Decks</li>
             </ol>
           </div>
-          <div class="col-xs-6">
+          <div class="col-sm-6">
             <div class="btn-group pull-right">
               <%= link_to 'Create Deck', new_deck_path, class: 'btn btn-brand' %>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
-  
   <div class="container">
 
     <%= render 'shared/deck_summary', resource: @decks %>
 
     <div class="row">
       <div class="col-xs-12">  
-        <div class="panel panel-default">
+        <div class="panel panel-default panel-table">
           <div class="panel-heading">All Decks</div>
           <table class="table table-bordered table-hover table-links">
             <thead>
@@ -39,11 +35,9 @@
               </tr>
             </thead>
             <tbody>
-
               <% @decks_ordered.each do |deck| %>
                 <%= render deck %>
               <% end %>
-
             </tbody>
           </table>      
         </div>

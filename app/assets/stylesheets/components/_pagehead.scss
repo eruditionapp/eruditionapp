@@ -9,8 +9,18 @@
 }
 
 .pagehead .glyphicon {
-  font-size: 16px;
+  font-size: 12px;
+  top: -1px;
   margin-right: 10px;
-  color: $gray;
   opacity: .4;
+  color: #555;
+}
+
+@media (max-width: $screen-sm-min) {
+  .pagehead .pull-right {
+    float: none !important;
+  }
+  .pagehead .btn {
+    margin-top: 5px;
+  }
 }

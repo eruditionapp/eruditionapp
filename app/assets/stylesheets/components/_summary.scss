@@ -50,3 +50,9 @@
   color: $gray;
   opacity: .4;
 }
+
+@media (max-width: $screen-sm-min) {
+  .summary .glyphicon {
+    display: none;
+  }
+}

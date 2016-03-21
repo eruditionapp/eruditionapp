@@ -1,20 +1,21 @@
 <div class="page page-dashboard">
-  
   <div class="wrapper wrapper--light">
     <div class="container">
-
       <div class="pagehead">
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-sm-6">
             <ol class="breadcrumb">
-              <li><span class="glyphicon glyphicon-list" aria-hidden="true"></span><%= link_to 'Decks', decks_path %></li>
+              <li><%= link_to 'Decks', decks_path %></li>
               <li class="active"><%= @deck.title %></li>
             </ol>
           </div>
-          <div class="col-xs-6">
+          <div class="col-sm-6">
             <div class="btn-toolbar pull-right">
               <div class="btn-group">
-              <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
+                <%= link_to 'Quotes', deck_quotes_path(@deck), class: 'btn btn-default' %>
+              </div>
+              <div class="btn-group">
+                <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
               </div>
               <div class="btn-group">
                 <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
@@ -23,17 +24,15 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
-
   <div class="container">
 
     <%= render 'shared/deck_summary' %>
     
     <div class="row">
       <div class="col-xs-12">  
-        <div class="panel panel-default">
+        <div class="panel panel-default panel-table">
           <div class="panel-heading">Cards</div>
           <table class="table table-bordered table-hover table-links">
             <thead>
@@ -58,6 +57,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

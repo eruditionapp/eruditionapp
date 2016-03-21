@@ -3,10 +3,17 @@
     <div class="container">
       <div class="pagehead">
         <div class="row">
-          <div class="col-xs-12">
+          <div class="col-sm-6">
             <ol class="breadcrumb">
-              <li class="active"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>Edit Deck</li>
+              <li><%= link_to 'Decks', decks_path %></li>
+              <li><%= link_to @deck.title, deck_path(@deck) %></li>
+              <li class="active">Edit</li>
             </ol>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group pull-right">
+              <%= link_to 'Cancel', deck_path(@deck), class: 'btn btn-default' %>
+            </div>
           </div>
         </div>
       </div>

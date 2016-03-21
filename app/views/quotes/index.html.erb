@@ -1,4 +1,30 @@
-<%= link_to 'Create quote', new_deck_quote_path %><br>
-<% @quotes.each do |quote| %>
-  <%= render quote %>
-<% end %>
+<div class="page page-dashboard">
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li><%= link_to @deck.title, deck_path(@deck) %></li>
+              <li class="active">Quotes</li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group pull-right">
+              <%= link_to 'Create Quote', new_deck_quote_path, class: 'btn btn-brand' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7"> 
+        <% @quotes.each do |quote| %>
+          <%= render quote %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,31 @@
-<%= form_for [@deck, @quote] do |f| %>
-  <%= render 'shared/errors', resource: @quote %>
+<div class="page page-dashboard">
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li class="active"><%= link_to @deck.title, deck_path(@deck) %></li>
+              <li><%= link_to 'Quotes', deck_quotes_path(@deck) %></li>
+              <li class="active"><%= @quote.id %> Edit</li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group pull-right">
+              <%= link_to 'Cancel', deck_quotes_path(@deck), class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
 
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+        <%= render 'shared/quote_form', new: false %>
 
-  <%= f.submit "Update" %>
-<% end %>
+      </div>
+    </div>
+  </div>
+</div>
