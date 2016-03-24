@@ -14,7 +14,7 @@ We work within the Git Feature Branching Workflow, use Slack for internal commun
 
 If you have questions installing any of these please ask.
 
-### Rake Tasts
+### Rake Tasks
 
 ```ruby
 rake db:recreate

@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319205354) do
+ActiveRecord::Schema.define(version: 20160324002317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.integer "card_type"
+    t.integer "difficulty"
+    t.integer "deck_id"
+    t.integer "quote_id"
+    t.jsonb   "content",    default: {}
+  end
+
+  add_index "cards", ["card_type"], name: "index_cards_on_card_type", using: :btree
+  add_index "cards", ["deck_id"], name: "index_cards_on_deck_id", using: :btree
+  add_index "cards", ["difficulty"], name: "index_cards_on_difficulty", using: :btree
+  add_index "cards", ["quote_id"], name: "index_cards_on_quote_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string "name"

@@ -36,11 +36,11 @@ class QuotesController < ApplicationController
     @deck = Deck.find(params[:deck_id])
     @quote = Quote.new(strong_params)
     if @deck.quotes << @quote
-      flash[:success] = "Quote updated."
+      flash[:success] = "Quote created."
       redirect_to deck_quote_path(@deck, @quote)
     else
-      flash[:error] = "Failed to update quote."
-      render 'edit'
+      flash[:error] = "Failed to create quote."
+      render 'new'
     end
   end
 

@@ -2,11 +2,15 @@ class Deck < ActiveRecord::Base
   has_many :category_deck_links
   has_many :categories, through: :category_deck_links
   has_many :quotes
+  has_many :cards
 
   validates_presence_of :title, :author
 
-  enum tier:   { free: 0, paid: 1 }
-  enum status: { published: 0, unpublished: 1 }
+  enum tier:   { free: 0,
+                 paid: 1 }
+
+  enum status: { published:   0,
+                 unpublished: 1 }
 
   after_initialize :set_tier, if: :new_record?
   after_initialize :set_status, if: :new_record?
