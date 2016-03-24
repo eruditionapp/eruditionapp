@@ -11,7 +11,7 @@
   user.save!
 end
 
-# Setup Decks with associated Categories and Guiding Quotes
+# Setup Decks with associated Categories, Guiding Quotes, and Cards
 
 5.times do |count|
   Category.create! name: Faker::Commerce.department(1)
@@ -31,5 +31,13 @@ end
 
   3.times do
     Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
+  end
+
+  quotes = Quote.where(deck_id: Deck.last.id).map &:id
+
+  50.times do
+    Deck.last.cards << Card.new(card_type: rand(0...Card.card_types.count),
+                                difficulty: rand(0..10), quote_id: quotes[rand(0...quotes.length)],
+                                content: {})
   end
 end
