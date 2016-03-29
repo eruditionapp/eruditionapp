@@ -8,7 +8,7 @@ $gray-dark: lighten($gray-base, 20%);
 $gray: lighten($gray-base, 33.5%);
 $gray-light: lighten($gray-base, 46.7%);
 $gray-lighter: lighten($gray-base, 93.5%);
-$gray-page-bg: lighten($gray-base, 97.5%);
+$gray-brand-lightest: lighten($gray-base, 97.5%);
 $brand-base: #6e5baa;
 $brand-light: lighten($brand-base, 13.5%);
 $brand-lighter: lighten($brand-base, 20%);
@@ -109,7 +109,7 @@ h3 {
 .header {
   display: block;
   padding: 30px;
-  background-color: $gray-page-bg;
+  background-color: $gray-brand-lightest;
 }
 
 .header-logo {
@@ -131,7 +131,7 @@ h3 {
   display: block;
   padding: 30px;
   color: $gray-light;
-  background-color: $gray-page-bg;
+  background-color: $gray-brand-lightest;
 }
 
 .footer-button {

@@ -10,8 +10,9 @@ class DecksController < ApplicationController
   def show
     @deck = Deck.find(params[:id])
     @categories = @deck.categories
-    @category_deck_links = CategoryDeckLink.find(params[:id])
+    @category_deck_links = CategoryDeckLink.where(deck_id: params[:id])
     @cards = @deck.cards
+    @card_types = Card.card_types
   end
 
   def edit

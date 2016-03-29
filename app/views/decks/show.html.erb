@@ -12,10 +12,10 @@
           <div class="col-sm-6">
             <div class="btn-toolbar pull-right">
               <div class="btn-group">
-                <%= link_to 'Quotes', deck_quotes_path(@deck), class: 'btn btn-default' %>
+                <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
               </div>
               <div class="btn-group">
-                <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
+                <%= link_to 'Guided Quotes', deck_quotes_path(@deck), class: 'btn btn-default' %>
               </div>
               <div class="btn-group">
                 <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
@@ -28,33 +28,61 @@
   </div>
   <div class="container">
 
-    <%= render 'shared/deck_summary' %>
+    <%= render 'deck_summary', resource: @cards %>
     
     <div class="row">
       <div class="col-xs-12">  
         <div class="panel panel-default panel-table">
           <div class="panel-heading">Cards</div>
-          <table class="table table-bordered table-hover table-links">
+          <table class="table table-bordered table-striped table-hover table-links">
             <thead>
               <tr>
-                <th>Title<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Subtitle<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Id<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
                 <th>Author<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Categories</th>
+                <th>Question Type<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Difficulty<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Last Modified<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Date Created<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
               </tr>
             </thead>
             <tbody>
-              <% for i in 0..10 %>
-                <tr data-link="#" class="tier-free status-unpublished">
-                  <td>Card Title</td>
-                  <td>Card Subtitle</td>
-                  <td>Card Author</td>
-                  <td>Category 1, Category 2</td>
-                </tr>
+              <% @cards.each do |card| %>
+
+                <%= render card %>
+                
               <% end %>
             </tbody>
           </table>      
         </div>
+        <nav>
+          <ul class="pagination">
+            <li class="disabled">
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <a href="#">5</a>
+            </li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">»</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

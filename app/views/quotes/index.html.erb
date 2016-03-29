@@ -5,8 +5,9 @@
         <div class="row">
           <div class="col-sm-6">
             <ol class="breadcrumb">
+              <li><%= link_to 'Decks', decks_path %></li>
               <li><%= link_to @deck.title, deck_path(@deck) %></li>
-              <li class="active">Quotes</li>
+              <li class="active">Guided Quotes</li>
             </ol>
           </div>
           <div class="col-sm-6">
@@ -22,7 +23,9 @@
     <div class="row">
       <div class="col-lg-7"> 
         <% @quotes.each do |quote| %>
+
           <%= render quote %>
+          
         <% end %>
       </div>
     </div>

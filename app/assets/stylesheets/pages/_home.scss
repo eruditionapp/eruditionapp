@@ -103,9 +103,9 @@
 }
 
 .home-section--gray {
-  background-color: $gray-page-bg;
+  background-color: $gray-brand-lightest;
   .home-section__thumb:after {
-    background-image: linear-gradient(to top, $gray-page-bg 1%, rgba(249, 249, 249, 0) 40%);
+    background-image: linear-gradient(to top, $gray-brand-lightest 1%, rgba(249, 249, 249, 0) 40%);
   }
 }
 

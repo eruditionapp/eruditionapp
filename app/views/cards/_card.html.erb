@@ -1,0 +1,12 @@
+<tr data-link="<%= edit_deck_card_path(@deck, card) %>" class="status-needs-review">
+  <th><%= card.id %></th>
+  <td>Card Author</td>
+  <td><%= card.card_type.humanize %></td>
+  <td><%= card.difficulty %></td>
+  <td>Last Modified</td>
+  <td>Date Created</td>
+</tr>
+<tr data-link="<%= edit_deck_card_path(@deck, card) %>">
+  <td class="td-preview">Preview</td>
+  <td colspan="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</td>
+</tr>

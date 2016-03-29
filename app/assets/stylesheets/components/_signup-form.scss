@@ -11,7 +11,7 @@
   height: 37px;
   padding: 5px 10px;
   border: 0;
-  border: 1px solid $gray-border;
+  border: 1px solid $gray-brand-lighter;
 }
 
 .signup-form .form-control::-moz-placeholder {
@@ -102,7 +102,7 @@
 .signup-form #error_explanation {
   margin-bottom: 20px;
   padding: 5px;
-  border: 1px solid $gray-border;
+  border: 1px solid $gray-brand-lighter;
   border-radius: 6px;
 }
 

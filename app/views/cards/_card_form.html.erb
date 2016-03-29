@@ -1,0 +1,105 @@
+<%= form_for [@deck, @card] do |f| %>
+          
+  <%= render 'shared/errors', resource: @card %>
+  
+  <div class="form-group">
+    <label>Guided Quotes</label>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="">
+        Esse nihil ducimus dolores voluptate veniam fuga. Consequuntur excepturi qui. Quod libero voluptatum dolore. Qui voluptate voluptates nihil ut.
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="">
+        Maxime porro id cum sed quae velit atque. Non quo iure sit corrupti. Sit ut cumque libero dignissimos voluptates molestias aliquam. Blanditiis maiores tenetur ipsum. Soluta perspiciatis magni est.
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Difficulty</label>
+    <select class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option selected="selected">3</option>
+    </select>
+  </div>
+
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#flashcard" data-toggle="tab">Flashcard</a></li>
+      <li><a href="#shortAnswer" data-toggle="tab">Short Answer</a></li>
+      <li><a href="#organize" data-toggle="tab">Organize</a></li>
+      <li><a href="#fillInBlank" data-toggle="tab">Fill in Blank</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="flashcard">
+        <div class="form-group">
+          <label>Prompt</label>
+          <textarea class="form-control" rows="6" placeholder="Flashcard prompt ..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Answer</label>
+          <textarea class="form-control" rows="4" placeholder="Flashcard answer ..."></textarea>
+        </div>
+      </div>
+      <div class="tab-pane" id="shortAnswer">
+        <div class="form-group">
+          <label>Prompt</label>
+          <textarea class="form-control" rows="6" placeholder="Short Answer prompt ..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Answer</label>
+          <textarea class="form-control" rows="4" placeholder="Short Answer answer ..."></textarea>
+        </div>
+      </div>
+      <div class="tab-pane" id="organize">
+        <div class="form-group">
+          <label>Add Prompts</label>
+          <textarea class="form-control organize-prompt-text" rows="3" placeholder="New organize prompt ..."></textarea>
+          <div class="btn btn-default organize-prompt-btn-add">Add Prompt</div>
+        </div>
+        <label>Answer</label>
+        <ul id="organizePromptList" class="list-group organize-prompt-list">
+          <li class="list-group-item">
+            <span class="glyphicon glyphicon-resize-vertical"></span>
+            This is a sortable organize prompt list.</a>
+            <span class="glyphicon glyphicon-remove organize-prompt-btn-remove"></span>
+          </li>
+          <li class="list-group-item">
+            <span class="glyphicon glyphicon-resize-vertical"></span>
+            Add or remove items ...
+            <span class="glyphicon glyphicon-remove organize-prompt-btn-remove"></span>
+            </li>
+          <li class="list-group-item">
+            <span class="glyphicon glyphicon-resize-vertical"></span>
+            and drag them into the correct order.
+            <span class="glyphicon glyphicon-remove organize-prompt-btn-remove"></span>
+          </li>
+        </ul>
+        <p class="help-block organize-help-block">Add prompts using the input above.<br>Use the arrows to drag and drop prompts in their correct order</p>
+      </div>
+      <div class="tab-pane" id="fillInBlank">
+        <div class="form-group">
+          <label>Prompt</label>
+          <textarea class="form-control" rows="8" placeholder="Fill in the blank prompt ..."></textarea>
+          <p class="help-block">'One #two# three' will result in 'One ___ three'<br><%= link_to "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", target: "blank" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
+<% end %>
+
+<!-- Use https://github.com/RubaXa/Sortable for Drag + Drop support -->
+<script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+
+<script>
+  Sortable.create(organizePromptList, {
+    handle: '.glyphicon-resize-vertical',
+    animation: 150
+  });
+</script>

@@ -14,7 +14,7 @@ body {
 // ==========================
 .wrapper {
   border-bottom: 1px solid $gray-lighter;
-  background-color: $gray-page-bg;
+  background-color: $gray-brand-lightest;
 }
 
 
@@ -117,24 +117,29 @@ table > thead > tr > th > a {
 }
 
 tr.status-published {
-    border-right: 10px solid $published;
-  }
+  border-right: 10px solid $published;
+}
 
-  tr.status-unpublished {
-    border-right: 10px solid $unpublished;
-  }
+tr.status-unpublished {
+  border-right: 10px solid $unpublished;
+}
 
-  tr.status-needs-review {
-    border-right: 10px solid $needs-review;
-  }
+tr.status-needs-review {
+  border-right: 10px solid $needs-review;
+}
 
-  tr.tier-paid {
-    border-left: 10px solid $paid;
-  }
+tr.tier-paid {
+  border-left: 10px solid $paid;
+}
 
-  tr.tier-free {
-    border-left: 10px solid $free;
-  }
+tr.tier-free {
+  border-left: 10px solid $free;
+}
+
+.table-bordered > tbody > tr > td.td-preview {
+  border-right: 1px solid rgba(0,0,0,0) !important;
+  opacity: 0;
+}
 
 
 // ==========================
@@ -142,6 +147,10 @@ tr.status-published {
 // ==========================
 .panel-table .panel-heading {
   padding-left: 8px;
+}
+
+.panel-heading .list-inline {
+  margin-bottom: 0;
 }
 
 
@@ -226,6 +235,27 @@ tr.status-published {
 
 .label-free {
   background-color: $free;
+}
+
+
+// ==========================
+// Progress bars
+// ==========================
+.progress,
+.progress-bar {
+  box-shadow: none;
+}
+
+
+// ==========================
+// Tabs
+// ==========================
+.nav-tabs > li > a {
+  font-weight: 600;
+}
+
+.tab-pane {
+  padding-top: 10px;
 }
 
 
