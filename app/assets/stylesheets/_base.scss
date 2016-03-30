@@ -36,6 +36,15 @@ a {
   }
 }
 
+// control font flash
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active {
+  visibility: visible;
+}
+
 // ==========================
 // Buttons
 // ==========================

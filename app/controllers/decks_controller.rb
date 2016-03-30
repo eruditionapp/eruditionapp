@@ -4,15 +4,12 @@ class DecksController < ApplicationController
     @decks = Deck.all
     @decks_ordered = @decks.order(:title)
     @categories = Category.all
-    @category_deck_links = CategoryDeckLink.all
   end
 
   def show
     @deck = Deck.find(params[:id])
     @categories = @deck.categories
-    @category_deck_links = CategoryDeckLink.where(deck_id: params[:id])
     @cards = @deck.cards
-    @card_types = Card.card_types
   end
 
   def edit

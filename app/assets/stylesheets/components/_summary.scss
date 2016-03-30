@@ -51,6 +51,58 @@
   opacity: .4;
 }
 
+td.card-difficulty {
+  width: 50%;
+  .progress-difficulty {
+    margin-bottom: 2px;
+  }
+}
+
+.progress-difficulty {
+  overflow: visible;
+  height: 18px;
+  background-color: $white-base;
+}
+
+.progress-bar-difficulty {
+  position: relative;
+  span {
+    font-weight: 600;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    min-width: 200px;
+    text-align: left;
+    opacity: 0;
+    color: $gray-dark;
+  }
+  &:hover {
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+@for $i from 1 through 11 {
+  .progress-bar-difficulty:nth-of-type(#{12 - $i}) {
+    background-color: lighten($brand-base, percentage($i/35));
+    @if $i == 11 {
+      border-radius: 3px 0 0 3px;
+      border-left: 0;
+    } 
+    @if $i == 1 {
+      border-radius: 0 3px 3px 0;
+    }
+    @if $i < 7 {
+      span {
+        right: 0 !important;
+        left: auto;
+        text-align: right;
+      }
+    }
+  }
+}
+
 @media (max-width: $screen-sm-min) {
   .summary .glyphicon {
     display: none;
