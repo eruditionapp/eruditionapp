@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require_tree ./global
-//= require ./admin/admin
+//= require _global
+//= require_tree ./modules
+//= require _main

@@ -37,22 +37,48 @@ Reference: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
               |-- components
               |-- pages
               |-- _base.scss
+              |-- _variables.scss
               |-- application.scss
               |-- email.scss
 ```
 
 * `/components/..`
-  * For reusable, composable elements
+  * Reusable, composable elements
 * `/pages/..`
-  * For page specific code, ie 'home' or 'contact' pages
+  * Page specific code, ie 'home' or 'contact' pages
 * `_base.scss`
-  * For core variables and bootstrap overrides
+  * Main document elements and bootstrap overrides
+* `_variables.scss`
+  * Global variables and functions
 * `application.scss`
-  * Main manifest file
+  * Application manifest file
 * `email.scss`
-  * For HTML emails
+  * Email manifest file
 
 
 ### Javascript
 
 * Reference: [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript/tree/master/es5)
+
+#### File Structure
+
+```
+|-- eruditionapp
+    |-- app
+        |-- assets
+          |-- images
+          |-- javascripts
+              |-- modules
+              |-- _global.js
+              |-- _main.js
+              |-- application.js
+```
+
+* `/modules/..`
+  * Modular pattern for page functions
+* `_global.js`
+  * Global variables and functions
+* `_main.js`
+  * Initialize modules
+* `application.js`
+  * Application manifest file

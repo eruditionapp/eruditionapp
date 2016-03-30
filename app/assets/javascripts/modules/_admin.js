@@ -4,15 +4,10 @@
  */
 var admin = (function() {
 
-  var tableLinks = querySelector('.table-links');
-  
-  var promptAddBtn = querySelector('.organize-prompt-btn-add');
-  var promptText = querySelector('.organize-prompt-text');
-  var promptList = querySelector('.organize-prompt-list');
-
   return {
-
+    
     handleTableLinks: function() {
+      var tableLinks = querySelector('.table-links');
       var clickTableLink = function(event) {
         if (event.target.parentElement.dataset.link) {
           window.location = event.target.parentElement.dataset.link;
@@ -23,7 +18,11 @@ var admin = (function() {
         tableLinks.addEventListener('click', clickTableLink, false);
       }
     },
+
     handleOrganizeCards: function() {
+      var promptAddBtn = querySelector('.organize-prompt-btn-add');
+      var promptText = querySelector('.organize-prompt-text');
+      var promptList = querySelector('.organize-prompt-list');
       var clickAddPrompt = function() {
         if (!promptText.value.length) {
           return;
@@ -57,7 +56,4 @@ var admin = (function() {
       }
     }
   }
-}());
-
-admin.handleTableLinks();
-admin.handleOrganizeCards();
+})();
