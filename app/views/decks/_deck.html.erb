@@ -1,5 +1,5 @@
-<tr data-link="<%= deck_path(deck) %>" class="tier-<%= deck.tier %> status-<%= deck.status %>">
-  <td><%= deck.title %></td>
+<tr class="tier-<%= deck.tier %> status-<%= deck.status %>">
+  <th><%= link_to deck.title, deck_path(deck) %></th>
   <td><%= deck.subtitle %></td>
   <td><%= deck.author %></td>
   <td><%= render 'categories', resource: deck %></td>

@@ -1,5 +1,4 @@
 var init = function() {
-  admin.handleTableLinks();
   admin.handleOrganizeCards();
 };
 

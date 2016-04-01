@@ -84,7 +84,8 @@ a {
   }
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm,
+.btn-group-sm > .btn {
   padding: 3px 8px;
 }
 
@@ -110,18 +111,12 @@ table {
 }
 
 table > thead > tr > th > a {
-  float: right;
   font-size: 11px;
+  float: right;
   margin-top: 3px;
   color: $gray-light;
   &:hover {
     color: $gray;
-  }
-}
-
-.table-hover > tbody > tr {
-  &:hover {
-    cursor: pointer;
   }
 }
 
@@ -145,9 +140,33 @@ tr.tier-free {
   border-left: 10px solid $free;
 }
 
-.table-bordered > tbody > tr > td.td-preview {
-  border-right: 1px solid rgba(0,0,0,0) !important;
-  opacity: 0;
+.table-deck .glyphicon-sort {
+  display: none;
+}
+
+.table-deck > thead > tr > th {
+  border-bottom: 0;
+}
+
+.table-striped.table-deck > tbody > tr {
+  &:nth-of-type(4n),
+  &:nth-of-type(4n - 1) {
+    background-color: $white-base;
+  }
+  &:nth-of-type(4n - 2),
+  &:nth-of-type(4n - 3) {
+    background-color: $table-bg-accent;
+  }
+}
+
+.table-deck > tbody > tr > td.td-preview {
+  padding-bottom: 20px;
+  border-top: 0;
+}
+
+.table-deck > tbody > tr.tr-padding-top > th,
+.table-deck > tbody > tr.tr-padding-top > td {
+  padding-top: 16px;
 }
 
 
@@ -188,8 +207,8 @@ tr.tier-free {
 // Breadcrumb
 // ==========================
 .breadcrumb > li {
-  font-weight: 600;
   font-size: 18px;
+  font-weight: 600;
 }
 
 .breadcrumb > .active {
@@ -206,7 +225,7 @@ tr.tier-free {
   text-align: center;
   color: $white-base;
   border: 0;
-  border-radius: 0; 
+  border-radius: 0;
 }
 
 .alert-notice,

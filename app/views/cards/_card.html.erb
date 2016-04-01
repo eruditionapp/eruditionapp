@@ -1,12 +1,12 @@
-<tr data-link="<%= edit_deck_card_path(@deck, card) %>" class="status-needs-review">
-  <th><%= card.id %></th>
-  <td>Card Author</td>
-  <td><%= card.card_type.humanize %></td>
-  <td><%= card.difficulty %></td>
-  <td>Last Modified</td>
-  <td>Date Created</td>
+<tr class="tr-padding-top status-needs-review">
+  <th><%= link_to card.id, edit_deck_card_path(@deck, card) %></th>
+  <th>Card Author</th>
+  <th><%= card.card_type.humanize %></th>
+  <th><%= card.difficulty %></th>
+  <th>Last Modified</th>
+  <th>Date Created</th>
 </tr>
-<tr data-link="<%= edit_deck_card_path(@deck, card) %>">
-  <td class="td-preview">Preview</td>
-  <td colspan="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</td>
+<tr class="status-needs-review">
+  <td class="td-preview"></td>
+  <td class="td-preview" colspan="5"><em>Prompt:</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</td>
 </tr>

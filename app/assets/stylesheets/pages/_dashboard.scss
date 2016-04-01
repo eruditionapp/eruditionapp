@@ -24,7 +24,7 @@
   margin-top: 0;
 }
 
-.page-dashboard input[type="submit"] {
+.page-dashboard input[type='submit'] {
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -33,15 +33,36 @@
   margin: 0;
 }
 
-.organize-prompt-btn-add {
+// card_form - tabs
+.page-dashboard .tab-pane {
+  padding-top: 20px;
+}
+
+// card_form - guided quotes
+.quotes-group {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.quotes-group .btn-link {
+  color: $brand-base;
+}
+
+.quotes-group .checkbox {
+  margin: 0;
+  padding-top: 10px;
+}
+
+// card_form - organize
+.organize-item-btn-add {
   margin-top: 10px;
 }
 
-.organize-prompt-list {
+.organize-item-list {
   margin-bottom: 0;
 }
 
-.organize-prompt-list .glyphicon-remove {
+.organize-item-list .glyphicon-remove {
   float: right;
   cursor: pointer;
   color: $gray-btn-bg;
@@ -50,7 +71,7 @@
   }
 }
 
-.organize-prompt-list .glyphicon-resize-vertical {
+.organize-item-list .glyphicon-resize-vertical {
   margin-right: 10px;
   cursor: move;
   cursor: grab;
