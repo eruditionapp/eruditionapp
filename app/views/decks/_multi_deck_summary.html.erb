@@ -1,0 +1,70 @@
+<div class="summary">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="well">
+        <table class="table table-condensed table-striped">
+          <tbody>
+            <tr>
+              <th><span class="glyphicon glyphicon-book"></span>Decks</th>
+              <td>
+                <%= decks.count %>
+              </td>
+              <td>
+                <ul class="list-inline">
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-published">
+                        <%= decks.where(status: 'published').count %> Published
+                      </span>
+                    </li>
+                  </a>
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-unpublished">
+                        <%= decks.where(status: 'unpublished').count %> Unpublished
+                      </span>
+                    </li>
+                  </a>
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-paid">
+                        <%= decks.where(tier: 'paid').count %> Paid
+                      </span>
+                    </li>
+                  </a>
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-free">
+                        <%= decks.where(tier: 'free').count %> Free
+                      </span>
+                    </li>
+                  </a>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <span class="glyphicon glyphicon-bookmark"></span>
+                Categories
+              </th>
+              <td>
+                <%= @categories.count %>
+              </td>
+              <td>
+                <ul class="list-inline">
+                  <% @categories.each do |category| %>
+                    <li class="list-item-label">
+                      <span class="label label-default">
+                        <%= category.decks.count %> <%= category.name %>
+                      </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

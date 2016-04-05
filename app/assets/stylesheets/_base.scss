@@ -1,30 +1,4 @@
 // ==========================
-// Variables
-// ==========================
-// Bootstrap color var reference
-// $gray-base:              #000 !default;
-// $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-// $gray-dark:              lighten($gray-base, 20%) !default;   // #333
-// $gray:                   lighten($gray-base, 33.5%) !default; // #555
-// $gray-light:             lighten($gray-base, 46.7%) !default; // #777
-// $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
-$gray-lightest: lighten($gray-base, 97.5%) !default;
-$white-base: #fff;
-$blue-base: #408fec;
-$blue-light: lighten($blue-base, 13.5%) !default;
-$blue-lighter: lighten($blue-base, 20%) !default;
-$blue-lightest: lighten($blue-base, 26.5%) !default;
-$blue-dark: darken($blue-base, 13.5%) !default;
-$blue-darker: darken($blue-base, 20%) !default;
-$purple-base: #6e5baa;
-$purple-light: lighten($purple-base, 13.5%) !default;
-$purple-lighter: lighten($purple-base, 20%) !default;
-$purple-dark: darken($purple-base, 13.5%) !default;
-$purple-darker: darken($purple-base, 20%) !default;
-$shadow-base: 0 1px 2px rgba(0,30,50,.15);
-
-
-// ==========================
 // Body
 // ==========================
 body {
@@ -36,29 +10,83 @@ body {
 
 
 // ==========================
+// Wrappers
+// ==========================
+.wrapper {
+  border-bottom: 1px solid $gray-lighter;
+  background-color: $gray-brand-lightest;
+}
+
+
+// ==========================
+// Typography
+// ==========================
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+a {
+  color: $brand-base;
+  &:hover {
+    color: darken($brand-base, 15%);
+  }
+}
+
+// control font flash
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active {
+  visibility: visible;
+}
+
+// ==========================
 // Buttons
 // ==========================
 .btn {
-  color: $white-base;
+  font-weight: 600;
   border: 0;
   border-radius: 3px;
-  background-color: $purple-base;
+}
 
-  &:hover {
+.btn-default {
+  background-color: $gray-btn-bg;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    background-color: $gray-btn-bg-hover;
+  }
+}
+
+.btn-brand {
+  color: $white-base;
+  background-color: $brand-base;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
     color: $white-base;
-    background-color: $purple-light;
+    background-color: $brand-dark;
   }
 }
 
 .btn-link {
   font-weight: 600;
-  color: $blue-dark;
   background-color: transparent;
-
   &:hover {
-    color: $blue-darker;
     background-color: transparent;
   }
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 3px 8px;
 }
 
 
@@ -66,90 +94,131 @@ body {
 // Forms
 // ==========================
 .form-control {
-  border: 0;
   border-radius: 3px;
-}
-
-.form-control::-moz-placeholder {
-  color: $gray;
-}
-
-.form-control:-ms-input-placeholder {
-  color: $gray;
-}
-
-.form-control::-webkit-input-placeholder {
-  color: $gray;
-}
-
-
-// ==========================
-// Navbar
-// ==========================
-.navbar {
-  margin-bottom: 0;
-  border: 0;
-  background-color: $white-base;
-}
-
-.navbar .navbar-brand {
-  width: 130px;
-  height: 20px;
-  margin: 23px 0 !important;
-  padding: 0;
-  text-indent: -2222px;
-  background-image: image-url('logo-black.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.navbar .btn {
-  font-size: 13px;
-  font-weight: 600;
-  margin: 15px 0;
-  padding: 10px 20px;
-  color: #333;
-  background-color: #e6e6e6;
-
-  &:hover {
-    color: $white-base;
-    background-color: $purple-base;
+  box-shadow: none;
+  &:focus {
+    box-shadow: none;
   }
 }
 
-.navbar .navbar-user {
-  display: inline-block;
-  margin-right: 15px;
+
+// ==========================
+// Tables
+// ==========================
+table {
+  font-size: 13px;
+  overflow: hidden;
+}
+
+table > thead > tr > th > a {
+  font-size: 11px;
+  float: right;
+  margin-top: 3px;
+  color: $gray-light;
+  &:hover {
+    color: $gray;
+  }
+}
+
+tr.status-published {
+  border-right: 10px solid $published;
+}
+
+tr.status-unpublished {
+  border-right: 10px solid $unpublished;
+}
+
+tr.status-needs-review {
+  border-right: 10px solid $needs-review;
+}
+
+tr.tier-paid {
+  border-left: 10px solid $paid;
+}
+
+tr.tier-free {
+  border-left: 10px solid $free;
+}
+
+.table-deck .glyphicon-sort {
+  display: none;
+}
+
+.table-deck > thead > tr > th {
+  border-bottom: 0;
+}
+
+.table-striped.table-deck > tbody > tr {
+  &:nth-of-type(4n),
+  &:nth-of-type(4n - 1) {
+    background-color: $white-base;
+  }
+  &:nth-of-type(4n - 2),
+  &:nth-of-type(4n - 3) {
+    background-color: $table-bg-accent;
+  }
+}
+
+.table-deck > tbody > tr > td.td-preview {
+  padding-bottom: 20px;
+  border-top: 0;
+}
+
+.table-deck > tbody > tr.tr-padding-top > th,
+.table-deck > tbody > tr.tr-padding-top > td {
+  padding-top: 16px;
 }
 
 
 // ==========================
-// Footer
+// Panels
 // ==========================
-.footer {
+.panel-table .panel-heading {
+  padding-left: 8px;
+}
+
+.panel-heading .list-inline {
+  margin-bottom: 0;
+}
+
+
+// ==========================
+// Pagination
+// ==========================
+.pagination > li > a {
   font-weight: 600;
-  color: $gray-lighter;
-  background: $gray-dark;
+  color: $brand-base;
+  &:hover {
+    color: $brand-base;
+  }
 }
 
-.footer .row {
-  padding: 50px 20px 120px;
+.pagination > .active > a {
+  border-color: $brand-base;
+  background-color: $brand-base;
+  &:hover {
+    color: $white-base;
+    background-color: $brand-base;
+  }
 }
 
-.footer a {
-  color: $gray-lighter;
+
+// ==========================
+// Breadcrumb
+// ==========================
+.breadcrumb > li {
+  font-size: 18px;
+  font-weight: 600;
 }
 
-.footer .list-inline > li {
-  padding: 0 15px;
+.breadcrumb > .active {
+  color: $gray-dark;
 }
 
 
 // ==========================
 // Alerts
 // ==========================
-// Alert class reference:
-// .alert-notice, .alert-alert
 .alert {
   font-weight: 600;
   margin: 0;
@@ -157,7 +226,64 @@ body {
   color: $white-base;
   border: 0;
   border-radius: 0;
-  background: $purple-light;
+}
+
+.alert-notice,
+.alert-alert {
+  background-color: $brand-base;
+}
+
+.alert-success {
+  background-color: $published;
+}
+
+.alert-error {
+  background-color: $unpublished;
+}
+
+
+// ==========================
+// Labels
+// ==========================
+.label-needs-review {
+  background-color: $needs-review;
+}
+
+.label-published {
+  background-color: $published;
+}
+
+.label-unpublished {
+  background-color: $unpublished;
+}
+
+.label-paid {
+  background-color: $paid;
+}
+
+.label-free {
+  background-color: $free;
+}
+
+
+// ==========================
+// Progress bars
+// ==========================
+.progress,
+.progress-bar {
+  box-shadow: none;
+}
+
+
+// ==========================
+// Tabs
+// ==========================
+.nav-tabs > li > a {
+  font-weight: 600;
+}
+
+.tab-pane {
+  padding-top: 10px;
 }
 
 
@@ -165,17 +291,14 @@ body {
 // Scree size extra small
 // ==========================
 @media (max-width: $screen-xs-max) {
-
   .container > .navbar-header {
     float: left;
     margin-right: 0;
     margin-left: 0;
-
     &.navbar-right {
       float: right;
     }
   }
-  
 }
 
 

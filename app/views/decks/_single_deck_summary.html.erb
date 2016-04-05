@@ -1,0 +1,83 @@
+<div class="summary">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="well">
+        <table class="table table-condensed table-striped">
+          <tbody>  
+            <tr>
+              <th><span class="glyphicon glyphicon-calendar"></span>Created At</th>
+              <td>3/20/2016</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><span class="glyphicon glyphicon-book"></span>Cards</th>
+              <td><%= cards.count %></td>
+              <td>
+                <ul class="list-inline">
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-needs-review">0 Needs Review</span>
+                    </li>
+                  </a>
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-published">0 Published</span>
+                    </li>
+                  </a>
+                  <a href="#">
+                    <li class="list-item-label">
+                      <span class="label label-unpublished">0 Unpublished</span>
+                    </li>
+                  </a>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>Categories</th>
+              <td></td>
+              <td>
+                <ul class="list-inline">
+                  <% deck.categories.each do |category| %>
+                    <li class="list-item-label">
+                      <span class="label label-default">
+                        <%= category.name %>
+                      </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>Question Type</th>
+              <td></td>
+              <td>
+                <ul class="list-inline">
+                  <% Card.card_types.each do |key,value| %>
+                    <li class="list-item-label">
+                      <span class="label label-default">
+                        <%= cards.where(card_type: value).count %> <%= key.humanize %>
+                      </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th><span class="glyphicon glyphicon-signal" aria-hidden="true"></span>Difficulty</th>
+              <td>7.43 Avg</td>
+              <td>
+                <div class="progress progress-difficulty">
+                  <% for i in 0..10 %>
+                    <div class="progress-bar progress-bar-difficulty" style="width:<%= cards.where(difficulty: i).count.to_f / cards.count * 100 %>%">
+                      <span><%= cards.where(difficulty: i).count %> cards (difficulty-<%= i %>)</span>
+                    </div>
+                  <% end %>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

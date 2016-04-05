@@ -1,4 +1,15 @@
-<br>
-Content: <%= quote.content %><br>
-<%= link_to 'Link to quote page', deck_quote_path(@deck, quote) %><br>
-<%= link_to 'Edit quote', edit_deck_quote_path(@deck, quote) %><br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="list-inline">
+      <li>
+        <%= quote.id %>
+      </li>
+      <l1>
+        <%= link_to 'Edit Quote', edit_deck_quote_path(@deck, quote), class: 'pull-right' %>
+      </l1>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <%= quote.content %>
+  </div>
+</div>

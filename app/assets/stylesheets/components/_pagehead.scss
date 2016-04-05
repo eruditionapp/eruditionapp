@@ -1,0 +1,26 @@
+// ==========================
+// Pagehead
+// ==========================
+.pagehead .breadcrumb {
+  line-height: 1;
+  margin: 0;
+  padding: 7px 15px 7px 0;
+  background-color: transparent;
+}
+
+.pagehead .glyphicon {
+  font-size: 12px;
+  top: -1px;
+  margin-right: 10px;
+  opacity: .4;
+  color: #555;
+}
+
+@media (max-width: $screen-sm-min) {
+  .pagehead .pull-right {
+    float: none !important;
+  }
+  .pagehead .btn {
+    margin-top: 5px;
+  }
+}

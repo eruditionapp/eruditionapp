@@ -1,4 +1,76 @@
-<%= link_to 'Create Deck', new_deck_path %><br>
-<% @decks.each do |deck| %>
-  <%= render deck %>
-<% end %>
+<div class="page page-dashboard">
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li class="active">Decks</li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group pull-right">
+              <%= link_to 'Create Deck', new_deck_path, class: 'btn btn-brand' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    <%= render 'multi_deck_summary', decks: @decks %>
+
+    <div class="row">
+      <div class="col-xs-12">  
+        <div class="panel panel-default panel-table">
+          <div class="panel-heading">All Decks</div>
+          <table class="table table-hover table-deck">
+            <thead>
+              <tr>
+                <th>Title<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Subtitle<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Author<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+                <th>Categories</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @decks_ordered.each do |deck| %>
+                <%= render deck %>
+              <% end %>
+            </tbody>
+          </table>      
+        </div>
+        <nav>
+          <ul class="pagination">
+            <li class="disabled">
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <a href="#">5</a>
+            </li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">»</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>

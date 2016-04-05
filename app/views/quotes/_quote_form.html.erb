@@ -1,0 +1,10 @@
+<%= form_for [@deck, @quote] do |f| %>
+  
+  <%= render 'shared/errors', resource: @quote %>
+  
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class: 'form-control', placeholder: 'Content', rows: '4' %>
+  </div>
+  <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
+<% end %>

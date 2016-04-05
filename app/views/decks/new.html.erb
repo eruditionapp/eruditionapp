@@ -1,17 +1,30 @@
-<%= form_for @deck do |f| %>
-  <%= render 'shared/errors', resource: @deck %>
+<div class="page page-dashboard">
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li><%= link_to 'Decks', decks_path %></li>
+              <li class="active">Create Deck</li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group pull-right">
+              <%= link_to 'Cancel', decks_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+        <%= render 'deck_form', new: true %>
 
-  <%= f.label :subtitle %>
-  <%= f.text_field :subtitle %>
-
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-
-  <%= f.label :status %>
-  <%= f.select(:status, Deck.statuses.keys.map {|status| [status.titleize, status]}) %>
-
-  <%= f.submit "Create" %>
-<% end %>
+      </div>
+    </div>
+  </div>
+</div>

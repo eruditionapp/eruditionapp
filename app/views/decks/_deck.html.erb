@@ -1,8 +1,6 @@
-<br>
-Title: <%= deck.title %><br>
-Subtitle: <%= deck.subtitle %><br>
-Author: <%= deck.author %><br>
-Status: <%= deck.status.titleize %><br>
-Categories: <%= render 'categories', resource: deck %><br>
-<%= link_to 'Link to deck page', deck_path(deck) %><br>
-<%= link_to 'Edit deck', edit_deck_path(deck) %><br>
+<tr class="tier-<%= deck.tier %> status-<%= deck.status %>">
+  <th><%= link_to deck.title, deck_path(deck) %></th>
+  <td><%= deck.subtitle %></td>
+  <td><%= deck.author %></td>
+  <td><%= render 'categories', resource: deck %></td>
+</tr>

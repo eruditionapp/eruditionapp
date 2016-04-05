@@ -1,0 +1,12 @@
+<tr class="tr-padding-top status-needs-review">
+  <th><%= link_to card.id, edit_deck_card_path(@deck, card) %></th>
+  <th>Card Author</th>
+  <th><%= card.card_type.humanize %></th>
+  <th><%= card.difficulty %></th>
+  <th>Last Modified</th>
+  <th>Date Created</th>
+</tr>
+<tr class="status-needs-review">
+  <td class="td-preview"></td>
+  <td class="td-preview" colspan="5"><em>Prompt:</em> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</td>
+</tr>

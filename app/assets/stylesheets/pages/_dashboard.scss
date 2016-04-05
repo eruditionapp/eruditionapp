@@ -1,0 +1,78 @@
+// ==========================
+// Admin + User dashboard
+// ==========================
+.page-dashboard {
+  position: relative;
+  min-height: calc(100vh - 273px);
+}
+
+.page-dashboard .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.page-dashboard .well {
+  background: transparent;
+  box-shadow: none;
+}
+
+.page-dashboard .panel-heading {
+  font-weight: 600;
+}
+
+.page-dashboard .checkbox {
+  margin-top: 0;
+}
+
+.page-dashboard input[type='submit'] {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.page-dashboard .pagination {
+  margin: 0;
+}
+
+// card_form - tabs
+.page-dashboard .tab-pane {
+  padding-top: 20px;
+}
+
+// card_form - guided quotes
+.quotes-group {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.quotes-group .btn-link {
+  color: $brand-base;
+}
+
+.quotes-group .checkbox {
+  margin: 0;
+  padding-top: 10px;
+}
+
+// card_form - organize
+.organize-item-btn-add {
+  margin-top: 10px;
+}
+
+.organize-item-list {
+  margin-bottom: 0;
+}
+
+.organize-item-list .glyphicon-remove {
+  float: right;
+  cursor: pointer;
+  color: $gray-btn-bg;
+  &:hover {
+    color: $gray-btn-bg-hover;
+  }
+}
+
+.organize-item-list .glyphicon-resize-vertical {
+  margin-right: 10px;
+  cursor: move;
+  cursor: grab;
+}

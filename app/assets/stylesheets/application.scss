@@ -15,13 +15,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-// Core variables, bootstrap overrides
+// Variables
+// Bootstrap overrides
+@import "_variables";
 @import "_base";
 
-// Reusable components
-@import "components/signup-form";
+// Components
+@import "components/_nav";
+@import "components/_footer";
+@import "components/_pagehead";
+@import "components/_summary";
+@import "components/_signup-form";
 
-// Page specific
-@import "pages/home";
-@import "pages/account";
-@import "pages/policy";
+// Pages
+@import "pages/_home";
+@import "pages/_account";
+@import "pages/_dashboard";
+@import "pages/_policy";

@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require_tree .
+//= require sortable
+//= require _global
+//= require_tree ./modules
+//= require _main

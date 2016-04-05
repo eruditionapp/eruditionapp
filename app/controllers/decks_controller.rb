@@ -1,7 +1,9 @@
 class DecksController < ApplicationController
 
   def index
-    @decks = Deck.all.order(:title)
+    @decks = Deck.all
+    @decks_ordered = @decks.order(:title)
+    @categories = Category.all
   end
 
   def show

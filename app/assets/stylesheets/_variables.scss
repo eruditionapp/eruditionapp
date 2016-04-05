@@ -1,0 +1,42 @@
+// ==========================
+// Variables
+// ==========================
+$white-base: #fff;
+$gray-btn-bg: lighten($gray-base, 90%) !default;
+$gray-btn-bg-hover: lighten($gray-base, 88%) !default;
+$gray-brand-lighter: lighten($gray-base, 96%) !default;
+$gray-brand-lightest: lighten($gray-base, 98%) !default;
+$brand-base: #745CBF;
+$brand-light: lighten($brand-base, 10.5%) !default;
+$brand-lighter: lighten($brand-base, 20%) !default;
+$brand-lightest: lighten($brand-base, 43.5%) !default;
+$brand-dark: darken($brand-base, 5.5%) !default;
+$brand-darker: darken($brand-base, 20%) !default;
+$shadow-base: 0 1px 2px rgba(0,30,50,.15);
+
+// Make state color pallate
+$states: (
+  'needs-review',
+  'unpublished',
+  'published',
+  'free',
+  'paid'
+);
+
+$spectrum: 360deg;
+$offset: 20deg;
+
+@function state-color($color) {
+  @each $state in $states {
+    @if nth($state, 1) == $color {
+      @return saturate(adjust-hue($brand-base, $offset + $spectrum / length($states) * index($states, $state)), 5%);
+    }
+  }
+  @return null;
+}
+
+$needs-review: state-color(needs-review);
+$published: state-color(published);
+$unpublished: state-color(unpublished);
+$paid: state-color(paid);
+$free: state-color(free);

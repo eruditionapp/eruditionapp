@@ -1,0 +1,29 @@
+// ==========================
+// Navbar
+// ==========================
+.navbar-application {
+  margin-bottom: 0;
+  border: 0;
+  background-color: $gray-brand-lighter;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.navbar-application .navbar-brand {
+  width: 130px;
+  height: 20px;
+  margin: 26px 0 !important;
+  padding: 0;
+  text-indent: -2222px;
+  background-image: image-url('logo-black.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.navbar-application .btn {
+  margin: 20px 0;
+}
+
+.navbar-application .navbar-user {
+  display: inline-block;
+  margin-right: 15px;
+}
