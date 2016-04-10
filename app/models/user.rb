@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
     self.role ||= :free
   end
 
+  # Role Handling
+
   def is_free?
     return true if self.free? || self.is_paid?
   end

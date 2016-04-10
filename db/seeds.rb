@@ -37,7 +37,7 @@ end
 
   50.times do
     Deck.last.cards << Card.new(card_type: rand(0...Card.card_types.count),
-                                difficulty: rand(0..10), quote_id: quotes[rand(0...quotes.length)],
-                                content: Faker::Lorem.paragraph)
+                                difficulty: rand(1..10), quote_id: quotes[rand(0...quotes.length)],
+                                content: Faker::Lorem.paragraph, status: rand(0...Card.statuses.count))
   end
 end
