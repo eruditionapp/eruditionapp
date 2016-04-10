@@ -30,18 +30,6 @@ class UsersController < ApplicationController
 
   private
 
-  def superadmin_only
-    deny_access unless current_user.is_superadmin?
-  end
-
-  def admin_only
-    deny_access unless current_user.is_admin?
-  end
-
-  def self_or_admin_only
-    deny_access unless (current_user == User.find(params[:id])) || current_user.is_admin?
-  end
-
   def secure_params
     params.require(:user).permit(:role)
   end

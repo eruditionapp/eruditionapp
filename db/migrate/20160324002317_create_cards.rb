@@ -5,7 +5,7 @@ class CreateCards < ActiveRecord::Migration
       t.integer :difficulty, index: true
       t.references :deck, index: true
       t.references :quote, index: true
-      t.jsonb :content, default: {}
+      t.string :content
     end
   end
 end

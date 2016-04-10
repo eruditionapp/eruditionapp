@@ -1,4 +1,4 @@
-# Setup one user per role
+# Seed Users
 
 [ {email: 'superadmin@test.com', password: 'password', role: 4},
   {email: 'admin@test.com',      password: 'password', role: 3},
@@ -11,7 +11,7 @@
   user.save!
 end
 
-# Setup Decks with associated Categories, Guiding Quotes, and Cards
+# Seed Decks, Categories, Guiding Quotes, and Cards
 
 5.times do |count|
   Category.create! name: Faker::Commerce.department(1)
@@ -29,7 +29,7 @@ end
     end
   end
 
-  3.times do
+  20.times do
     Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
   end
 
@@ -37,7 +37,7 @@ end
 
   50.times do
     Deck.last.cards << Card.new(card_type: rand(0...Card.card_types.count),
-                                difficulty: rand(0..10), quote_id: quotes[rand(0...quotes.length)],
-                                content: {})
+                                difficulty: rand(1..10), quote_id: quotes[rand(0...quotes.length)],
+                                content: Faker::Lorem.paragraph, status: rand(0...Card.statuses.count))
   end
 end

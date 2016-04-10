@@ -11,17 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324002317) do
+ActiveRecord::Schema.define(version: 20160409234955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.integer "card_type"
-    t.integer "difficulty"
-    t.integer "deck_id"
-    t.integer "quote_id"
-    t.jsonb   "content",    default: {}
+    t.integer  "card_type"
+    t.integer  "difficulty"
+    t.integer  "deck_id"
+    t.integer  "quote_id"
+    t.string   "content"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "cards", ["card_type"], name: "index_cards_on_card_type", using: :btree

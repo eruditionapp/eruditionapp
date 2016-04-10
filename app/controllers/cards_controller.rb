@@ -23,13 +23,16 @@ class CardsController < ApplicationController
   end
 
   def new
-    @deck = Deck.find(params[:deck_id])
-    @card = Card.new
+    @deck   = Deck.find(params[:deck_id])
+    @quotes = @deck.quotes
+    @card   = Card.new
   end
 
   def create
-    @deck = Deck.find(param[:deck_id])
-    @card = Card.new(strong_params)
+    @deck   = Deck.find(params[:deck_id])
+    @quotes = @deck.quotes
+    @quote  = Quote.find(strong_params[:quote_id])
+    @card   = Card.new(strong_params)
     if @deck.cards << @card
       flash[:success] = 'Card created.'
       redirect_to @deck
@@ -42,6 +45,6 @@ class CardsController < ApplicationController
   private
 
     def strong_params
-      params.require(:card).permit(:type, :difficulty, :content)
+      params.require(:card).permit(:card_type, :difficulty, :quote_id, :content)
     end
 end
