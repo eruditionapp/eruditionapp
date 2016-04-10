@@ -1,15 +1,14 @@
 class DecksController < ApplicationController
 
   def index
-    @decks = Deck.all
-    @decks_ordered = @decks.order(:title)
+    @decks = Deck.paginate(page: params[:page]).order(:title)
     @categories = Category.all
   end
 
   def show
     @deck = Deck.find(params[:id])
     @categories = @deck.categories
-    @cards = @deck.cards
+    @cards = @deck.cards.paginate(page: params[:page])
   end
 
   def edit
