@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
 
   def index
     @deck = Deck.find(params[:deck_id])
-    @quotes = @deck.quotes
+    @quotes = @deck.quotes.paginate(page: params[:page])
   end
 
   def show

@@ -144,7 +144,8 @@ tr.tier-free {
   display: none;
 }
 
-.table-deck > thead > tr > th {
+.table-deck > thead > tr > th,
+.table-quote > thead > tr > th {
   border-bottom: 0;
 }
 
