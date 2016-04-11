@@ -41,36 +41,9 @@
             </tbody>
           </table>
         </div>
-        <%= will_paginate @decks %>
-        <nav>
-          <ul class="pagination">
-            <li class="disabled">
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">«</span>
-              </a>
-            </li>
-            <li class="active">
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">»</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div class="pagination">
+          <%= will_paginate @decks, renderer: BootstrapPaginationHelper::LinkRenderer %>
+        </div>
       </div>
     </div>
   </div>
