@@ -6,14 +6,17 @@ class Deck < ActiveRecord::Base
 
   validates_presence_of :title, :author
 
+  after_initialize :set_tier, if: :new_record?
+  after_initialize :set_status, if: :new_record?
+
+  scope :scope_status, -> status { where(status: status) }
+  scope :scope_tier,   -> tier   { where(tier: tier) }
+
   enum tier:   { free: 0,
                  paid: 1 }
 
   enum status: { published:   0,
                  unpublished: 1 }
-
-  after_initialize :set_tier, if: :new_record?
-  after_initialize :set_status, if: :new_record?
 
   def set_tier
     self.tier ||= :paid

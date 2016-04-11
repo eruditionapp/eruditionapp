@@ -3,8 +3,8 @@
   <th>Card Author</th>
   <th><%= card.card_type.humanize %></th>
   <th><%= card.difficulty %></th>
-  <th><%= card.updated_at %></th>
-  <th><%= card.created_at %></th>
+  <th><%= card.updated_at.strftime('%b %d, %Y') %></th>
+  <th><%= card.created_at.strftime('%b %d, %Y') %></th>
 </tr>
 <tr class="status-<%= card.status %>">
   <td class="td-preview"></td>

@@ -11,34 +11,24 @@
               </td>
               <td>
                 <ul class="list-inline">
-                  <a href="#">
+                  <% Deck.statuses.each do |key, value| %>
                     <li class="list-item-label">
-                      <span class="label label-published">
-                        <%= decks.where(status: 'published').count %> Published
-                      </span>
+                      <%= link_to decks_path status: value do %>
+                        <span class="label label-<%= key %>">
+                          <%= decks.where(status: key).count %> <%= key.titleize %>
+                        </span>
+                      <% end %>
                     </li>
-                  </a>
-                  <a href="#">
+                  <% end %>
+                  <% Deck.tiers.each do |key, value| %>
                     <li class="list-item-label">
-                      <span class="label label-unpublished">
-                        <%= decks.where(status: 'unpublished').count %> Unpublished
-                      </span>
+                      <%= link_to decks_path tier: value do %>
+                        <span class="label label-<%= key %>">
+                          <%= decks.where(tier: key).count %> <%= key.titleize %>
+                        </span>
+                      <% end %>
                     </li>
-                  </a>
-                  <a href="#">
-                    <li class="list-item-label">
-                      <span class="label label-paid">
-                        <%= decks.where(tier: 'paid').count %> Paid
-                      </span>
-                    </li>
-                  </a>
-                  <a href="#">
-                    <li class="list-item-label">
-                      <span class="label label-free">
-                        <%= decks.where(tier: 'free').count %> Free
-                      </span>
-                    </li>
-                  </a>
+                  <% end %>
                 </ul>
               </td>
             </tr>
@@ -54,9 +44,11 @@
                 <ul class="list-inline">
                   <% @categories.each do |category| %>
                     <li class="list-item-label">
-                      <span class="label label-default">
-                        <%= category.decks.count %> <%= category.name %>
-                      </span>
+                      <%= link_to decks_path category: category.name  do %>
+                        <span class="label label-default">
+                          <%= category.decks.count %> <%= category.name %>
+                        </span>
+                      <% end %>
                     </li>
                   <% end %>
                 </ul>
