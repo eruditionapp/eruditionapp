@@ -6,7 +6,7 @@
           <tbody>  
             <tr>
               <th><span class="glyphicon glyphicon-calendar"></span>Created At</th>
-              <td>3/20/2016</td>
+              <td>3/20/2016 *static*</td>
               <td></td>
             </tr>
             <tr>
@@ -64,7 +64,15 @@
             </tr>
             <tr>
               <th><span class="glyphicon glyphicon-signal" aria-hidden="true"></span>Difficulty</th>
-              <td>7.43 Avg</td>
+              <td>
+                <%= 
+                  difficulty_sum = 0
+                  cards.each do |card|
+                    difficulty_sum += card.difficulty
+                  end
+                  difficulty_sum.to_f / cards.count
+                %>
+              </td>
               <td>
                 <div class="progress progress-difficulty">
                   <% for i in 0..10 %>

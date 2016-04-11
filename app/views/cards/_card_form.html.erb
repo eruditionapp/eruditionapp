@@ -1,18 +1,24 @@
 <div>
   <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-      <a href="#fillInBlank" data-toggle="tab">Fill in Blank</a>
-    </li>
-    <li>
-      <a href="#flashcard" data-toggle="tab">Flashcard</a>
-    </li>
-    <li>
-      <a href="#organize" data-toggle="tab">Organize</a>
-    </li>
+    <% if @card.card_type %>
+      <li class="active">
+        <a href="#<% @card.card_type %>" data-toggle="tab"><%= @card.card_type.humanize %></a>
+      </li>
+    <% else %>
+      <li class="active">
+        <a href="#fill_in_blank" data-toggle="tab">Fill in Blank</a>
+      </li>
+      <li>
+        <a href="#flashcard" data-toggle="tab">Flashcard</a>
+      </li>
+      <li>
+        <a href="#organize" data-toggle="tab">Organize</a>
+      </li>
+    <% end %>
   </ul>
   <div class="tab-content">
-    <!-- FILL IN BLANK -->
-    <div class="tab-pane active" id="fillInBlank">
+    <!-- FILL_IN_BLANK -->
+    <div class="<%= !@card.card_type || @card.card_type === "fill_in_blank" ? "tab-pane active" : "tab-pane" %>" id="fill_in_blank">
       <%= form_for [@deck, @card] do |f| %>
         <%= render 'shared/errors', resource: @card %>
         <%= f.hidden_field :card_type, value: 'fill_in_blank' %>
@@ -20,14 +26,21 @@
           <% f.text_area :content, class: 'form-control', rows: '5' %>
         </div>
         <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseFillInBlank">Guiding Quotes</a>
-          <div class="collapse" id="collapseFillInBlank">
+          <a class="btn-link" data-toggle="collapse" href="#collapsefill_in_blank">Guiding Quotes</a>
+          <div class="collapse" id="collapsefill_in_blank">
             <%= f.collection_radio_buttons :quote_id, @deck.quotes, :id, :content %>
           </div>
         </div>
         <div class="form-group">
           <%= f.label :difficulty %>
           <%= f.select :difficulty, Card::DIFFICULTY_LEVELS.map {|key,value| ["#{value}. #{key.titleize}",value]}, {}, { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <label for="card_status">Behavior *static*</label>
+          <select class="form-control">
+            <option selected="selected" value="random">Random</option>
+            <option value="decay">Decay</option>
+          </select>
         </div>
         <div class="form-group">
           <%= f.label :content, 'Prompt' %>
@@ -38,15 +51,15 @@
           <%= f.label :status %>
           <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
         </div>
-        <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
+        <%= f.submit @card.card_type ? 'Update' : 'Create', class: 'btn btn-brand' %>
       <% end %>
     </div>
     <!-- FLASHCARD -->
-    <div class="tab-pane" id="flashcard">
+    <div class="<%= @card.card_type === "flashcard" ? "tab-pane active" : "tab-pane" %>" id="flashcard">
       <%= form_for [@deck, @card] do |f| %>
         <%= render 'shared/errors', resource: @card %>
         <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesFlashcard">Guided Quotes</a>
+          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesFlashcard">Guiding Quotes</a>
           <div class="collapse" id="collapseQuotesFlashcard">
             <% @deck.quotes.each do |quote| %>
               <div class="checkbox">
@@ -78,15 +91,15 @@
           <%= f.label :status %>
           <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
         </div>
-        <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
+        <%= f.submit @card.card_type ? 'Update' : 'Create', class: 'btn btn-brand' %>
       <% end %>
     </div>
     <!-- ORGANIZE -->
-    <div class="tab-pane" id="organize">
+    <div class="<%= @card.card_type === "organize" ? "tab-pane active" : "tab-pane" %>" id="organize">
       <%= form_for [@deck, @card] do |f| %>
         <%= render 'shared/errors', resource: @card %>
         <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesOrganize">Guided Quotes</a>
+          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesOrganize">Guiding Quotes</a>
           <div class="collapse" id="collapseQuotesOrganize">
             <% @deck.quotes.each do |quote| %>
               <div class="checkbox">
@@ -138,7 +151,7 @@
           <%= f.label :status %>
           <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
         </div>
-        <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
+        <%= f.submit @card.card_type ? 'Update' : 'Create', class: 'btn btn-brand' %>
       <% end %>
     </div>
   </div>
