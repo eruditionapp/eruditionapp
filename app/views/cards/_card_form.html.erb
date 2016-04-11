@@ -1,12 +1,46 @@
 <div>
   <ul class="nav nav-tabs" role="tablist">
-    <li><a href="#flashcard" data-toggle="tab">Flashcard</a></li>
-    <li><a href="#shortAnswer" data-toggle="tab">Short Answer</a></li>
-    <li><a href="#organize" data-toggle="tab">Organize</a></li>
-    <li class="active"><a href="#fillInBlank" data-toggle="tab">Fill in Blank</a></li>
+    <li class="active">
+      <a href="#fillInBlank" data-toggle="tab">Fill in Blank</a>
+    </li>
+    <li>
+      <a href="#flashcard" data-toggle="tab">Flashcard</a>
+    </li>
+    <li>
+      <a href="#organize" data-toggle="tab">Organize</a>
+    </li>
   </ul>
   <div class="tab-content">
-    
+    <!-- FILL IN BLANK -->
+    <div class="tab-pane active" id="fillInBlank">
+      <%= form_for [@deck, @card] do |f| %>
+        <%= render 'shared/errors', resource: @card %>
+        <%= f.hidden_field :card_type, value: 'fill_in_blank' %>
+        <div class="form-group">
+          <% f.text_area :content, class: 'form-control', rows: '5' %>
+        </div>
+        <div class="form-group quotes-group">
+          <a class="btn-link" data-toggle="collapse" href="#collapseFillInBlank">Guiding Quotes</a>
+          <div class="collapse" id="collapseFillInBlank">
+            <%= f.collection_radio_buttons :quote_id, @deck.quotes, :id, :content %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :difficulty %>
+          <%= f.select :difficulty, Card::DIFFICULTY_LEVELS.map {|key,value| ["#{value}. #{key.titleize}",value]}, {}, { class: 'form-control'} %>
+        </div>
+        <div class="form-group">
+          <%= f.label :content, 'Prompt' %>
+          <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Fill in the blank prompt ...' %>
+          <p class="help-block">Add blanks -> #blank here#'</p>
+        </div>
+        <div class="form-group">
+          <%= f.label :status %>
+          <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
+        </div>
+        <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
+      <% end %>
+    </div>
     <!-- FLASHCARD -->
     <div class="tab-pane" id="flashcard">
       <%= form_for [@deck, @card] do |f| %>
@@ -40,41 +74,9 @@
           <label>Answer</label>
           <textarea class="form-control" rows="4" placeholder="Flashcard answer ..."></textarea>
         </div>
-        <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
-      <% end %>
-    </div>
-    <!-- SHORT ANSWER -->
-    <div class="tab-pane" id="shortAnswer">
-      <%= form_for [@deck, @card] do |f| %>
-        <%= render 'shared/errors', resource: @card %>
-        <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesShortAnswer">Guided Quotes</a>
-          <div class="collapse" id="collapseQuotesShortAnswer">
-            <% @deck.quotes.each do |quote| %>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="">
-                  <%= quote.content %>
-                </label>
-              </div>
-            <% end %>
-          </div>
-        </div>
         <div class="form-group">
-          <label>Difficulty</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option selected="selected">3</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Prompt</label>
-          <textarea class="form-control" rows="5" placeholder="Short Answer prompt ..."></textarea>
-        </div>
-        <div class="form-group">
-          <label>Answer</label>
-          <textarea class="form-control" rows="4" placeholder="Short Answer answer ..."></textarea>
+          <%= f.label :status %>
+          <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
         </div>
         <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
       <% end %>
@@ -104,18 +106,15 @@
             <option selected="selected">3</option>
           </select>
         </div>
-        
         <div class="form-group">
           <label>Prompt</label>
           <textarea class="form-control" rows="5" placeholder="Organize prompt ..."></textarea>
         </div>
-
         <div class="form-group">
           <label>Add Items</label>
           <textarea class="form-control organize-item-text" rows="3" placeholder="Organize item ..."></textarea>
           <div class="btn btn-default organize-item-btn-add">Add Item</div>
         </div>
-
         <label>Answer</label>
         <ul id="organizeItemList" class="list-group organize-item-list">
           <li class="list-group-item">
@@ -135,38 +134,15 @@
           </li>
         </ul>
         <p class="help-block organize-help-block">Use the arrows to drag items in order, click the 'x' to remove an item.</p>
-        <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
-      <% end %>
-    </div>
-    <!-- FILL IN BLANK -->
-    <div class="tab-pane active" id="fillInBlank">
-      <%= form_for [@deck, @card] do |f| %>
-        <%= render 'shared/errors', resource: @card %>
-        <%= f.hidden_field :card_type, value: 'fill_in_blank' %>
         <div class="form-group">
-          <% f.text_area :content, class: 'form-control', rows: '5' %>
-        </div>
-        <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseFillInBlank">Guiding Quotes</a>
-          <div class="collapse" id="collapseFillInBlank">
-            <%= f.collection_radio_buttons :quote_id, @deck.quotes, :id, :content %>
-          </div>
-        </div>
-        <div class="form-group">
-          <%= f.label :difficulty %>
-          <%= f.select :difficulty, Card::DIFFICULTY_LEVELS.map {|key,value| ["#{value}. #{key.titleize}",value]}, {}, { class: 'form-control'} %>
-        </div>
-        <div class="form-group">
-          <%= f.label :content, 'Prompt' %>
-          <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Fill in the blank prompt ...' %>
-          <p class="help-block">Add blanks -> #blank here#'</p>
+          <%= f.label :status %>
+          <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
         </div>
         <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
       <% end %>
     </div>
   </div>
 </div>
-
 <!-- Use https://github.com/RubaXa/Sortable for Drag + Drop support -->
 <script>
   Sortable.create(organizeItemList, {
