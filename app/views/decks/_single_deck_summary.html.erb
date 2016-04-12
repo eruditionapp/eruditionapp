@@ -10,6 +10,16 @@
               <td></td>
             </tr>
             <tr>
+              <th><span class="glyphicon glyphicon-flag"></span>Status</th>
+              <td><%= deck.status.humanize %></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th><span class="glyphicon glyphicon-bitcoin"></span>Tier</th>
+              <td><%= deck.tier.humanize %></td>
+              <td></td>
+            </tr>
+            <tr>
               <th><span class="glyphicon glyphicon-book"></span>Cards</th>
               <td><%= cards.count %></td>
               <td>
