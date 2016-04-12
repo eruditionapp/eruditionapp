@@ -1,3 +1,4 @@
+# Open Source Code from: https://gist.github.com/oparrish/1248807
 module BootstrapPaginationHelper
   class LinkRenderer < WillPaginate::ActionView::LinkRenderer
     protected
