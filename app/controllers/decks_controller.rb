@@ -50,6 +50,6 @@ class DecksController < ApplicationController
   private
 
     def strong_params
-      params.require(:deck).permit(:title, :subtitle, :author)
+      params.require(:deck).permit(:title, :subtitle, :author, :status, :tier)
     end
 end
