@@ -53,6 +53,17 @@
   padding-top: 10px;
 }
 
+.quotes-group input[type='radio'] {
+  float: left;
+  margin: 14px 0 0 2px;
+}
+
+.quotes-group label {
+  font-weight: 400;
+  display: block;
+  padding: 12px 0 12px 22px;
+}
+
 // card_form - organize
 .organize-item-btn-add {
   margin-top: 10px;
