@@ -8,9 +8,8 @@ class Card < ActiveRecord::Base
   after_initialize :set_status, if: :new_record?
 
   enum card_type: { flashcard:     0,
-                    short_answer:  1,
-                    organize:      2,
-                    fill_in_blank: 3 }
+                    organize:      1,
+                    fill_in_blank: 2 }
 
   enum status: { needs_review: 0,
                  unpublished:  1,

@@ -12,7 +12,7 @@ class CardsController < ApplicationController
 
   def update
     @deck = Deck.find(params[:deck_id])
-    @card = Card.find(param[:id])
+    @card = Card.find(params[:id])
     if @card.update_attributes(strong_params)
       flash[:success] = 'Card updated.'
       redirect_to @deck
@@ -45,6 +45,6 @@ class CardsController < ApplicationController
   private
 
     def strong_params
-      params.require(:card).permit(:card_type, :difficulty, :quote_id, :content)
+      params.require(:card).permit(:card_type, :difficulty, :quote_id, :content, :status)
     end
 end

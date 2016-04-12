@@ -1,6 +1,6 @@
 <tr class="tr-padding-top status-<%= card.status %>">
   <th><%= link_to card.id, edit_deck_card_path(@deck, card) %></th>
-  <th>Card Author</th>
+  <th>Card Author *static*</th>
   <th><%= card.card_type.humanize %></th>
   <th><%= card.difficulty %></th>
   <th><%= card.updated_at.strftime('%b %d, %Y') %></th>

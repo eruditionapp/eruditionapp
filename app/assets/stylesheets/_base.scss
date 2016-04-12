@@ -128,7 +128,7 @@ tr.status-unpublished {
   border-right: 10px solid $unpublished;
 }
 
-tr.status-needs-review {
+tr.status-needs_review {
   border-right: 10px solid $needs-review;
 }
 
@@ -144,7 +144,8 @@ tr.tier-free {
   display: none;
 }
 
-.table-deck > thead > tr > th {
+.table-deck > thead > tr > th,
+.table-quote > thead > tr > th {
   border-bottom: 0;
 }
 

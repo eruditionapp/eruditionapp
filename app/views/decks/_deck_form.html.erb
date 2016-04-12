@@ -18,5 +18,9 @@
     <%= f.label :status %>
     <%= f.select(:status, Deck.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
   </div>
+  <div class="form-group">
+    <%= f.label :tier %>
+    <%= f.select(:tier, Deck.tiers.keys.map {|tier| [tier.titleize, tier]}, {}, {:class => 'form-control'}) %>
+  </div>
   <%= f.submit new ? 'Create' : 'Update', class: 'btn btn-brand' %>
 <% end %>

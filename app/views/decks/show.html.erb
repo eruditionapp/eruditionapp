@@ -15,7 +15,7 @@
                 <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
               </div>
               <div class="btn-group">
-                <%= link_to 'Guided Quotes', deck_quotes_path(@deck), class: 'btn btn-default' %>
+                <%= link_to 'Guiding Quotes', deck_quotes_path(@deck), class: 'btn btn-brand' %>
               </div>
               <div class="btn-group">
                 <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
@@ -54,36 +54,9 @@
             </tbody>
           </table>      
         </div>
-        <%= will_paginate @cards %>
-        <nav>
-          <ul class="pagination">
-            <li class="disabled">
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">«</span>
-              </a>
-            </li>
-            <li class="active">
-              <a href="#">1</a>
-            </li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">»</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div class="pagination">
+          <%= will_paginate @cards, renderer: BootstrapPaginationHelper::LinkRenderer %>
+        </div>
       </div>
     </div>
   </div>

@@ -29,7 +29,7 @@ end
     end
   end
 
-  20.times do
+  50.times do
     Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
   end
 
