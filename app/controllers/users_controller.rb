@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def dashboard
+  end
+
   def edit
   end
 

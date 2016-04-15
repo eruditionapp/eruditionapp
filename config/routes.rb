@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get 'privacy'              => 'static#privacy'
   get 'learn/:id/:deck_id'   => 'learn#index'
 
-  resources :users
+  resources :users do
+    member do
+      get 'dashboard'
+    end
+  end
   resources :decks do
     resources :cards, except: :index
     resources :quotes
