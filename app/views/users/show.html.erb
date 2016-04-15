@@ -1,41 +1,71 @@
-<div class="page page-account">
+<div class="page page-dashboard">
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li class="active">My Profile</li>
+            </ol>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-toolbar pull-right">
+              <div class="btn-group">
+                <%= link_to 'Edit Profile', edit_user_registration_path(@user), class: 'btn btn-default' %>
+              </div>
+              <div class="btn-group pull-right">
+                <%= link_to 'Dashboard', '#', class: 'btn btn-brand' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <h4>Account Info</h4>
-        <table class="table table-condensed">
-          <tbody>
-            <tr>
-              <th>Email:</th>
-              <td><%= @user.email %></td>
-            </tr>
-            <tr>
-              <th>Role:</th>
-              <td><%= @user.role %></td>
-            </tr>
-          </tbody>
-        </table>
-        <h4>What can this user see?</h4>
-        <table class="table table-condensed">
-          <tbody>
-            <tr>
-              <th>Free Content:</th>
-              <td><% if @user.is_free? %>Yes<% else %>No<% end%></td>
-            </tr>
-            <tr>
-              <th>Paid Content:</th>
-              <td><% if @user.is_paid? %>Yes<% else %>No<% end%></td>
-            </tr>
-            <tr>
-              <th>Admin Content:</th>
-              <td><% if @user.is_admin? %>Yes<% else %>No<% end%></td>
-            </tr>
-            <tr>
-              <th>Superadmin Content:</th>
-              <td><% if @user.is_superadmin? %>Yes<% else %>No<% end%></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="col-lg-7">
+
+        <div class="panel panel-default panel-table">
+          <div class="panel-heading">Account Info</div>
+          <table class="table table-deck">
+            <tbody>
+              <tr>
+                <th>Email:</th>
+                <td><%= @user.email %></td>
+              </tr>
+              <tr>
+                <th>Role:</th>
+                <td><%= @user.role %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel panel-default panel-table">
+          <div class="panel-heading">What can this user see?</div>
+          <table class="table table-deck">
+            <tbody>
+              <tr>
+                <th>Free Content:</th>
+                <td><% if @user.is_free? %>Yes<% else %>No<% end%></td>
+              </tr>
+              <tr>
+                <th>Paid Content:</th>
+                <td><% if @user.is_paid? %>Yes<% else %>No<% end%></td>
+              </tr>
+              <tr>
+                <th>Admin Content:</th>
+                <td><% if @user.is_admin? %>Yes<% else %>No<% end%></td>
+              </tr>
+              <tr>
+                <th>Superadmin Content:</th>
+                <td><% if @user.is_superadmin? %>Yes<% else %>No<% end%></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
     </div>
   </div>

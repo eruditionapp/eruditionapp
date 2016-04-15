@@ -4,12 +4,35 @@
       <%= link_to 'Erudition', root_path, class: 'navbar-brand' %>
     </div>
     <div class="navbar-header navbar-right">
-      <% if !user_signed_in? %>
-        <%= link_to 'Log in', new_user_session_path, class: 'btn btn-default navbar-btn nav-pills' %>
-      <% end %>
       <% if user_signed_in? %>
-        <p class="navbar-user hidden-xs"><%= current_user.email %></p>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn' %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.email %> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li>
+              <%= link_to 'Your Profile', user_path(current_user.id) %>
+            </li>
+            <li>
+              <%= link_to 'Dashboard', '#' %>
+            </li>
+            <% if current_user.is_admin? %>
+              <li role="separator" class="divider"></li>
+              <li>
+                <%= link_to 'Admin Dashboard', decks_path %>
+              </li>
+            <% end %>
+            <li role="separator" class="divider"></li>
+            <li>
+              <%= link_to 'Edit Profile', edit_user_registration_path(current_user.id) %>
+            </li>
+            <li>
+              <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
       <% end %>
     </div>
   </div>

@@ -76,6 +76,16 @@ a {
   }
 }
 
+.btn-danger {
+  background-color: state-color(needs-review);
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    background-color: darken(state-color(needs-review), 5.5%);
+  }
+}
+
 .btn-link {
   font-weight: 600;
   background-color: transparent;

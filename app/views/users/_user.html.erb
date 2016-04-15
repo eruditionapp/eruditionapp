@@ -13,17 +13,13 @@
         </tr>
       </tbody>
     </table>
-    
     <%= form_for(user, html: {class: 'form-inline'}) do |f| %>
-      
       <div class="form-group">
         <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}, {}, {:class => 'form-control'}) %>
       </div>
       <div class="form-group">
         <%= f.submit 'Change role', class: 'btn btn-default' %>
       </div>
-
     <% end %>
-    
   </div>
 </div>
