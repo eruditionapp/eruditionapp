@@ -4,6 +4,9 @@
 .page-dashboard {
   position: relative;
   min-height: calc(100vh - 273px);
+  &--light {
+    background-color: $gray-brand-lightest;
+  }
 }
 
 .page-dashboard .container {
@@ -87,3 +90,4 @@
   cursor: move;
   cursor: grab;
 }
+

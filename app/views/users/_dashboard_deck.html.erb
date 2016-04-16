@@ -1,0 +1,22 @@
+<div class="block">
+  <div class="block-image">
+    <%= link_to '#' do %>
+      <%=image_tag image_path("temp/dashboard-img-#{rand(1..4)}.jpg") %>
+    <% end %>
+  </div>
+  <div class="block-details">
+    <%= link_to '#', class: 'title-link' do %>
+      <h2 class="title"><%= deck.title %></h2>
+      <h4 class="author">by <%= deck.author %></h4>
+    <% end %>
+    <div class="meta">
+      <div class="categories">
+        <%= render 'decks/categories', resource: deck %>
+      </div>
+      <div class="count">
+        <%= pluralize(deck.cards.count, 'Card') %>
+      </div>
+    </div>
+  </div>
+  <div class="block-progress" style="width: <%= rand(1..100) %>%"></div>
+</div>

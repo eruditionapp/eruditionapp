@@ -1,11 +1,11 @@
-<div class="page page-dashboard">
+<div class="page page-dashboard page-dashboard--light">
   <div class="wrapper wrapper--light">
     <div class="container">
       <div class="pagehead">
         <div class="row">
           <div class="col-sm-6">
             <ol class="breadcrumb">
-              <li class="active">My Dashboard</li>
+              <li class="active">Dashboard</li>
             </ol>
           </div>
           <div class="col-sm-6">
@@ -22,7 +22,11 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <h1>Dashboard</h1>
+        <div class="grid">
+          <% @decks.each do |deck| %>
+            <%= render 'dashboard_deck', deck: deck %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

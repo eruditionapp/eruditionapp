@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @decks = Deck.paginate(page: params[:page]).order(:title)
   end
 
   def edit
