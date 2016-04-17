@@ -14,7 +14,7 @@
     <%= f.label :author %>
     <%= f.text_field :author, class: 'form-control', placeholder: 'Author' %>
   </div>
-  <% if @deck.id %>
+  <% if @deck.persisted? %>
     <div class="form-group">
       <%= f.label :status %>
       <%= f.select(:status, Deck.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
@@ -24,5 +24,5 @@
     <%= f.label :tier %>
     <%= f.select(:tier, Deck.tiers.keys.map {|tier| [tier.titleize, tier]}, {}, {:class => 'form-control'}) %>
   </div>
-  <%= f.submit @deck.id ? 'Update' : 'Create', class: 'btn btn-brand' %>
+  <%= f.submit @deck.persisted? ? 'Update' : 'Create', class: 'btn btn-brand' %>
 <% end %>
