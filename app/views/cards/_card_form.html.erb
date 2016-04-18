@@ -1,6 +1,6 @@
 <div>
   <ul class="nav nav-tabs" role="tablist">
-    <% if @card.card_type %>
+    <% if @card.persisted? %>
       <li class="active">
         <a href="#<% @card.card_type %>" data-toggle="tab"><%= @card.card_type.humanize %></a>
       </li>
@@ -18,7 +18,7 @@
   </ul>
   <div class="tab-content">
     <!-- FILL_IN_BLANK -->
-    <div class="<%= !@card.card_type || @card.card_type === "fill_in_blank" ? "tab-pane active" : "tab-pane" %>" id="fill_in_blank">
+    <div class="<%= !@card.persisted? || @card.card_type == "fill_in_blank" ? "tab-pane active" : "tab-pane" %>" id="fill_in_blank">
       <%= form_for [@deck, @card] do |f| %>
         <%= render 'shared/errors', resource: @card %>
         <%= f.hidden_field :card_type, value: 'fill_in_blank' %>
@@ -47,15 +47,17 @@
           <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Fill in the blank prompt ...' %>
           <p class="help-block">Add blanks -> #blank here#'</p>
         </div>
-        <div class="form-group">
-          <%= f.label :status %>
-          <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
-        </div>
-        <%= f.submit @card.card_type ? 'Update' : 'Create', class: 'btn btn-brand' %>
+        <% if @card.persisted? %>
+          <div class="form-group">
+            <%= f.label :status %>
+            <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
+          </div>
+        <% end %>
+        <%= f.submit @card.persisted? ? 'Update' : 'Create', class: 'btn btn-brand' %>
       <% end %>
     </div>
     <!-- FLASHCARD -->
-    <div class="<%= @card.card_type === "flashcard" ? "tab-pane active" : "tab-pane" %>" id="flashcard">
+    <div class="<%= @card.card_type == "flashcard" ? "tab-pane active" : "tab-pane" %>" id="flashcard">
       <%= form_for [@deck, @card] do |f| %>
         <%= render 'shared/errors', resource: @card %>
         <div class="form-group quotes-group">
@@ -87,15 +89,17 @@
           <label>Answer</label>
           <textarea class="form-control" rows="4" placeholder="Flashcard answer ..."></textarea>
         </div>
-        <div class="form-group">
-          <%= f.label :status %>
-          <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
-        </div>
-        <%= f.submit @card.card_type ? 'Update' : 'Create', class: 'btn btn-brand' %>
+        <% if @card.persisted? %>
+          <div class="form-group">
+            <%= f.label :status %>
+            <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
+          </div>
+        <% end %>
+        <%= f.submit @card.persisted? ? 'Update' : 'Create', class: 'btn btn-brand' %>
       <% end %>
     </div>
     <!-- ORGANIZE -->
-    <div class="<%= @card.card_type === "organize" ? "tab-pane active" : "tab-pane" %>" id="organize">
+    <div class="<%= @card.card_type == "organize" ? "tab-pane active" : "tab-pane" %>" id="organize">
       <%= form_for [@deck, @card] do |f| %>
         <%= render 'shared/errors', resource: @card %>
         <div class="form-group quotes-group">
@@ -147,11 +151,13 @@
           </li>
         </ul>
         <p class="help-block organize-help-block">Use the arrows to drag items in order, click the 'x' to remove an item.</p>
-        <div class="form-group">
-          <%= f.label :status %>
-          <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
-        </div>
-        <%= f.submit @card.card_type ? 'Update' : 'Create', class: 'btn btn-brand' %>
+        <% if @card.persisted? %>
+          <div class="form-group">
+            <%= f.label :status %>
+            <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
+          </div>
+        <% end %>
+        <%= f.submit @card.persisted? ? 'Update' : 'Create', class: 'btn btn-brand' %>
       <% end %>
     </div>
   </div>
