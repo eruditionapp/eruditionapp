@@ -94,6 +94,20 @@ a {
   }
 }
 
+.btn-preview {
+  background-color: $white-base;
+  border: 1px solid $gray-btn-bg;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    border-color: $gray-btn-bg;
+    background-color: $white-base;
+    color: $brand-base;
+    outline: none;
+  }
+}
+
 .btn-sm,
 .btn-group-sm > .btn {
   padding: 3px 8px;
