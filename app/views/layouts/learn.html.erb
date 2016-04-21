@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Erudition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://use.typekit.net/gkn6avx.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+
+<% unless flash.empty? %>
+  <% flash.each do |key,value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+<% end %>
+
+welcom to learn mode
+
+<%= yield %>
+
+</body>
+</html>

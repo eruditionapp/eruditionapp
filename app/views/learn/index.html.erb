@@ -1,0 +1,11 @@
+<br>
+<br>
+User: <%= @user.email %><br>
+Deck: <%= @deck.title.humanize %><br>
+Quote: <%= @series[:quote].content %><br>
+Cards:
+<br>
+<% @series[:cards].each do |card| %>
+  <%= card.content %>
+  <br>
+<% end %>

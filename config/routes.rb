@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions:      'sessions',
                                     registrations: 'registrations' }
 
-  root      'static#home'
-
-  get 'privacy' => 'static#privacy'
+  root                          'static#home'
+  get 'privacy'              => 'static#privacy'
+  get 'learn/:id/:deck_id'   => 'learn#index'
 
   resources :users
   resources :decks do
