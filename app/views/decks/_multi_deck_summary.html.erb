@@ -7,7 +7,7 @@
             <tr>
               <th><span class="glyphicon glyphicon-book"></span>Decks</th>
               <td>
-                <%= decks.count %>
+                <%= Deck.count %>
               </td>
               <td>
                 <ul class="list-inline">
@@ -15,7 +15,7 @@
                     <li class="list-item-label">
                       <%= link_to decks_path status: value do %>
                         <span class="label label-<%= key %>">
-                          <%= decks.where(status: key).count %> <%= key.titleize %>
+                          <%= Deck.where(status: key).count %> <%= key.titleize %>
                         </span>
                       <% end %>
                     </li>
@@ -24,7 +24,7 @@
                     <li class="list-item-label">
                       <%= link_to decks_path tier: value do %>
                         <span class="label label-<%= key %>">
-                          <%= decks.where(tier: key).count %> <%= key.titleize %>
+                          <%= Deck.where(tier: key).count %> <%= key.titleize %>
                         </span>
                       <% end %>
                     </li>
