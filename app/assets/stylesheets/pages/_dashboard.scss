@@ -33,10 +33,6 @@
   margin-bottom: 20px;
 }
 
-// .page-dashboard .pagination {
-//   margin: 0;
-// }
-
 // card_form - tabs
 .page-dashboard .tab-pane {
   padding-top: 20px;
@@ -92,6 +88,13 @@
   cursor: grab;
 }
 
+.page-dashboard .btn-toolbar .btn-light {
+  &:hover,
+  &:active {
+    color: $gray-darker !important;
+  }
+}
+
 // category filter
 .browse-decks-container {
   position: relative;
@@ -99,10 +102,6 @@
 
 .btn-category-filter {
   margin-right: 4px;
-  &:hover,
-  &:active {
-    color: $gray-darker !important;
-  }
   span.caret {
     margin-left: 4px;
   }
@@ -168,7 +167,7 @@
   .popover-footer {
     text-align: center;
     border-top: 1px solid $gray-btn-bg;
-    a {
+    button {
       width: 100%;
       padding: 15px 10px;
       color: $brand-base;

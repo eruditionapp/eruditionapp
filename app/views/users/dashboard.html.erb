@@ -49,18 +49,20 @@
                                        <span class='caret'></span>
                                      </span>
                                    </span>"
-              data-content="<div class='filter-group'>
-                              <% Category.all.each do |category| %>
-                                <label class='btn btn-sm btn-light'>
-                                  <input type='checkbox' autocomplete='on' checked><%= category.name %>
-                                </label>
-                              <% end %>
-                            </div>
-                            <div class='popover-footer'>
-                              <a href='#' class='btn btn-link'>
-                                <span class='glyphicon glyphicon-refresh'></span> Refresh Categories
-                              </a>
-                            </div>">
+              data-content='<form action="<%= dashboard_user_path(current_user.id) %>" method="get">
+                              <div class="filter-group">
+                                <% Category.all.each do |category| %>
+                                  <label class="btn btn-sm btn-light">
+                                    <%= check_box_tag :category, category.name, checked: true  %><%= category.name %>
+                                  </label>
+                                <% end %>
+                              </div>
+                              <div class="popover-footer">
+                                <%= button_tag(type: "submit", class: "btn btn-link", name: nil) do %>
+                                  <span class="glyphicon glyphicon-refresh"></span> Refresh Categories
+                                <% end %>
+                              </div>
+                            </form>'>
               Categories <span class="caret"></span>
             </button>
           </div>
