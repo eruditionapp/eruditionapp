@@ -12,7 +12,13 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @decks = Deck.paginate(page: params[:page]).order(:title)
+    if params[:category].present?
+      @decks = Category.filter_decks(params[:category]).paginate(page: params[:page])
+    else
+      @decks = Deck.paginate(page: params[:page]).order(:title)
+      @decks = @decks.scope_tier(params[:tier])     if params[:tier].present?
+      @decks = @decks.scope_status(params[:status]) if params[:status].present?
+    end
   end
 
   def edit

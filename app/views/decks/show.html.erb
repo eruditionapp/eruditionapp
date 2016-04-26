@@ -55,7 +55,7 @@
           </table>      
         </div>
         <div class="pagination">
-          <%= will_paginate @cards, renderer: BootstrapPaginationHelper::LinkRenderer %>
+          <%= will_paginate @cards, renderer: BootstrapPagination::Rails %>
         </div>
       </div>
     </div>

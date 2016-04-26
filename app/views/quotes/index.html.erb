@@ -33,15 +33,13 @@
             </thead>
             <tbody>
               <% @quotes.each do |quote| %>
-
                 <%= render quote %>
-                
               <% end %>
             </tbody>
           </table>      
         </div>
         <div class="pagination">
-          <%= will_paginate @quotes, renderer: BootstrapPaginationHelper::LinkRenderer %>
+          <%= will_paginate @quotes, renderer: BootstrapPagination::Rails %>
         </div>
       </div>
     </div>

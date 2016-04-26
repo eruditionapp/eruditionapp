@@ -18,9 +18,7 @@
     </div>
   </div>
   <div class="container">
-
     <%= render 'multi_deck_summary', decks: @decks %>
-
     <div class="row">
       <div class="col-xs-12">  
         <div class="panel panel-default panel-table">
@@ -42,7 +40,7 @@
           </table>
         </div>
         <div class="pagination">
-          <%= will_paginate @decks, renderer: BootstrapPaginationHelper::LinkRenderer %>
+          <%= will_paginate @decks, renderer: BootstrapPagination::Rails %>
         </div>
       </div>
     </div>

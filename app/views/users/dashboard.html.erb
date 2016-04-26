@@ -1,4 +1,4 @@
-<div class="page page-dashboard page-dashboard--light">
+<div class="page page-dashboard page-dashboard-light">
   <div class="wrapper wrapper--light">
     <div class="container">
       <div class="pagehead">
@@ -7,31 +7,74 @@
             <ol class="breadcrumb">
               <li class="active">Dashboard</li>
             </ol>
-            <div class="btn-toolbar">
-              <label>Filter by:</label>
-              <div class="btn-group btn-group-sm" data-toggle="buttons">
-                <% Category.all.each do |category| %>
-                <label class="btn btn-default active">
-                  <input type="checkbox" autocomplete="on" checked><%=category.name %>
-                </label>
-                <% end %>
-              </div>
-              <label>Sort by:</label>
-              <div class="btn-group btn-group-sm" data-toggle="buttons">
-                <label class="btn btn-default active">
-                  <input type="radio" name="options" autocomplete="off" checked> Title
-                </label>
-                <label class="btn btn-default">
-                  <input type="radio" name="options" autocomplete="off"> Author
-                </label>
-              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-xs-12">
+            <label>Current Decks</label>
+            <div class="grid">
+              <% @decks.take(10).each_with_index do |deck, index| %>
+                <%= render 'dashboard_current_deck', deck: deck, index: index %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container browse-decks-container">
+    <div class="row">
+      <div class="col-xs-12">
+        <label>Browse Decks</label>
+        <div class="btn-toolbar pull-right">
+          <div class="btn-group">
+            <button 
+              type="button"
+              class="btn btn-light btn-sm btn-category-filter"
+              data-container=".browse-decks-container"
+              data-role="filter"
+              data-toggle="popover"
+              data-placement="bottom"
+              data-animation="false"
+              data-html="true"
+              data-original-title="<span class='btn-close-category-filter'>
+                                     Categories 
+                                     <span class='dropup'>
+                                       <span class='caret'></span>
+                                     </span>
+                                   </span>"
+              data-content="<div class='filter-group'>
+                              <% Category.all.each do |category| %>
+                                <label class='btn btn-sm btn-light'>
+                                  <input type='checkbox' autocomplete='on' checked><%= category.name %>
+                                </label>
+                              <% end %>
+                            </div>
+                            <div class='popover-footer'>
+                              <a href='#' class='btn btn-link'>
+                                <span class='glyphicon glyphicon-refresh'></span> Refresh Categories
+                              </a>
+                            </div>">
+              Categories <span class="caret"></span>
+            </button>
+          </div>
+          <div class="btn-group btn-group-sm" data-toggle="buttons">
+            <label class="btn btn-light active">
+              <input type="radio" name="options" autocomplete="off" checked> Title
+            </label>
+            <label class="btn btn-light">
+              <input type="radio" name="options" autocomplete="off"> Author
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col-xs-12">
         <div class="grid">
@@ -39,6 +82,11 @@
             <%= render 'dashboard_deck', deck: deck %>
           <% end %>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <%= will_paginate @decks, renderer: BootstrapPagination::Rails %>
       </div>
     </div>
   </div>

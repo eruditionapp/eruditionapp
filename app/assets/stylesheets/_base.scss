@@ -2,7 +2,7 @@
 // Body
 // ==========================
 body {
-  font-family: 'source-sans-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,6 +31,9 @@ h5 {
 
 a {
   color: $brand-base;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     color: darken($brand-base, 15%);
   }
@@ -52,6 +55,10 @@ a {
   font-weight: 600;
   border: 0;
   border-radius: 3px;
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
 }
 
 .btn-default {
@@ -94,7 +101,7 @@ a {
   }
 }
 
-.btn-preview {
+.btn-light {
   background-color: $white-base;
   border: 1px solid $gray-btn-bg;
   &:hover,
@@ -104,7 +111,6 @@ a {
     border-color: $gray-btn-bg;
     background-color: $white-base;
     color: $brand-base;
-    outline: none;
   }
 }
 
@@ -218,7 +224,7 @@ tr.tier-free {
   }
 }
 
-.pagination > .active > a {
+.pagination > .active > span {
   border-color: $brand-base;
   background-color: $brand-base;
   &:hover {
@@ -238,6 +244,10 @@ tr.tier-free {
 
 .breadcrumb > .active {
   color: $gray-dark;
+}
+
+.breadcumb.secondary > .active {
+  color: $gray
 }
 
 
