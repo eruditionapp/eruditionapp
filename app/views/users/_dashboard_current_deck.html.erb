@@ -1,0 +1,7 @@
+<%= link_to '#', class: "block block-sm #{'block-last-active' if index == 0}" do %>
+  <div class="block-details">
+    <div class="title"><%= deck.title %></div>
+    <div class="author">by <%= deck.author %></div>
+  </div>
+  <div class="block-progress" style="width: <%= rand(1..100) %>%"></div>
+<% end %>

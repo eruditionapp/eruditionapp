@@ -2,7 +2,7 @@
 // Body
 // ==========================
 body {
-  font-family: 'source-sans-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $sans-serif;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,6 +31,9 @@ h5 {
 
 a {
   color: $brand-base;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     color: darken($brand-base, 15%);
   }
@@ -52,6 +55,10 @@ a {
   font-weight: 600;
   border: 0;
   border-radius: 3px;
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
 }
 
 .btn-default {
@@ -76,11 +83,34 @@ a {
   }
 }
 
+.btn-danger {
+  background-color: state-color(needs-review);
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    background-color: darken(state-color(needs-review), 5.5%);
+  }
+}
+
 .btn-link {
   font-weight: 600;
   background-color: transparent;
   &:hover {
     background-color: transparent;
+  }
+}
+
+.btn-light {
+  background-color: $white-base;
+  border: 1px solid $gray-btn-bg;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    border-color: $gray-btn-bg;
+    background-color: $white-base;
+    color: $brand-base;
   }
 }
 
@@ -194,7 +224,7 @@ tr.tier-free {
   }
 }
 
-.pagination > .active > a {
+.pagination > .active > span {
   border-color: $brand-base;
   background-color: $brand-base;
   &:hover {
@@ -214,6 +244,10 @@ tr.tier-free {
 
 .breadcrumb > .active {
   color: $gray-dark;
+}
+
+.breadcumb.secondary > .active {
+  color: $gray
 }
 
 
@@ -285,6 +319,26 @@ tr.tier-free {
 
 .tab-pane {
   padding-top: 10px;
+}
+
+
+// ==========================
+// Pills
+// ==========================
+.nav-pills > li > a {
+  padding: 5px 10px;
+  font-weight: 600;
+  &.active {
+    background-color: $gray-lighter;
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+  &:hover,
+  &:focus {
+    color: $brand-dark;
+    background-color: transparent;
+  }
 }
 
 

@@ -16,6 +16,21 @@
   color: #555;
 }
 
+// col-flex
+.pagehead .col-flex {
+  display: flex;
+  align-items: center;
+  .breadcrumb {
+    flex: 1;
+  }
+  .btn-group {
+    float: none;
+  }
+  label {
+    margin-left: 20px;
+  }
+}
+
 @media (max-width: $screen-sm-min) {
   .pagehead .pull-right {
     float: none !important;

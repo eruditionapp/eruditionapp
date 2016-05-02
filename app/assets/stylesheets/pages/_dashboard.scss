@@ -6,6 +6,10 @@
   min-height: calc(100vh - 273px);
 }
 
+.page-dashboard-light {
+  background-color: $gray-brand-lighter;
+}
+
 .page-dashboard .container {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -27,10 +31,6 @@
 .page-dashboard input[type='submit'] {
   margin-top: 10px;
   margin-bottom: 20px;
-}
-
-.page-dashboard .pagination {
-  margin: 0;
 }
 
 // card_form - tabs
@@ -86,4 +86,19 @@
   margin-right: 10px;
   cursor: move;
   cursor: grab;
+}
+
+.page-dashboard .btn-toolbar .btn-light {
+  &:hover,
+  &:active {
+    color: $gray-darker !important;
+  }
+}
+
+.page-dashboard .browse-decks-container {
+  padding-top: 15px;
+}
+
+.page-dashboard .browse-decks-container label {
+  margin-top: 5px;
 }

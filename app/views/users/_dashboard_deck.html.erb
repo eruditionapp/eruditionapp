@@ -1,0 +1,41 @@
+<div class="block">
+  <div class="block-image">
+    <%= link_to '#' do %>
+      <%=image_tag image_path("temp/dashboard-img-#{rand(1..4)}.jpg") %>
+    <% end %>
+  </div>
+  <div class="block-details">
+    <%= link_to '#', class: 'title-link' do %>
+      <h2 class="title"><%= deck.title %></h2>
+      <h4 class="subtitle"><%= deck.subtitle %></h4>
+    <% end %>
+    <div class="meta">
+      <div class="pull-left">
+        <div class="author">
+          by <%= deck.author %>
+        </div>
+        <div class="categories">
+          <%= render 'decks/categories', resource: deck %>
+        </div>
+      </div>
+      <div class="pull-right text-right">
+        <div class="count">
+          <%= pluralize(deck.cards.count, 'Card') %>
+        </div>
+        <div class="difficulty">
+          *static* 9.5 Difficulty
+        </div>
+      </div>
+    </div>
+  </div>
+  <button 
+    type="button"
+    class="btn btn-light btn-sm"
+    data-toggle="popover"
+    data-trigger="click"
+    data-original-title="Description"
+    data-html="true" data-content="*static* <%= deck.cards.offset(rand(deck.cards.count)).first.content %>">
+      Description
+    </button>
+  <div class="block-progress" style="width: <%= rand(1..100) %>%"></div>
+</div>

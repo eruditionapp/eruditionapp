@@ -1,5 +1,6 @@
 var init = function() {
   admin.handleOrganizeCards();
+  dashboard.handleDeckPreviews();
 };
 
 $(document).ready(function() {
