@@ -1,7 +1,6 @@
 var init = function() {
   admin.handleOrganizeCards();
   dashboard.handleDeckPreviews();
-  dashboard.handleCategoryFilter();
 };
 
 $(document).ready(function() {

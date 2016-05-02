@@ -1,4 +1,6 @@
-// user_dashboard - grid
+// ==========================
+// Grid - Dashboard layout
+// ==========================
 .grid {
   display: flex;
   margin: 0 -15px;
@@ -9,8 +11,12 @@
 .block {
   position: relative;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   margin: 15px;
+  border-radius: 2px;
+  background-color: $white-base;
+  box-shadow: 0 1px 2px rgba(0,0,0,.07);
   .btn-light {
     color: $brand-base;
   }
@@ -58,7 +64,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $white-base;
 
   flex: 1 1 auto;
   .title-link {
@@ -92,8 +97,8 @@
       margin-top: 5px;
     }
     .author {
-      color: $gray-base;
       font-weight: 600;
+      color: $gray-base;
     }
   }
 }
@@ -109,9 +114,16 @@
   position: absolute;
   z-index: 1061;
   top: 10px;
-  right: 10px;
+  left: 10px;
   transition: .1s linear opacity;
   opacity: 0;
+  color: $gray-darker;
+  border: 0;
+  border-radius: 2px;
+  background-color: $gray-brand-lightest;
+  &:active {
+    color: $gray-darker;
+  }
 }
 
 .block .popover {
@@ -137,16 +149,16 @@
   font-family: $sans-serif;
   font-size: 12px;
   font-weight: 600;
-  padding: 16px 20px;
+  padding: 16px 18px;
   border-bottom: none;
   background-color: transparent;
-  border-bottom: 1px solid $gray-btn-bg;
 }
 
 .block .popover-content {
   font-family: $serif;
   font-size: 16px;
   padding: 16px 20px;
+  border-top: 1px solid $gray-btn-bg;
 }
 
 // small block
@@ -201,5 +213,14 @@
 @media (min-width: $screen-lg-min) {
   .block.block-sm {
     width: calc(16.666% - 30px);
+  }
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .block .btn-light {
+    opacity: 1;
   }
 }

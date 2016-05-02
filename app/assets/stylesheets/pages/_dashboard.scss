@@ -95,88 +95,10 @@
   }
 }
 
-// category filter
-.browse-decks-container {
-  position: relative;
+.page-dashboard .browse-decks-container {
+  padding-top: 15px;
 }
 
-.btn-category-filter {
-  margin-right: 4px;
-  span.caret {
-    margin-left: 4px;
-  }
-}
-
-.browse-decks-container > .popover {
-  z-index: 1062;
-  top: 1px !important;
-  right: 10px;
-  left: auto !important;
-  max-width: 296px;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: #fff;
-}
-
-.browse-decks-container > .popover .arrow {
-  display: none;
-}
-
-.browse-decks-container > .popover .popover-title {
-  font-family: $sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.5;
-  padding: 0;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 0;
-  background-color: $gray-btn-bg;
-  .btn-close-category-filter {
-    display: block;
-    width: 100%;
-    padding: 13px 6px 13px 0;
-    .caret {
-      margin-left: 4px;
-    }
-  }
-}
-
-.browse-decks-container > .popover .popover-content {
-  font-family: $sans-serif;
-  padding: 0;
-  .filter-group {
-    display: flex;
-    padding: 15px;
-
-    flex-wrap: wrap;
-  }
-  .filter-group > .btn {
-    width: calc(50% - 10px);
-    margin: 5px;
-    padding-bottom: 5px;
-    text-align: left;
-    &:hover {
-      color: $gray-darker;
-    }
-    input[type='checkbox'] {
-      margin-right: 8px;
-    }
-  }
-  .popover-footer {
-    text-align: center;
-    border-top: 1px solid $gray-btn-bg;
-    button {
-      width: 100%;
-      padding: 15px 10px;
-      color: $brand-base;
-      span {
-        margin-right: 4px;
-      }
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
+.page-dashboard .browse-decks-container label {
+  margin-top: 5px;
 }

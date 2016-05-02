@@ -7,11 +7,7 @@ Rails.application.routes.draw do
 
   get 'privacy' => 'static#privacy'
 
-  resources :users do
-    member do
-      get 'dashboard'
-    end
-  end
+  resources :users
   resources :decks do
     resources :cards, except: :index
     resources :quotes

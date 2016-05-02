@@ -323,6 +323,26 @@ tr.tier-free {
 
 
 // ==========================
+// Pills
+// ==========================
+.nav-pills > li > a {
+  padding: 5px 10px;
+  font-weight: 600;
+  &.active {
+    background-color: $gray-lighter;
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+  &:hover,
+  &:focus {
+    color: $brand-dark;
+    background-color: transparent;
+  }
+}
+
+
+// ==========================
 // Scree size extra small
 // ==========================
 @media (max-width: $screen-xs-max) {

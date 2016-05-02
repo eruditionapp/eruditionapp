@@ -1,71 +1,68 @@
-<div class="page page-dashboard">
+<div class="page page-dashboard page-dashboard-light">
   <div class="wrapper wrapper--light">
     <div class="container">
       <div class="pagehead">
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-xs-12 col-flex">
             <ol class="breadcrumb">
-              <li class="active">My Profile</li>
+              <li class="active">Dashboard</li>
             </ol>
           </div>
-          <div class="col-sm-6">
-            <div class="btn-toolbar pull-right">
-              <div class="btn-group">
-                <%= link_to 'Edit Profile', edit_user_registration_path(@user), class: 'btn btn-default' %>
-              </div>
-              <div class="btn-group pull-right">
-                <%= link_to 'Dashboard', dashboard_user_path(@user), class: 'btn btn-brand' %>
-              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper wrapper--light">
+    <div class="container">
+      <div class="pagehead">
+        <div class="row">
+          <div class="col-xs-12">
+            <label>Current Decks</label>
+            <div class="grid">
+              <% @decks.take(10).each_with_index do |deck, index| %>
+                <%= render 'dashboard_current_deck', deck: deck, index: index %>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container browse-decks-container">
     <div class="row">
-      <div class="col-lg-7">
-
-        <div class="panel panel-default panel-table">
-          <div class="panel-heading">Account Info</div>
-          <table class="table table-deck">
-            <tbody>
-              <tr>
-                <th>Email:</th>
-                <td><%= @user.email %></td>
-              </tr>
-              <tr>
-                <th>Role:</th>
-                <td><%= @user.role %></td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="col-xs-12">
+        <label>Browse Decks</label>
+        <div class="btn-toolbar pull-right">
+          <ul class="nav nav-pills">
+            <% Category.all.each do |category| %>
+              <li>
+                <%= link_to category.name, check_current_filter(category.name, params[:category]) ? user_path : user_path(category: category.name), class: check_current_filter(category.name, params[:category]) ? 'active' : ''  %>
+              </li>
+            <% end %>
+          </ul>
         </div>
-
-        <div class="panel panel-default panel-table">
-          <div class="panel-heading">What can this user see?</div>
-          <table class="table table-deck">
-            <tbody>
-              <tr>
-                <th>Free Content:</th>
-                <td><% if @user.is_free? %>Yes<% else %>No<% end%></td>
-              </tr>
-              <tr>
-                <th>Paid Content:</th>
-                <td><% if @user.is_paid? %>Yes<% else %>No<% end%></td>
-              </tr>
-              <tr>
-                <th>Admin Content:</th>
-                <td><% if @user.is_admin? %>Yes<% else %>No<% end%></td>
-              </tr>
-              <tr>
-                <th>Superadmin Content:</th>
-                <td><% if @user.is_superadmin? %>Yes<% else %>No<% end%></td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- <div class="btn-group btn-group-sm" data-toggle="buttons">
+            <label class="btn btn-light active">
+              <input type="radio" name="options" autocomplete="off" checked> Title
+            </label>
+            <label class="btn btn-light">
+              <input type="radio" name="options" autocomplete="off"> Author
+            </label>
+          </div> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="grid">
+          <% @decks.each do |deck| %>
+            <%= render 'dashboard_deck', deck: deck %>
+          <% end %>
         </div>
-
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <%= will_paginate @decks, renderer: BootstrapPagination::Rails %>
       </div>
     </div>
   </div>

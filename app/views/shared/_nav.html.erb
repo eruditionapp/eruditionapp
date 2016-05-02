@@ -14,7 +14,7 @@
               <%= link_to 'Your Profile', user_path(current_user.id) %>
             </li>
             <li>
-              <%= link_to 'Dashboard', dashboard_user_path(current_user.id) %>
+              <%= link_to 'Dashboard', user_path(current_user.id) %>
             </li>
             <% if current_user.is_admin? %>
               <li role="separator" class="divider"></li>
@@ -24,7 +24,7 @@
             <% end %>
             <li role="separator" class="divider"></li>
             <li>
-              <%= link_to 'Edit Profile', edit_user_registration_path(current_user.id) %>
+              <%= link_to 'Edit Profile', edit_user_path(current_user.id) %>
             </li>
             <li>
               <%= link_to 'Log out', destroy_user_session_path, method: :delete %>

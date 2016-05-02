@@ -23,7 +23,7 @@
           <%= pluralize(deck.cards.count, 'Card') %>
         </div>
         <div class="difficulty">
-          9.5 Difficulty
+          *static* 9.5 Difficulty
         </div>
       </div>
     </div>
@@ -33,9 +33,9 @@
     class="btn btn-light btn-sm"
     data-toggle="popover"
     data-trigger="click"
-    data-original-title="Content Preview"
-    data-html="true" data-content="<%= deck.cards.offset(rand(deck.cards.count)).first.content %>">
-      Preview
+    data-original-title="Description"
+    data-html="true" data-content="*static* <%= deck.cards.offset(rand(deck.cards.count)).first.content %>">
+      Description
     </button>
   <div class="block-progress" style="width: <%= rand(1..100) %>%"></div>
 </div>
