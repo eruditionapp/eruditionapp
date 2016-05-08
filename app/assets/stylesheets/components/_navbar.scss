@@ -8,6 +8,11 @@
   border-bottom: 1px solid $gray-lighter;
 }
 
+.navbar-application.white {
+  background-color: $white-base;
+  border: none;
+}
+
 .navbar-application .navbar-brand {
   width: 130px;
   height: 20px;

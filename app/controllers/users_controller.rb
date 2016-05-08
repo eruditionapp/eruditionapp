@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     if params[:category].present?
       @decks = Category.filter_decks(params[:category]).paginate(page: params[:page])
     else

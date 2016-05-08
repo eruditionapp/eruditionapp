@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-application">
+<nav class="navbar navbar-default navbar-application<% if controller_name == "static" or controller_name == "learn" %> white<% end %>">
   <div class="container">
     <div class="navbar-header">
       <%= link_to 'Erudition', root_path, class: 'navbar-brand' %>

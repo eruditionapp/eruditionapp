@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel reponse">
+      <div class="content">
+        <h1>Response</h1>
+        <p>Correct! -or- Incorrect!</p>
+      </div>
+      <div class="controls">
+        <%= link_to 'Next Prompt', "/learn/#{@user.id}/#{@deck.id}/prompt", remote: true, class: 'btn btn-brand btn-outline' %>
+      </div>
+    </div>
+  </div>
+</div>

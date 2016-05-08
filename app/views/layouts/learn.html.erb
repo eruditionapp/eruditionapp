@@ -11,16 +11,12 @@
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
-
 <% unless flash.empty? %>
   <% flash.each do |key,value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
   <% end %>
 <% end %>
-
-welcom to learn mode
-
+<%= render "shared/navbar" %>
 <%= yield %>
-
 </body>
 </html>
