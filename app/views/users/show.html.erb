@@ -67,10 +67,3 @@
     </div>
   </div>
 </div>
-
-below is an example of listing some decks and linking to their learn modes
-<br>
-<% Deck.limit(10).each do |deck| %>
-  <br>
-  <%= link_to deck.title.humanize, "/learn/#{@user.id}/#{deck.id}" %>
-<% end %>

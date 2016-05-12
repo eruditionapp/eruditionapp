@@ -3,6 +3,7 @@ class CreateCardResponsesTable < ActiveRecord::Migration
     create_table :card_responses do |t|
       t.datetime :card_due
       t.boolean :response_was_correct, null: false
+      t.integer :box, default: 0, null: false
       t.references :user, null: false, index: true
       t.references :quote, null: false, index: true
       t.references :deck, null: false, index: true

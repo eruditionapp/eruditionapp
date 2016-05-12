@@ -48,6 +48,6 @@ Quote: <%= @series[:quote].content %><br>
 Cards:
 <br>
 <% @series[:cards].each do |card| %>
-  <%= card.content %>
+  <%= card.random_blank %>
   <br>
 <% end %>

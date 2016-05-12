@@ -1,4 +1,5 @@
-<%= link_to "/learn/#{@user.id}/#{deck.id}", class: "block block-sm #{'block-last-active' if index == 0}" do %>
+<%= link_to "/learn/#{@user.id}/#{deck.id}",
+  class: "block block-sm #{'block-last-active' if index == 0}" do %>
   <div class="block-details">
     <div class="title"><%= deck.title %></div>
     <div class="author">by <%= deck.author %></div>

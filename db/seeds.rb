@@ -34,10 +34,11 @@ end
   end
 
   quotes = Quote.where(deck_id: Deck.last.id).map &:id
-
-  500.times do
+  content = 'The *first* man to walk on the moon was *Neil Armstrong*.'
+  
+  100.times do
     Deck.last.cards << Card.new(card_type: rand(0...Card.card_types.count),
-                                difficulty: rand(1..10), content: Faker::Lorem.paragraph,
+                                difficulty: rand(1..10), content: content,
                                 status: rand(0...Card.statuses.count))
     
     quote = Quote.find(quotes[rand(0...quotes.length)])
