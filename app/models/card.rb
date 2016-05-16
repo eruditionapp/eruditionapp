@@ -1,6 +1,8 @@
 class Card < ActiveRecord::Base
   belongs_to :deck
   belongs_to :quote
+  has_many :card_responses
+  has_many :users, through: :card_responses
 
   validates_presence_of :card_type
   validates_presence_of :difficulty

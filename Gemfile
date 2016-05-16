@@ -58,5 +58,6 @@ group :development, :test do
 
   gem 'hirb'
   gem 'faker'
+  gem 'pry'
 end
 

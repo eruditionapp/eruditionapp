@@ -8,7 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 // ==========================
 // Wrappers
 // ==========================
@@ -80,6 +79,18 @@ a {
   &:focus {
     color: $white-base;
     background-color: $brand-dark;
+  }
+  &.btn-outline {
+    background-color: transparent;
+    border: 1px solid $brand-base;
+    color: $brand-base;
+    &:hover,
+    &:active,
+    &:active:hover,
+    &:focus {
+      color: $white-base;
+      background-color: $brand-base;
+    }
   }
 }
 

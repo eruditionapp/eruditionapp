@@ -1,0 +1,81 @@
+.learn-panel {
+  padding: 0;
+}
+
+.learn-panel .content {
+  font-size: 27px;
+}
+
+.learn-panel .content p {
+  font-family: $serif;
+}
+
+.learn-panel .controls {
+  padding: 30px;
+  text-align: center;
+}
+
+.learn-panel.intro .header {
+  display: flex;
+  padding: 30px;
+
+  flex-wrap: wrap;
+}
+
+.learn-panel.intro .header .image {
+  width: 100px;
+  height: 100px;
+  margin-right: 30px;
+}
+
+.learn-panel.intro .header .image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  flex: 1 1 auto;
+}
+
+.learn-panel.intro .header .info {
+  font-family: $serif;
+
+  flex: 1;
+}
+
+.learn-panel.intro .header .info .title {
+  font-weight: 400;
+  margin: 0;
+}
+
+.learn-panel.intro .header .info .subtitle {
+  font-weight: 400;
+  margin: 11px 0  12px 0;
+}
+
+.learn-panel.intro .header .info .author {
+  font-size: 16px;
+}
+
+.learn-panel.intro .summary {
+  padding: 30px;
+}
+
+.learn-panel.intro .summary p {
+  font-family: $serif;
+  font-size: 19px;
+}
+
+.learn-panel.intro .summary .meta {
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  margin-bottom: 15px;
+  color: $gray-light;
+}
+
+.learn-panel.intro .summary .meta div {
+  margin-right: 10px;
+  &:last-of-type {
+    margin: 0;
+  }
+}

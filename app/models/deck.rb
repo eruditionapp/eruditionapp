@@ -3,6 +3,8 @@ class Deck < ActiveRecord::Base
   has_many :categories, through: :category_deck_links
   has_many :quotes
   has_many :cards
+  has_many :card_responses
+  has_many :users, through: :card_responses
 
   validates_presence_of :title, :author
 

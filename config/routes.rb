@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions:      'sessions',
                                     registrations: 'registrations' }
 
-  root      'static#home'
-
-  get 'privacy' => 'static#privacy'
+  root                                 'static#home'
+  get 'privacy'                     => 'static#privacy'
+  get 'learn/:id/:deck_id'          => 'learn#index'
+  get 'learn/:id/:deck_id/prompt'   => 'learn#card_prompt'
+  get 'learn/:id/:deck_id/response' => 'learn#card_response'
 
   resources :users
   resources :decks do

@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+
+  has_many :card_responses
+  has_many :cards, through: :card_responses
+  has_many :decks, through: :card_responses
+  has_many :quotes, through: :card_responses
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
