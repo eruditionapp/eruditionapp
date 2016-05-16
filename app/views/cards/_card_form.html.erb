@@ -8,12 +8,6 @@
       <li class="active">
         <a href="#fill_in_blank" data-toggle="tab">Fill in Blank</a>
       </li>
-      <li>
-        <a href="#flashcard" data-toggle="tab">Flashcard</a>
-      </li>
-      <li>
-        <a href="#organize" data-toggle="tab">Organize</a>
-      </li>
     <% end %>
   </ul>
   <div class="tab-content">
@@ -36,121 +30,10 @@
           <%= f.select :difficulty, Card::DIFFICULTY_LEVELS.map {|key,value| ["#{value}. #{key.titleize}",value]}, {}, { class: 'form-control'} %>
         </div>
         <div class="form-group">
-          <label for="card_status">Behavior *static*</label>
-          <select class="form-control">
-            <option selected="selected" value="random">Random</option>
-            <option value="decay">Decay</option>
-          </select>
-        </div>
-        <div class="form-group">
           <%= f.label :content, 'Prompt' %>
           <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Fill in the blank prompt ...' %>
-          <p class="help-block">Add blanks -> #blank here#'</p>
+          <p class="help-block">The *first* man to walk on the moon was *Neil Armstrong*. -> The ___ man to walk on the moon was ______.</p>
         </div>
-        <% if @card.persisted? %>
-          <div class="form-group">
-            <%= f.label :status %>
-            <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
-          </div>
-        <% end %>
-        <%= f.submit @card.persisted? ? 'Update' : 'Create', class: 'btn btn-brand' %>
-      <% end %>
-    </div>
-    <!-- FLASHCARD -->
-    <div class="<%= @card.card_type == "flashcard" ? "tab-pane active" : "tab-pane" %>" id="flashcard">
-      <%= form_for [@deck, @card] do |f| %>
-        <%= render 'shared/errors', resource: @card %>
-        <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesFlashcard">Guiding Quotes</a>
-          <div class="collapse" id="collapseQuotesFlashcard">
-            <% @deck.quotes.each do |quote| %>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="">
-                  <%= quote.content %>
-                </label>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Difficulty</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option selected="selected">3</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Prompt</label>
-          <textarea class="form-control" rows="5" placeholder="Flashcard prompt ..."></textarea>
-        </div>
-        <div class="form-group">
-          <label>Answer</label>
-          <textarea class="form-control" rows="4" placeholder="Flashcard answer ..."></textarea>
-        </div>
-        <% if @card.persisted? %>
-          <div class="form-group">
-            <%= f.label :status %>
-            <%= f.select(:status, Card.statuses.keys.map {|status| [status.titleize, status]}, {}, {:class => 'form-control'}) %>
-          </div>
-        <% end %>
-        <%= f.submit @card.persisted? ? 'Update' : 'Create', class: 'btn btn-brand' %>
-      <% end %>
-    </div>
-    <!-- ORGANIZE -->
-    <div class="<%= @card.card_type == "organize" ? "tab-pane active" : "tab-pane" %>" id="organize">
-      <%= form_for [@deck, @card] do |f| %>
-        <%= render 'shared/errors', resource: @card %>
-        <div class="form-group quotes-group">
-          <a class="btn-link" data-toggle="collapse" href="#collapseQuotesOrganize">Guiding Quotes</a>
-          <div class="collapse" id="collapseQuotesOrganize">
-            <% @deck.quotes.each do |quote| %>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="">
-                  <%= quote.content %>
-                </label>
-              </div>
-            <% end %>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Difficulty</label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option selected="selected">3</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Prompt</label>
-          <textarea class="form-control" rows="5" placeholder="Organize prompt ..."></textarea>
-        </div>
-        <div class="form-group">
-          <label>Add Items</label>
-          <textarea class="form-control organize-item-text" rows="3" placeholder="Organize item ..."></textarea>
-          <div class="btn btn-default organize-item-btn-add">Add Item</div>
-        </div>
-        <label>Answer</label>
-        <ul id="organizeItemList" class="list-group organize-item-list">
-          <li class="list-group-item">
-            <span class="glyphicon glyphicon-resize-vertical"></span>
-            This is a sortable list of items.</a>
-            <span class="glyphicon glyphicon-remove organize-item-btn-remove"></span>
-          </li>
-          <li class="list-group-item">
-            <span class="glyphicon glyphicon-resize-vertical"></span>
-            Add or remove items ...
-            <span class="glyphicon glyphicon-remove organize-item-btn-remove"></span>
-            </li>
-          <li class="list-group-item">
-            <span class="glyphicon glyphicon-resize-vertical"></span>
-            drag them into the correct order.
-            <span class="glyphicon glyphicon-remove organize-item-btn-remove"></span>
-          </li>
-        </ul>
-        <p class="help-block organize-help-block">Use the arrows to drag items in order, click the 'x' to remove an item.</p>
         <% if @card.persisted? %>
           <div class="form-group">
             <%= f.label :status %>
@@ -162,10 +45,3 @@
     </div>
   </div>
 </div>
-<!-- Use https://github.com/RubaXa/Sortable for Drag + Drop support -->
-<script>
-  Sortable.create(organizeItemList, {
-    handle: '.glyphicon-resize-vertical',
-    animation: 150
-  });
-</script>

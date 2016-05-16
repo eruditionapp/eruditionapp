@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'learn/:id/:deck_id'          => 'learn#index'
   get 'learn/:id/:deck_id/prompt'   => 'learn#card_prompt'
   get 'learn/:id/:deck_id/response' => 'learn#card_response'
+  post 'learn/:id/:deck_id'  => 'learn#create_card_response'
 
   resources :users
   resources :decks do

@@ -40,3 +40,23 @@
   <!-- Answer -->
   <div id="card-response" class="container-learn hidden"></div>
 </div>
+<br>
+<br>
+User: <%= @user.email %><br>
+Deck: <%= @deck.title.humanize %><br>
+Quote: <%= @series[:quote].content %><br>
+Cards:
+<br>
+<% @series[:cards].each do |card| %>
+  <%= card.random_blank %>
+  <br>
+<% end %>
+
+<%= form_for :card_response do |f| %>
+  <%= hidden_field :card_response, :correct_answer, value: 'foo' %>
+  <%= hidden_field :card_response, :deck, value: @deck %>
+  <div>pre answer text</div>
+  <%= f.text_field :answer %>
+  <div>post answer text</div>
+  <%= f.submit %>
+<% end %>

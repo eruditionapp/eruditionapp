@@ -29,15 +29,15 @@ end
     end
   end
 
-  50.times do
+  10.times do
     Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
   end
 
   quotes = Quote.where(deck_id: Deck.last.id).map &:id
-
-  500.times do
-    Deck.last.cards << Card.new(card_type: rand(0...Card.card_types.count),
-                                difficulty: rand(1..10), content: Faker::Lorem.paragraph,
+  content = 'The *first* man to walk on the moon was *Neil Armstrong*.'
+  
+  100.times do
+    Deck.last.cards << Card.new(card_type: 2, difficulty: rand(1..10), content: content,
                                 status: rand(0...Card.statuses.count))
     
     quote = Quote.find(quotes[rand(0...quotes.length)])
@@ -48,6 +48,12 @@ end
 # Seed Card Responses
 
 User.find_each do |user|
+  value = [
+    true,true,true,true,true,
+    true,true,true,true,true,
+    false
+  ]
+
   3.times do
     deck = Deck.find(rand(1..Deck.count))
     quotes = deck.quotes.map &:id
@@ -57,7 +63,7 @@ User.find_each do |user|
       cards = quote.cards.limit(10)
 
       cards.each do |card|
-        CardResponse.create card_due: nil, response_was_correct: true, user_id: user.id,
+        CardResponse.create response_was_correct: value.sample, user_id: user.id,
           quote_id: quote.id, deck_id: deck.id, card_id: card.id
       end
     end

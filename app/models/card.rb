@@ -8,6 +8,9 @@ class Card < ActiveRecord::Base
   validates_presence_of :difficulty
 
   after_initialize :set_status, if: :new_record?
+  def set_status
+    self.status ||= :needs_review
+  end
 
   enum card_type: { flashcard:     0,
                     organize:      1,
@@ -30,8 +33,24 @@ class Card < ActiveRecord::Base
     'Hard/Esoteric questions based on/about secondary commentary'                                 => 10
   }
 
-  def set_status
-    self.status ||= :needs_review
+  def answers
+    answers = strip_char(content.scan(/\*[a-zA-Z0-9\s]+\*/)) if fill_in_blank?
+  end
+
+  def random_blank
+    answer = answers[rand 0...answers.count]
+    prompt = strip_char(content.split "*#{answer}*")
+    group = {
+      pre_answer: prompt[0],
+      post_answer: prompt[1],
+      answer: answer
+    }
+  end
+
+  def strip_char array, char = '*'
+    array.each_with_index do |string, index|
+      array[index] = array[index].gsub char, ''
+    end
   end
 
 end

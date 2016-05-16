@@ -1,7 +1,8 @@
 class CreateCardResponsesTable < ActiveRecord::Migration
   def change
     create_table :card_responses do |t|
-      t.datetime :card_due
+      t.integer :card_due_key, null: false
+      t.datetime :card_due_value
       t.boolean :response_was_correct, null: false
       t.references :user, null: false, index: true
       t.references :quote, null: false, index: true
