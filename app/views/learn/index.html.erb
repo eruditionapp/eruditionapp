@@ -51,3 +51,12 @@ Cards:
   <%= card.random_blank %>
   <br>
 <% end %>
+
+<%= form_for :card_response do |f| %>
+  <%= hidden_field :card_response, :correct_answer, value: 'foo' %>
+  <%= hidden_field :card_response, :deck, value: @deck %>
+  <div>pre answer text</div>
+  <%= f.text_field :answer %>
+  <div>post answer text</div>
+  <%= f.submit %>
+<% end %>

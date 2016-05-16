@@ -34,7 +34,7 @@ class Card < ActiveRecord::Base
   }
 
   def answers
-    answers = strip_char(content.scan(/\*[a-zA-Z0-9\s]+\*/)) if card_type = 'fill_in_blank'
+    answers = strip_char(content.scan(/\*[a-zA-Z0-9\s]+\*/)) if fill_in_blank?
   end
 
   def random_blank

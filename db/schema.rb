@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20160501002533) do
   enable_extension "plpgsql"
 
   create_table "card_responses", force: :cascade do |t|
-    t.datetime "card_due"
-    t.boolean  "response_was_correct",             null: false
-    t.integer  "box",                  default: 0, null: false
-    t.integer  "user_id",                          null: false
-    t.integer  "quote_id",                         null: false
-    t.integer  "deck_id",                          null: false
-    t.integer  "card_id",                          null: false
+    t.integer  "card_due_key",         null: false
+    t.datetime "card_due_value"
+    t.boolean  "response_was_correct", null: false
+    t.integer  "user_id",              null: false
+    t.integer  "quote_id",             null: false
+    t.integer  "deck_id",              null: false
+    t.integer  "card_id",              null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
