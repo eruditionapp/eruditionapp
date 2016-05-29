@@ -4,15 +4,16 @@ class LearnController < ApplicationController
   def index
     @user = User.find(params[:id])
     @deck = Deck.find(params[:deck_id])
-    @prompt = Learn.series(@user, @deck)[:cards][2]
-    @series = Learn.series(@user, @deck)
+    session[:series] = Learn.series(@user, @deck)
+    @current_card = session[:series]['cards'][session[:series]['card_index']]
+    @quote = session[:series]['quote']['content']
+    @cards_remaining = session[:series]['card_index'] < session[:series]['cards'].count
   end
 
   def get_card_prompt
     @user = User.find(params[:id])
     @deck = Deck.find(params[:deck_id])
-    @prompt = Learn.series(@user, @deck)[:cards][2]
-    @series = Learn.series(@user, @deck)
+    @current_card = session[:series]['cards'][session[:series]['card_index']]
 
     respond_to do |format|
       format.js   {}
@@ -22,6 +23,8 @@ class LearnController < ApplicationController
   def post_user_response
     @user = User.find(params[:id])
     @deck = Deck.find(params[:deck_id])
+    session[:series]['card_index'] += 1
+    @cards_remaining = session[:series]['card_index'] < session[:series]['cards'].count
 
     respond_to do |format|
       format.js   {}

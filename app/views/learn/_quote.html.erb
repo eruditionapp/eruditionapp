@@ -1,12 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel reponse">
-      <div class="content">
-        <p>Correct! -or- Incorrect!</p>
-      </div>
+      <%= @quote %>
       <div class="controls">
       <% if @cards_remaining %>
-        <%= link_to 'Next Prompt', "/learn/#{@user.id}/#{@deck.id}/get-card-prompt",
+        <%= link_to 'Start Series', "/learn/#{@user.id}/#{@deck.id}/get-card-prompt",
           remote: true, class: 'btn btn-brand btn-outline' %>
       <% else %>
         <%= link_to 'Next Quote', "/learn/#{@user.id}/#{@deck.id}",

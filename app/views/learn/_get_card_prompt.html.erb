@@ -2,12 +2,14 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel prompt">
       <div class="content">
-        <%= form_for :card_response, remote: true, :url => "/learn/#{@user.id}/#{@deck.id}/post-user-response", :html => {:class => 'prompt-form'} do |f| %>
-          <%= hidden_field :card_response, :correct_answer, value: 'foo' %>
+        <%= form_for :card_response, remote: true,
+          :url => "/learn/#{@user.id}/#{@deck.id}/post-user-response",
+          :html => {:class => 'prompt-form'} do |f| %>
+          <%= hidden_field :card_response, :correct_answer, value: @current_card['answer'] %>
           <%= hidden_field :card_response, :deck, value: @deck %>
-          <div><%= @series[:cards].first.random_blank[:pre_answer] %></div>
+          <div><%= @current_card['pre_answer'] %></div>
           <%= f.text_field :answer %>
-          <div><%= @series[:cards].first.random_blank[:post_answer] %></div>
+          <div><%= @current_card['post_answer'] %></div>
           <div class="controls">
             <%= f.submit 'Submit', class: 'btn btn-brand btn-outline' %>
           </div>
