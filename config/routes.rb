@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions:      'sessions',
                                     registrations: 'registrations' }
 
-  root                                 'static#home'
-  get 'privacy'                     => 'static#privacy'
-  get 'learn/:id/:deck_id'          => 'learn#index'
-  get 'learn/:id/:deck_id/prompt'   => 'learn#card_prompt'
-  get 'learn/:id/:deck_id/response' => 'learn#card_response'
-  post 'learn/:id/:deck_id'  => 'learn#create_card_response'
+  root                         'static#home'
+  get 'privacy'             => 'static#privacy'
+  get 'users/:id/:deck_id/' => 'users#deck_preview'
+  get 'learn/:id/:deck_id'                     => 'learn#index'
+  get 'learn/:id/:deck_id/get-card-prompt'     => 'learn#get_card_prompt'
+  post 'learn/:id/:deck_id/post-user-response' => 'learn#post_user_response'
+  post 'learn/:id/:deck_id'                    => 'learn#create_card_response'
 
   resources :users
   resources :decks do

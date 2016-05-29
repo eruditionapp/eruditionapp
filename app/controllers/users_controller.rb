@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     redirect_to users_path, alert: 'User deleted.'
   end
 
+  def deck_preview
+    @user = User.find(params[:id])
+    @deck = Deck.find(params[:deck_id])
+  end
+
   private
 
   def secure_params
