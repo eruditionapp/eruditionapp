@@ -5,13 +5,13 @@
         <div class="row">
           <div class="col-sm-6">
             <ol class="breadcrumb">
-              <li><%= link_to 'My Profile', user_path(current_user.id) %></li>
-              <li class="active">Edit</li>
+              <li><%= link_to 'Dashboard', user_path(current_user.id) %></li>
+              <li class="active">Edit Profile</li>
             </ol>
           </div>
           <div class="col-sm-6">
             <div class="btn-group pull-right">
-              <%= link_to 'Back', :back, class: 'btn btn-default' %>
+              <%= link_to 'Cancel', :back, class: 'btn btn-default' %>
             </div>
           </div>
         </div>
