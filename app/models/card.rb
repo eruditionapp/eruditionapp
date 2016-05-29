@@ -41,6 +41,7 @@ class Card < ActiveRecord::Base
     answer = answers[rand 0...answers.count]
     prompt = strip_char(content.split "*#{answer}*")
     group = {
+      id: id,
       pre_answer: prompt[0],
       post_answer: prompt[1],
       answer: answer
