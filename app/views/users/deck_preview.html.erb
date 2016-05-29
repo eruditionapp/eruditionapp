@@ -1,0 +1,38 @@
+<div class="page-learn">
+  <!-- Intro -->
+  <div id="deck-intro container-learn">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel intro">
+          <div class="header">
+            <div class="image">
+              <%=image_tag image_path "temp/dashboard-img-#{rand(1..4)}.jpg", class: 'img-circle' %>
+            </div>
+            <div class="info">
+              <h2 class="title"><%= @deck.title %></h2>
+              <h3 class="subtitle"><%= @deck.subtitle %></h3>
+              <div class="author">by <%= @deck.author %></div>
+            </div>
+          </div>
+          <div class="summary">
+            <div class="meta">
+              <div>
+                <%= render 'decks/categories', resource: @deck %>
+              </div>
+              <div>
+                <%= pluralize(@deck.cards.count, 'Card') %>
+              </div>
+              <div>
+                *static* 9.5 Difficulty
+              </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="controls">
+            <%= link_to 'Begin -or- Resume', "/learn/#{@user.id}/#{@deck.id}/", remote: false, class: 'btn btn-brand btn-outline' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

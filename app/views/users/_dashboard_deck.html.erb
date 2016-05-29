@@ -1,11 +1,11 @@
 <div class="block">
   <div class="block-image">
-    <%= link_to "/learn/#{@user.id}/#{deck.id}" do %>
+    <%= link_to "/users/#{@user.id}/#{deck.id}" do %>
       <%=image_tag image_path("temp/dashboard-img-#{rand(1..4)}.jpg") %>
     <% end %>
   </div>
   <div class="block-details">
-    <%= link_to "/learn/#{@user.id}/#{deck.id}", class: 'title-link' do %>
+    <%= link_to "/users/#{@user.id}/#{deck.id}", class: 'title-link' do %>
       <h2 class="title"><%= deck.title %></h2>
       <h4 class="subtitle"><%= deck.subtitle %></h4>
     <% end %>
