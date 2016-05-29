@@ -23,6 +23,7 @@ class LearnController < ApplicationController
   def post_user_response
     @user = User.find(params[:id])
     @deck = Deck.find(params[:deck_id])
+    @response_was_correct = create_card_response @user, @deck
     session[:series]['card_index'] += 1
     @cards_remaining = session[:series]['card_index'] < session[:series]['cards'].count
 
@@ -31,16 +32,14 @@ class LearnController < ApplicationController
     end
   end
 
-  def create_card_response
-    @user = User.find(params[:id])
-    @deck = Deck.find(params[:deck_id])
-    quote = 10
-    card = 66
+  def create_card_response user, deck
+    quote = session[:series]['quote']['id']
+    current_card = session[:series]['cards'][session[:series]['card_index']]
     response_was_correct = check_answer
-    card_response = CardResponse.new user: @user, deck: @deck, quote_id: quote,
-      card_id: card, response_was_correct: response_was_correct
+    card_response = CardResponse.new user: user, deck: deck, quote_id: quote,
+      card_id: current_card['id'], response_was_correct: response_was_correct
     card_response.save
-    redirect_to "/learn/#{@user.id}/#{@deck.id}"
+    response_was_correct
   end
 
   def check_answer

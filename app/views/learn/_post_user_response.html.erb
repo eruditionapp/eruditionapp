@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel reponse">
       <div class="content">
-        <p>Correct! -or- Incorrect!</p>
+        <% if @response_was_correct %>
+          <p>Correct</p>
+        <% else %>
+          <p>Incorrect</p>
+        <% end %>
       </div>
       <div class="controls">
       <% if @cards_remaining %>
