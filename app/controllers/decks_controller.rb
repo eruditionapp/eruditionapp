@@ -1,4 +1,6 @@
 class DecksController < ApplicationController
+  before_action :authenticate_user!
+  before_action :superadmin_or_admin_only
 
   def index
     if params[:category].present?

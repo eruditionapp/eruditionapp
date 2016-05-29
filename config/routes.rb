@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root                         'static#home'
   get 'privacy'             => 'static#privacy'
-  get 'users/:id/:deck_id/' => 'users#deck_preview'
+  get 'users/:id/:deck_id/preview' => 'users#deck_preview'
   get 'learn/:id/:deck_id'                     => 'learn#index'
   get 'learn/:id/:deck_id/get-card-prompt'     => 'learn#get_card_prompt'
   post 'learn/:id/:deck_id/post-user-response' => 'learn#post_user_response'
