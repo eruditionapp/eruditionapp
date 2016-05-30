@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-application<% if controller_name == "static" or controller_name == "learn" %> white<% end %>">
+<nav class="navbar navbar-default navbar-application">
   <div class="container">
     <div class="navbar-header">
       <%= link_to 'Erudition', root_path, class: 'navbar-brand' %>
@@ -10,25 +10,14 @@
             <%= current_user.email %> <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-right">
-            <li>
-              <%= link_to 'Your Profile', user_path(current_user.id) %>
-            </li>
-            <li>
-              <%= link_to 'Dashboard', user_path(current_user.id) %>
-            </li>
+            <li><%= link_to 'Dashboard', user_path(current_user.id) %></li>
             <% if current_user.is_admin? %>
               <li role="separator" class="divider"></li>
-              <li>
-                <%= link_to 'Admin Dashboard', decks_path %>
-              </li>
+              <li><%= link_to 'Admin Dashboard', decks_path %></li>
             <% end %>
             <li role="separator" class="divider"></li>
-            <li>
-              <%= link_to 'Edit Profile', edit_user_path(current_user.id) %>
-            </li>
-            <li>
-              <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-            </li>
+            <li><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></li>
+            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
       <% else %>

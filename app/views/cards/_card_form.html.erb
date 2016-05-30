@@ -17,12 +17,12 @@
         <%= render 'shared/errors', resource: @card %>
         <%= f.hidden_field :card_type, value: 'fill_in_blank' %>
         <div class="form-group">
-          <% f.text_area :content, class: 'form-control', rows: '5' %>
+          <% f.text_area :content, required: true, class: 'form-control', rows: '5' %>
         </div>
         <div class="form-group quotes-group">
           <a class="btn-link" data-toggle="collapse" href="#collapsefill_in_blank">Guiding Quotes</a>
           <div class="collapse" id="collapsefill_in_blank">
-            <%= f.collection_radio_buttons :quote_id, @deck.quotes, :id, :content %>
+            <%= f.collection_radio_buttons :quote_id, @deck.quotes, :id, :content, { checked: @deck.quotes.first.id } %>
           </div>
         </div>
         <div class="form-group">
@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
           <%= f.label :content, 'Prompt' %>
-          <%= f.text_area :content, class: 'form-control', rows: '5', placeholder: 'Fill in the blank prompt ...' %>
+          <%= f.text_area :content, required: true, class: 'form-control', rows: '5', placeholder: 'Fill in the blank prompt ...' %>
           <p class="help-block">The *first* man to walk on the moon was *Neil Armstrong*. -> The ___ man to walk on the moon was ______.</p>
         </div>
         <% if @card.persisted? %>
