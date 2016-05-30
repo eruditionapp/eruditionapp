@@ -8,7 +8,7 @@
           <%= hidden_field :card_response, :correct_answer, value: @current_card['answer'] %>
           <%= hidden_field :card_response, :deck, value: @deck %>
           <div><%= @current_card['pre_answer'] %></div>
-          <%= f.text_field :answer, required: true %>
+          <%= f.text_field :answer, required: true, autofocus: true %>
           <div><%= @current_card['post_answer'] %></div>
           <div class="controls">
             <%= f.submit 'Submit', class: 'btn btn-brand btn-outline' %>

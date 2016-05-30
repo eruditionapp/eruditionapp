@@ -11,10 +11,6 @@ class ApplicationController < ActionController::Base
     deny_access unless current_user.is_admin?
   end
 
-  def superadmin_or_admin_only
-    deny_access unless (current_user.is_superadmin? || current_user.is_admin?)
-  end
-
   def self_or_admin_only
     deny_access unless (current_user == User.find(params[:id])) || current_user.is_admin?
   end

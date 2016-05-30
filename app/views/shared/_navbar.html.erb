@@ -10,9 +10,6 @@
             <%= current_user.email %> <span class="caret"></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-right">
-            <% if controller_name == "learn" %>
-              <li><%= link_to 'Pause Session', "/users/#{@user.id}/#{@deck.id}/preview" %></li>
-            <% end %>
             <li><%= link_to 'Dashboard', user_path(current_user.id) %></li>
             <% if current_user.is_admin? %>
               <li role="separator" class="divider"></li>
