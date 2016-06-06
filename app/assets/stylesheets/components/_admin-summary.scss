@@ -1,27 +1,25 @@
-// ==========================
-// Summary
-// ==========================
-.summary .well {
+.admin-summary .well {
   padding: 15px 12px;
+  border-color: $gray-lighter;
 }
 
-.summary table {
+.admin-summary table {
   margin: 0;
 }
 
-.summary .table > tbody > tr > th,
-.summary .table > tbody > tr > td {
+.admin-summary .table > tbody > tr > th,
+.admin-summary .table > tbody > tr > td {
   border: 0;
   padding: 8px 8px 6px 8px; 
 }
 
-.summary .list-inline {
+.admin-summary .list-inline {
   &:last-of-type {
     margin-bottom: 0;
   }
 }
 
-.summary .list-inline > a {
+.admin-summary .list-inline > a {
   display: inline-block;
   margin-right: 5px;
   &:hover {
@@ -29,42 +27,42 @@
   }
 }
 
-.summary .list-item-label {
+.admin-summary .list-item-label {
   padding-left: 0;
   margin-bottom: 3px;
 }
 
-.summary .label {
+.admin-summary .label {
   font-size: 80%;
 }
 
-.summary .label-default {
+.admin-summary .label-default {
   background-color: transparent;
   border: 1px solid $well-border;
   color: $gray-dark;
 }
 
-.summary .glyphicon {
+.admin-summary .glyphicon {
   font-size: 11px;
   margin-right: 10px;
   color: $gray;
   opacity: .4;
 }
 
-td.card-difficulty {
+.admin-summary td.card-difficulty {
   width: 50%;
   .progress-difficulty {
     margin-bottom: 2px;
   }
 }
 
-.progress-difficulty {
+.admin-summary .progress-difficulty {
   overflow: visible;
   height: 18px;
-  background-color: $white-base;
+  background-color: #fff;
 }
 
-.progress-bar-difficulty {
+.admin-summary .progress-bar-difficulty {
   position: relative;
   span {
     font-weight: 600;
@@ -104,7 +102,7 @@ td.card-difficulty {
 }
 
 @media (max-width: $screen-sm-min) {
-  .summary .glyphicon {
+  .admin-summary .glyphicon {
     display: none;
   }
 }

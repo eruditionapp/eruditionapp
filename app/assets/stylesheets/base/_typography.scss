@@ -1,0 +1,37 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+a {
+  color: $brand-base;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: darken($brand-base, 15%);
+  }
+}
+
+.label-needs-review {
+  background-color: $needs-review;
+}
+
+.label-published {
+  background-color: $published;
+}
+
+.label-unpublished {
+  background-color: $unpublished;
+}
+
+.label-paid {
+  background-color: $paid;
+}
+
+.label-free {
+  background-color: $free;
+}

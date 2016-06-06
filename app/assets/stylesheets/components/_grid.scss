@@ -1,6 +1,3 @@
-// ==========================
-// Grid - Dashboard layout
-// ==========================
 .grid {
   display: flex;
   margin: 0 -15px;
@@ -8,14 +5,14 @@
   flex-wrap: wrap;
 }
 
-.block {
+.grid .block {
   position: relative;
   display: flex;
   overflow: hidden;
   flex-direction: column;
   margin: 15px;
   border-radius: 2px;
-  background-color: $white-base;
+  background-color: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,.07);
   .btn-light {
     color: $brand-base;
@@ -27,7 +24,7 @@
   }
 }
 
-.block-last-active {
+.grid .block-last-active {
   &:after {
     position: absolute;
     top: 6px ;
@@ -40,8 +37,7 @@
   }
 }
 
-// block-image
-.block-image {
+.grid .block .block-image {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -59,8 +55,7 @@
   }
 }
 
-// block-details
-.block-details {
+.grid .block .block-details {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -103,14 +98,12 @@
   }
 }
 
-// progress bar
-.block .block-progress {
+.grid .block .block-progress {
   height: 2px;
   background-color: $brand-light;
 }
 
-// preview styles
-.block .btn-light {
+.grid .block .btn-light {
   position: absolute;
   z-index: 1061;
   top: 10px;
@@ -126,7 +119,7 @@
   }
 }
 
-.block .popover {
+.grid .block .popover {
   top: 0 !important;
   left: 0 !important;
   display: block;
@@ -141,11 +134,11 @@
   background-color: $gray-brand-lightest;
 }
 
-.block .popover > .arrow {
+.grid .block .popover > .arrow {
   display: none;
 }
 
-.block .popover-title {
+.grid .block .popover-title {
   font-family: $sans-serif;
   font-size: 12px;
   font-weight: 600;
@@ -154,15 +147,14 @@
   background-color: transparent;
 }
 
-.block .popover-content {
+.grid .block .popover-content {
   font-family: $serif;
   font-size: 16px;
   padding: 16px 20px;
   border-top: 1px solid $gray-btn-bg;
 }
 
-// small block
-.block-sm {
+.grid .block-sm {
   .block-details {
     font-size: 12px;
     font-weight: 600;
@@ -181,28 +173,28 @@
 }
 
 @media (max-width: $screen-xs-max) {
-  .block {
+  .grid .block {
     width: calc(100% - 30px);
     &.block-sm {
       width: calc(50% - 30px);
     }
   }
-  .block-image img {
+  .grid .block .block-image img {
     height: 150px;
   }
-  .block .btn-light {
+  .grid .block .btn-light {
     opacity: 1;
   }
 }
 
 @media (min-width: $screen-sm-min) {
-  .block {
+  .grid .block {
     width: calc(50% - 30px);
   }
 }
 
 @media (min-width: $screen-md-min) {
-  .block {
+  .grid .block {
     width: calc(33.333% - 30px);
     &.block-sm {
       width: calc(20% - 30px);
@@ -211,7 +203,7 @@
 }
 
 @media (min-width: $screen-lg-min) {
-  .block.block-sm {
+  .grid .block.block-sm {
     width: calc(16.666% - 30px);
   }
 }
@@ -220,7 +212,7 @@
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
-  .block .btn-light {
+  .grid .block .btn-light {
     opacity: 1;
   }
 }

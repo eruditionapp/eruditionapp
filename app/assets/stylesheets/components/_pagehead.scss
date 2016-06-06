@@ -1,6 +1,3 @@
-// ==========================
-// Pagehead
-// ==========================
 .pagehead .breadcrumb {
   line-height: 1;
   margin: 0;
@@ -16,19 +13,22 @@
   color: #555;
 }
 
-// col-flex
 .pagehead .col-flex {
   display: flex;
+
   align-items: center;
-  .breadcrumb {
-    flex: 1;
-  }
-  .btn-group {
-    float: none;
-  }
-  label {
-    margin-left: 20px;
-  }
+}
+
+.pagehead .col-flex .breadcrumb {
+  flex: 1;
+}
+
+.pagehead .col-flex .btn-group {
+  float: none;
+}
+
+.pagehead .col-flex label {
+  margin-left: 20px;
 }
 
 @media (max-width: $screen-sm-min) {

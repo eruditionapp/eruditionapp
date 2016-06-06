@@ -1,62 +1,57 @@
-<div class="page page-dashboard">
-  <div class="wrapper wrapper--light">
-    <div class="container">
-      <div class="pagehead">
-        <div class="row">
-          <div class="col-sm-6">
-            <ol class="breadcrumb">
-              <li><%= link_to 'Decks', decks_path %></li>
-              <li class="active"><%= @deck.title %></li>
-            </ol>
-          </div>
-          <div class="col-sm-6">
-            <div class="btn-toolbar pull-right">
-              <div class="btn-group">
-                <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
-              </div>
-              <div class="btn-group">
-                <%= link_to 'Guiding Quotes', deck_quotes_path(@deck), class: 'btn btn-brand' %>
-              </div>
-              <div class="btn-group">
-                <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
-              </div>
+<% provide(:page_class, 'page-dashboard') %>
+<div class="wrapper">
+  <div class="container">
+    <div class="pagehead">
+      <div class="row">
+        <div class="col-sm-6">
+          <ol class="breadcrumb">
+            <li><%= link_to 'Decks', decks_path %></li>
+            <li class="active"><%= @deck.title %></li>
+          </ol>
+        </div>
+        <div class="col-sm-6">
+          <div class="btn-toolbar pull-right">
+            <div class="btn-group">
+              <%= link_to 'Edit Deck', edit_deck_path(@deck), class: 'btn btn-default' %>
+            </div>
+            <div class="btn-group">
+              <%= link_to 'Guiding Quotes', deck_quotes_path(@deck), class: 'btn btn-brand' %>
+            </div>
+            <div class="btn-group">
+              <%= link_to 'Add New Card', new_deck_card_path(@deck), class: 'btn btn-brand' %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-
-    <%= render 'single_deck_summary', cards: @cards, deck: @deck %>
-    
-    <div class="row">
-      <div class="col-xs-12">  
-        <div class="panel panel-default panel-table">
-          <div class="panel-heading">Cards</div>
-          <table class="table table-striped table-deck">
-            <thead>
-              <tr>
-                <th>Id<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Author<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Question Type<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Difficulty<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Last Modified<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-                <th>Date Created<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @cards.each do |card| %>
-
-                <%= render card %>
-                
-              <% end %>
-            </tbody>
-          </table>      
-        </div>
-        <div class="pagination">
-          <%= will_paginate @cards, renderer: BootstrapPagination::Rails %>
-        </div>
+</div>
+<div class="container">
+  <%= render 'single_deck_summary', cards: @cards, deck: @deck %>
+  <div class="row">
+    <div class="col-xs-12">  
+      <div class="panel panel-table">
+        <div class="panel-heading">Cards</div>
+        <table class="table table-striped table-deck">
+          <thead>
+            <tr>
+              <th>Id<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+              <th>Author<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+              <th>Question Type<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+              <th>Difficulty<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+              <th>Last Modified<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+              <th>Date Created<a href="#"><span class="glyphicon glyphicon-sort"></span></a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cards.each do |card| %>
+              <%= render card %>
+            <% end %>
+          </tbody>
+        </table>      
+      </div>
+      <div class="pagination">
+        <%= will_paginate @cards, renderer: BootstrapPagination::Rails %>
       </div>
     </div>
   </div>

@@ -1,0 +1,12 @@
+.breadcrumb > .active {
+  color: $gray-dark;
+}
+
+.breadcumb.secondary > .active {
+  color: $gray;
+}
+
+.breadcrumb > li {
+  font-size: 18px;
+  font-weight: 600;
+}

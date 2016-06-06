@@ -1,0 +1,16 @@
+.panel {
+  border-color: $gray-lighter;
+}
+
+.panel-heading {
+  background-color: $gray-brand-lightest;
+  border-bottom: 1px solid $gray-lighter;
+}
+
+.panel-heading .list-inline {
+  margin-bottom: 0;
+}
+
+.panel-table .panel-heading {
+  padding-left: 8px;
+}

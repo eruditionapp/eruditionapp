@@ -1,0 +1,21 @@
+.alert {
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+}
+
+.alert-notice,
+.alert-alert {
+  background-color: $brand-base;
+}
+
+.alert-success {
+  background-color: $published;
+}
+
+.alert-error {
+  background-color: $unpublished;
+}

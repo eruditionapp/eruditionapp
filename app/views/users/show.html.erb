@@ -1,69 +1,68 @@
-<div class="page page-dashboard page-dashboard-light">
-  <div class="wrapper wrapper--light">
-    <div class="container">
-      <div class="pagehead">
-        <div class="row">
-          <div class="col-xs-12 col-flex">
-            <ol class="breadcrumb">
-              <li class="active">Dashboard</li>
-            </ol>
-          </div>
+<% provide(:page_class, 'page-dashboard page-user-dashboard') %>
+<div class="wrapper">
+  <div class="container">
+    <div class="pagehead">
+      <div class="row">
+        <div class="col-xs-12 col-flex">
+          <ol class="breadcrumb">
+            <li class="active">Dashboard</li>
+          </ol>
         </div>
       </div>
     </div>
   </div>
-  <div class="wrapper wrapper--light">
-    <div class="container">
-      <div class="pagehead">
-        <div class="row">
-          <div class="col-xs-12">
-            <label>Current Decks</label>
-            <div class="grid">
-              <% @decks.take(10).each_with_index do |deck, index| %>
-                <%= render 'dashboard_current_deck', deck: deck, index: index %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container browse-decks-container">
-    <div class="row">
-      <div class="col-xs-12">
-        <label>Browse Decks</label>
-        <div class="btn-toolbar pull-right">
-          <ul class="nav nav-pills">
-            <% Category.all.each do |category| %>
-              <li>
-                <%= link_to category.name, check_current_filter(category.name, params[:category]) ? user_path : user_path(category: category.name), class: check_current_filter(category.name, params[:category]) ? 'active' : ''  %>
-              </li>
+</div>
+<div class="wrapper">
+  <div class="container">
+    <div class="pagehead">
+      <div class="row">
+        <div class="col-xs-12">
+          <label>Current Decks</label>
+          <div class="grid">
+            <% @decks.take(10).each_with_index do |deck, index| %>
+              <%= render 'dashboard_current_deck', deck: deck, index: index %>
             <% end %>
-          </ul>
+          </div>
         </div>
-          <!-- <div class="btn-group btn-group-sm" data-toggle="buttons">
-            <label class="btn btn-light active">
-              <input type="radio" name="options" autocomplete="off" checked> Title
-            </label>
-            <label class="btn btn-light">
-              <input type="radio" name="options" autocomplete="off"> Author
-            </label>
-          </div> -->
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="grid">
-          <% @decks.each do |deck| %>
-            <%= render 'dashboard_deck', deck: deck %>
+  </div>
+</div>
+<div class="container browse-decks-container">
+  <div class="row">
+    <div class="col-xs-12">
+      <label>Browse Decks</label>
+      <div class="btn-toolbar pull-right">
+        <ul class="nav nav-pills">
+          <% Category.all.each do |category| %>
+            <li>
+              <%= link_to category.name, check_current_filter(category.name, params[:category]) ? user_path : user_path(category: category.name), class: check_current_filter(category.name, params[:category]) ? 'active' : ''  %>
+            </li>
           <% end %>
-        </div>
+        </ul>
+      </div>
+        <!-- <div class="btn-group btn-group-sm" data-toggle="buttons">
+          <label class="btn btn-light active">
+            <input type="radio" name="options" autocomplete="off" checked> Title
+          </label>
+          <label class="btn btn-light">
+            <input type="radio" name="options" autocomplete="off"> Author
+          </label>
+        </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="grid">
+        <% @decks.each do |deck| %>
+          <%= render 'dashboard_deck', deck: deck %>
+        <% end %>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <%= will_paginate @decks, renderer: BootstrapPagination::Rails %>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= will_paginate @decks, renderer: BootstrapPagination::Rails %>
     </div>
   </div>
 </div>

@@ -1,17 +1,16 @@
-<div class="page-learn">
-  <!-- Prompt -->
-  <div id="card-prompt" class="container-learn">
-    <!-- this gets rendered when you begin or resume a learn mode session -
-         every subsequent request will replace this html via AJAX -->
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel prompt">
-          <h1>Contextualizing Quote</h1>
-        </div>
+<% provide(:page_class, 'page-learn') %>
+<!-- Prompt -->
+<div id="card-prompt" class="container-learn">
+  <!-- this gets rendered when you begin or resume a learn mode session -
+       every subsequent request will replace this html via AJAX -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 col-md-offset-2 learn-panel prompt">
+        <h1>Contextualizing Quote</h1>
       </div>
     </div>
-    <%= render 'quote' %>
   </div>
-  <!-- Response -->
-  <div id="card-response" class="container-learn hidden"></div>
+  <%= render 'quote' %>
 </div>
+<!-- Response -->
+<div id="card-response" class="container-learn hidden"></div>

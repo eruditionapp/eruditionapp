@@ -1,7 +1,6 @@
-<div class="page page-account">
-  <div class="container">
-    <% @users.each do |user| %>
-      <%= render user %>
-    <% end %>
-  </div>
+<% provide(:page_class, 'page-account') %>
+<div class="container">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
 </div>

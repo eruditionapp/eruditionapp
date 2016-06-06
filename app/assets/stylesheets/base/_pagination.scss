@@ -1,0 +1,16 @@
+.pagination > li > a {
+  font-weight: 600;
+  color: $brand-base;
+  &:hover {
+    color: $brand-base;
+  }
+}
+
+.pagination > .active > span {
+  border-color: $brand-base;
+  background-color: $brand-base;
+  &:hover {
+    color: #fff;
+    background-color: $brand-base;
+  }
+}
