@@ -18,7 +18,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: image-url('static/home-cover-03.jpg');
+  background-image: image-url('static/home-cover-01.jpg');
   background-position: top center;
   background-size: cover;
   &:after {
@@ -64,12 +64,31 @@
 
 .page-home .cover .signup-form-header {
   font-size: 25px;
-  margin-top: 4px;
+  margin-top: 8px;
   margin-bottom: 9px;
 }
 
+.page-home .cover .signup-form .btn {
+  font-weight: 500;
+}
+
 .page-home .cover .signup-form .form-control {
+  font-weight: 500;
+  padding-left: 0;
+  color: #fff;
   border: 0;
+  border-bottom: 2px solid #fff;
+  border-radius: 0;
+  background-color: transparent;
+  &::-moz-placeholder {
+    color: #fff;
+  }
+  &:-ms-input-placeholder {
+    color: #fff;
+  }
+  &::-webkit-input-placeholder {
+    color: #fff;
+  }
 }
 
 .page-home .cover .signup-form .hr-label {
