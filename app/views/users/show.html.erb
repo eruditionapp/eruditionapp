@@ -12,22 +12,6 @@
     </div>
   </div>
 </div>
-<div class="wrapper">
-  <div class="container">
-    <div class="pagehead">
-      <div class="row">
-        <div class="col-xs-12">
-          <label>Current Decks</label>
-          <div class="grid">
-            <% @decks.take(10).each_with_index do |deck, index| %>
-              <%= render 'dashboard_current_deck', deck: deck, index: index %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="container browse-decks-container">
   <div class="row">
     <div class="col-xs-12">
@@ -41,14 +25,6 @@
           <% end %>
         </ul>
       </div>
-        <!-- <div class="btn-group btn-group-sm" data-toggle="buttons">
-          <label class="btn btn-light active">
-            <input type="radio" name="options" autocomplete="off" checked> Title
-          </label>
-          <label class="btn btn-light">
-            <input type="radio" name="options" autocomplete="off"> Author
-          </label>
-        </div> -->
     </div>
   </div>
   <div class="row">
