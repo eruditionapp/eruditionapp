@@ -1,0 +1,64 @@
+table {
+  font-size: 13px;
+  overflow: hidden;
+}
+
+table > thead > tr > th > a {
+  font-size: 11px;
+  float: right;
+  margin-top: 3px;
+  color: $gray-light;
+  &:hover {
+    color: $gray;
+  }
+}
+
+tr.status-published {
+  border-right: 10px solid $published;
+}
+
+tr.status-unpublished {
+  border-right: 10px solid $unpublished;
+}
+
+tr.status-needs_review {
+  border-right: 10px solid $needs-review;
+}
+
+tr.tier-paid {
+  border-left: 10px solid $paid;
+}
+
+tr.tier-free {
+  border-left: 10px solid $free;
+}
+
+.table-deck .glyphicon-sort {
+  display: none;
+}
+
+.table-deck > thead > tr > th,
+.table-quote > thead > tr > th {
+  border-bottom: 0;
+}
+
+.table-striped.table-deck > tbody > tr {
+  &:nth-of-type(4n),
+  &:nth-of-type(4n - 1) {
+    background-color: #fff;
+  }
+  &:nth-of-type(4n - 2),
+  &:nth-of-type(4n - 3) {
+    background-color: $table-bg-accent;
+  }
+}
+
+.table-deck > tbody > tr > td.td-preview {
+  padding-bottom: 20px;
+  border-top: 0;
+}
+
+.table-deck > tbody > tr.tr-padding-top > th,
+.table-deck > tbody > tr.tr-padding-top > td {
+  padding-top: 16px;
+}

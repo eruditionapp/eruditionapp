@@ -1,0 +1,8 @@
+@function state-color($color) {
+  @each $state in $states {
+    @if nth($state, 1) == $color {
+      @return saturate(adjust-hue($brand-darker, $offset + $spectrum / length($states) * index($states, $state)), 5%);
+    }
+  }
+  @return null;
+}

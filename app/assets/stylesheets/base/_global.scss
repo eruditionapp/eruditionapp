@@ -1,0 +1,19 @@
+body {
+  font-family: $sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+  border-bottom: 1px solid $gray-lighter;
+  background-color: #fff;
+}
+
+.form-control {
+  border-radius: 3px;
+  box-shadow: none;
+  &:focus {
+    box-shadow: none;
+  }
+}

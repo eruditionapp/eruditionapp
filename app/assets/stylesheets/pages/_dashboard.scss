@@ -1,13 +1,10 @@
-// ==========================
-// Admin + User dashboard
-// ==========================
 .page-dashboard {
   position: relative;
   min-height: calc(100vh - 273px);
 }
 
-.page-dashboard-light {
-  background-color: $gray-brand-lighter;
+.page-user-dashboard {
+  background-color: $gray-brand-lightest;
 }
 
 .page-dashboard .container {
@@ -33,9 +30,23 @@
   margin-bottom: 20px;
 }
 
-// card_form - tabs
 .page-dashboard .tab-pane {
   padding-top: 20px;
+}
+
+.page-dashboard .btn-toolbar .btn-light {
+  &:hover,
+  &:active {
+    color: $gray-darker !important;
+  }
+}
+
+.page-dashboard .browse-decks-container {
+  padding-top: 15px;
+}
+
+.page-dashboard .browse-decks-container label {
+  margin-top: 5px;
 }
 
 // card_form - guided quotes
@@ -86,19 +97,4 @@
   margin-right: 10px;
   cursor: move;
   cursor: grab;
-}
-
-.page-dashboard .btn-toolbar .btn-light {
-  &:hover,
-  &:active {
-    color: $gray-darker !important;
-  }
-}
-
-.page-dashboard .browse-decks-container {
-  padding-top: 15px;
-}
-
-.page-dashboard .browse-decks-container label {
-  margin-top: 5px;
 }

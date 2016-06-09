@@ -23,8 +23,6 @@ Drops db, creates db, runs migrations, seeds db. This task will fail if the serv
 
 ### CSS
 
-Reference: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
-
 #### File Structure
 
 ```
@@ -34,22 +32,19 @@ Reference: [Airbnb CSS/Sass Style Guide](https://github.com/airbnb/css)
           |-- images
           |-- javascripts
           |-- stylesheets
+              |-- base
               |-- components
               |-- pages
-              |-- _base.scss
-              |-- _variables.scss
               |-- application.scss
               |-- email.scss
 ```
 
+* `/base/..`
+  * Fonts, functions, variables, Bootstrap overrides
 * `/components/..`
-  * Reusable, composable elements
+  * Reusable and composable page elements
 * `/pages/..`
-  * Page specific code, ie 'home' or 'contact' pages
-* `_base.scss`
-  * Main document elements and bootstrap overrides
-* `_variables.scss`
-  * Global variables and functions
+  * Page specific layouts
 * `application.scss`
   * Application manifest file
 * `email.scss`

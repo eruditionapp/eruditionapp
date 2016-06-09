@@ -1,30 +1,29 @@
-<div class="page page-dashboard">
-  <div class="wrapper wrapper--light">
-    <div class="container">
-      <div class="pagehead">
-        <div class="row">
-          <div class="col-sm-6">
-            <ol class="breadcrumb">
-              <li><%= link_to 'Decks', decks_path %></li>
-              <li class="active">Create Deck</li>
-            </ol>
-          </div>
-          <div class="col-sm-6">
-            <div class="btn-group pull-right">
-              <%= link_to 'Cancel', decks_path, class: 'btn btn-default' %>
-            </div>
+<% provide(:page_class, 'page-dashboard') %>
+<div class="wrapper">
+  <div class="container">
+    <div class="pagehead">
+      <div class="row">
+        <div class="col-sm-6">
+          <ol class="breadcrumb">
+            <li><%= link_to 'Decks', decks_path %></li>
+            <li class="active">Create Deck</li>
+          </ol>
+        </div>
+        <div class="col-sm-6">
+          <div class="btn-group pull-right">
+            <%= link_to 'Cancel', decks_path, class: 'btn btn-default' %>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-5">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
 
-        <%= render 'deck_form' %>
+      <%= render 'deck_form' %>
 
-      </div>
     </div>
   </div>
 </div>

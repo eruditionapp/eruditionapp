@@ -1,0 +1,79 @@
+.btn {
+  font-weight: 600;
+  border: 0;
+  border-radius: 3px;
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
+}
+
+.btn-default {
+  background-color: $gray-btn-bg;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    background-color: $gray-btn-bg-hover;
+  }
+}
+
+.btn-brand {
+  color: #fff;
+  background-color: $brand-base;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    color: #fff;
+    background-color: $brand-dark;
+  }
+  &.btn-outline {
+    color: $brand-base;
+    border: 1px solid $brand-base;
+    background-color: transparent;
+    &:hover,
+    &:active,
+    &:active:hover,
+    &:focus {
+      color: #fff;
+      background-color: $brand-base;
+    }
+  }
+}
+
+.btn-danger {
+  background-color: state-color(needs-review);
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    background-color: darken(state-color(needs-review), 5.5%);
+  }
+}
+
+.btn-link {
+  font-weight: 600;
+  background-color: transparent;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.btn-light {
+  border: 1px solid $gray-btn-bg;
+  background-color: #fff;
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:focus {
+    color: $brand-base;
+    border-color: $gray-btn-bg;
+    background-color: #fff;
+  }
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  padding: 3px 8px;
+}

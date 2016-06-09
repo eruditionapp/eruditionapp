@@ -7,8 +7,6 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script src="https://use.typekit.net/gkn6avx.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
 <% unless flash.empty? %>
@@ -17,7 +15,9 @@
   <% end %>
 <% end %>
 <%= render "shared/navbar" %>
-<%= yield %>
+<div id="page" class="<%= yield :page_class %>">
+  <%= yield %>
+</div>
 <%= render "shared/footer" %>
 </body>
 </html>

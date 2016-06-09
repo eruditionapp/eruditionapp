@@ -1,38 +1,37 @@
-<div class="page page-account">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-      <h3 class="signup-text">Log in</h3>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal signup-form'}) do |f| %>
+<% provide(:page_class, 'page-account') %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+    <h3 class="signup-form-header">Log in</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal signup-form'}) do |f| %>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <%= f.email_field :email, required: true, class: 'form-control', placeholder: 'Email' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <%= f.password_field :password, required: true, class: 'form-control', placeholder: 'Password', autocomplete: "off" %>
+        </div>
+      </div>
+      <% if devise_mapping.rememberable? -%>
         <div class="form-group">
           <div class="col-xs-12">
-            <%= f.email_field :email, required: true, class: 'form-control', placeholder: 'Email' %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-xs-12">
-            <%= f.password_field :password, required: true, class: 'form-control', placeholder: 'Password', autocomplete: "off" %>
-          </div>
-        </div>
-        <% if devise_mapping.rememberable? -%>
-          <div class="form-group">
-            <div class="col-xs-12">
-              <div class="checkbox">
-                <label>
-                  <%= f.check_box :remember_me %> Remember Me
-                </label>
-              </div>
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :remember_me %> Remember Me
+              </label>
             </div>
           </div>
-        <% end -%>
-        <div class="form-group">
-          <div class="col-xs-12">
-            <%= f.submit 'Log in', class: 'btn btn-brand btn-block' %>
-          </div>
         </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
+      <% end -%>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <%= f.submit 'Log in', class: 'btn btn-brand btn-block' %>
+        </div>
       </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>

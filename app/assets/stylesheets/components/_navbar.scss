@@ -1,19 +1,11 @@
-// ==========================
-// Navbar
-// ==========================
-.navbar-application {
+.navbar {
   margin-bottom: 0;
   border: 0;
-  background-color: $gray-brand-lighter;
   border-bottom: 1px solid $gray-lighter;
+  background-color: #fff;
 }
 
-.navbar-application.white {
-  background-color: $white-base;
-  border: none;
-}
-
-.navbar-application .navbar-brand {
+.navbar .navbar-brand {
   width: 130px;
   height: 20px;
   margin: 26px 0 !important;
@@ -24,11 +16,22 @@
   background-size: contain;
 }
 
-.navbar-application .btn {
+.navbar .btn {
   margin: 20px 0 0 0;
 }
 
-.navbar-application .navbar-user {
+.navbar .navbar-user {
   display: inline-block;
   margin-right: 15px;
+}
+
+@media (max-width: $screen-xs-max) {
+  .container > .navbar-header {
+    float: left;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .container > .navbar-header.navbar-right {
+    float: right;
+  }
 }
