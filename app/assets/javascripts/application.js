@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap-sprockets
+//= require bootstrap/dropdown
+//= require bootstrap/collapse
+//= require typed
 //= require sortable
 //= require _global
 //= require_tree ./modules
 //= require _main
+//= require turbolinks

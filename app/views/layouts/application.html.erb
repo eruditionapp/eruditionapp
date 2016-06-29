@@ -4,6 +4,7 @@
   <title>Erudition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
   <%= favicon_link_tag 'favicon.ico' %>
+  <link href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:400' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,5 +20,10 @@
   <%= yield %>
 </div>
 <%= render "shared/footer" %>
+<% if content_for?(:javascripts) %>
+  <%= javascript_tag do %>
+    <%= yield(:javascripts) %>
+  <% end %>
+<% end %>
 </body>
 </html>

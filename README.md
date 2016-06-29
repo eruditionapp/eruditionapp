@@ -50,6 +50,12 @@ Drops db, creates db, runs migrations, seeds db. This task will fail if the serv
 * `email.scss`
   * Email manifest file
 
+#### z-index
+* `.navbar.transparent: 15`
+* `.cover .carousel: 1`
+* `.cover .container: 10`
+
+
 
 ### Javascript
 

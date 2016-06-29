@@ -1,0 +1,94 @@
+#typed-strings {
+  display: none;
+}
+
+.home-cover {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
+.home-cover .slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: linear-gradient(90deg, rgba(0,0,0,.8) 0, rgba(0,0,0,0));
+  }
+}
+
+.home-cover .slides ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-cover .slides ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 7s ease;
+  transform: scale(1);
+  opacity: 0;
+}
+
+.home-cover .slides ul li.active {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.home-cover .slides ul li img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+.home-cover .container {
+  height: 100%;
+}
+
+.home-cover .container .col-xs-12 {
+  display: flex;
+  height: 100vh;
+
+  align-items: center;
+}
+
+.home-cover .container .typed {
+  font-family: $serif;
+  font-size: 5vw;
+  font-weight: 400;
+  color: #fff;
+}
+
+.home-cover .container .controls {
+  position: absolute;
+  right: 15px;
+  bottom: 20px;
+  display: flex;
+
+  align-items: center;
+}
+
+.home-cover .container .controls a {
+  &.next {
+    margin-left: 15px;
+  }
+}

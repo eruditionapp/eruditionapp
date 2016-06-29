@@ -1,13 +1,23 @@
+/**
+ * Main init
+ *
+ */
 var init = function() {
-  admin.handleOrganizeCards();
-  dashboard.handleDeckPreviews();
+  var page = $('#page');
+
+  // Page specific JS
+  if (page.hasClass('page-home')) {
+    home.handleCoverSlides();
+  } else if (page.hassClass('page-admin-card')) {
+    admin.handleOrganizeCards();
+  }
 };
 
 $(document).ready(function() {
   init();
 });
 
-// re-init for turbolinks renders
+// Re-init for turbolinks renders
 $(document).on('page:load', function() {
   init();
 });

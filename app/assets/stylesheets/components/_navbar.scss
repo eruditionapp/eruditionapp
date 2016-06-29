@@ -20,9 +20,48 @@
   margin: 20px 0 0 0;
 }
 
+.navbar .btn.signup {
+  margin-left: 15px;
+}
+
+.navbar .navbar-header.navbar-right .btn {
+  float: left;
+}
+
 .navbar .navbar-user {
   display: inline-block;
   margin-right: 15px;
+}
+
+.navbar.transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: none;
+  background-color: transparent;
+  z-index: 15;
+}
+
+.navbar.transparent .navbar-brand {
+  background-image: image-url('logo-white.png');
+}
+
+.navbar.transparent .btn-default {
+  background-color: transparent;
+  border: 1px solid $gray-btn-bg;
+  color: #fff;
+  &:hover {
+    background-color: $gray-btn-bg;
+    color: $gray-dark;
+  }
+}
+
+.navbar.transparent .btn-brand {
+  border: 1px solid $brand-base;
+  &:hover {
+    border: 1px solid $brand-dark;
+  }
 }
 
 @media (max-width: $screen-xs-max) {

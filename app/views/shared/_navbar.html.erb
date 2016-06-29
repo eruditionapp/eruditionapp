@@ -1,4 +1,4 @@
-<nav id="page-navbar" class="navbar">
+<nav id="page-navbar" class="navbar<%= controller.action_name == 'home' ? ' transparent' : '' %>">
   <div class="container">
     <div class="navbar-header">
       <%= link_to 'Erudition', root_path, class: 'navbar-brand' %>
@@ -22,6 +22,7 @@
         </div>
       <% else %>
         <%= link_to 'Log in', new_user_session_path, class: 'btn btn-default navbar-btn' %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-brand navbar-btn signup' %>
       <% end %>
     </div>
   </div>
