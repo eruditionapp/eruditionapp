@@ -8,7 +8,7 @@ var init = function() {
   // Page specific JS
   if (page.hasClass('page-home')) {
     home.handleCoverSlides();
-  } else if (page.hassClass('page-admin-card')) {
+  } else if (page.hasClass('page-admin-card')) {
     admin.handleOrganizeCards();
   }
 };

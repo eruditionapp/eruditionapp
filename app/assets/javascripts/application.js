@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap/dropdown
 //= require bootstrap/collapse
-//= require typed
 //= require sortable
 //= require _global
 //= require_tree ./modules

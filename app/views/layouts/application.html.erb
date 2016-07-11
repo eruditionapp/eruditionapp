@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Erudition</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
-  <%= favicon_link_tag 'favicon.ico' %>
-  <link href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:400' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% unless flash.empty? %>
-  <% flash.each do |key,value| %>
-    <div class="alert alert-<%= key %>"><%= value %></div>
+  <head>
+    <title>Erudition</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  <% unless flash.empty? %>
+    <% flash.each do |key,value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
   <% end %>
-<% end %>
-<%= render "shared/navbar" %>
-<div id="page" class="<%= yield :page_class %>">
-  <%= yield %>
-</div>
-<%= render "shared/footer" %>
-<% if content_for?(:javascripts) %>
-  <%= javascript_tag do %>
-    <%= yield(:javascripts) %>
+  <%= render "shared/navbar" %>
+  <div id="page" class="<%= yield :page_class %>">
+    <%= yield %>
+  </div>
+  <%= render "shared/footer" %>
+  <% if content_for?(:javascripts) %>
+    <%= javascript_tag do %>
+      <%= yield(:javascripts) %>
+    <% end %>
   <% end %>
-<% end %>
-</body>
+  </body>
 </html>

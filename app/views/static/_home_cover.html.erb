@@ -1,24 +1,44 @@
-<section class="home-cover">
+<section class="home-cover" data-active-index="1">
   <div class="slides">
-    <ul>
-      <li><%= image_tag 'static/home-cover-01.jpg' %></li>
-      <li><%= image_tag 'static/home-cover-02.jpg' %></li>
-      <li><%= image_tag 'static/home-cover-03.jpg' %></li>
-    </ul>
+    <div class="slide">
+      <%= image_tag 'static/home-cover-01.jpg' %>
+      <div class="container">
+        <h1>Remember what you read in stunning detail for the rest of your life.</h1>
+      </div>
+    </div>
+    <div class="slide">
+      <%= image_tag 'static/home-cover-02.jpg' %>
+      <div class="container">
+        <h1>Master the greatest works of philosophy ever written.</h1>
+      </div>
+    </div>
+    <div class="slide">
+      <%= image_tag 'static/home-cover-03.jpg' %>
+      <div class="container">
+        <h1>Master the greatest works of literature ever written.</h1>
+      </div>
+    </div>
+    <div class="slide">
+      <%= image_tag 'static/home-cover-04.jpg' %>
+      <div class="container">
+        <h1>Understand the greatest events in history ever recorded.</h1>
+      </div>
+    </div>
+    <div class="slide">
+      <%= image_tag 'static/home-cover-05.jpg' %>
+      <div class="container">
+        <h1>Understand the greatest works of art ever created.</h1>
+      </div>
+    </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="typed-strings">
-          <p>Discover the greatest works of literature ever written.</p>
-          <p>Discover the greatest works of art ever painted.</p>
-          <p>Discover the greatest works of philosophy ever concieved.</p>
-        </div>
-        <span id="typed" class="typed"></span>
-        <div class="controls">
-          <a class="btn btn-default previous"><</a>
-          <a class="btn btn-default next">></a>
-        </div>
+  <div class="controls">
+    <div class="container">
+      <div class="slide-nav pull-right">
+        <button class="active">Learn</button>
+        <button>Philosophy</button>
+        <button>Literature</button>
+        <button>History</button>
+        <button>Art</button>
       </div>
     </div>
   </div>

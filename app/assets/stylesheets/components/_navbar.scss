@@ -6,14 +6,16 @@
 }
 
 .navbar .navbar-brand {
-  width: 130px;
+  font-family: $serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
   height: 20px;
   margin: 26px 0 !important;
   padding: 0;
-  text-indent: -2222px;
-  background-image: image-url('logo-black.png');
-  background-repeat: no-repeat;
-  background-size: contain;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #000;
 }
 
 .navbar .btn {
@@ -35,25 +37,25 @@
 
 .navbar.transparent {
   position: absolute;
+  z-index: 15;
   top: 0;
   left: 0;
   width: 100%;
   border-bottom: none;
   background-color: transparent;
-  z-index: 15;
 }
 
 .navbar.transparent .navbar-brand {
-  background-image: image-url('logo-white.png');
+  color: #fff;
 }
 
 .navbar.transparent .btn-default {
-  background-color: transparent;
-  border: 1px solid $gray-btn-bg;
   color: #fff;
+  border: 1px solid $gray-btn-bg;
+  background-color: transparent;
   &:hover {
-    background-color: $gray-btn-bg;
     color: $gray-dark;
+    background-color: $gray-btn-bg;
   }
 }
 
@@ -62,6 +64,19 @@
   &:hover {
     border: 1px solid $brand-dark;
   }
+}
+
+.navbar.home {
+  backface-visibility: hidden;
+}
+
+.navbar.home .navbar-btn.btn {
+  font-weight: 400;
+  border: none;
+}
+
+.navbar.home .navbar-btn.btn.signup {
+  display: none;
 }
 
 @media (max-width: $screen-xs-max) {

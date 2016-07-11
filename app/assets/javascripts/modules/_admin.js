@@ -10,7 +10,8 @@ var admin = (function() {
       var itemAddBtn = querySelector('.organize-item-btn-add');
       var itemText = querySelector('.organize-item-text');
       var itemList = querySelector('.organize-item-list');
-      var clickAddItem = function() {
+      
+      function clickAddItem() {
         if (!itemText.value.length) {
           return;
         }
@@ -29,7 +30,8 @@ var admin = (function() {
         
         itemList.appendChild(itemEl);
       }
-      var clickRemoveItem = function(event) {
+
+      function clickRemoveItem(event) {
         if (!event.target.classList.contains('organize-item-btn-remove')) {
           return;
         }

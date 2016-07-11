@@ -1,5 +1,5 @@
 $sans-serif: 'San Francisco', helvetica, sans-serif;
-$serif: 'Cormorant Garamond', Garamond, serif;
+$serif: 'Canela', Garamond, serif;
 $gray-btn-bg: lighten($gray-base, 90%) !default;
 $gray-btn-bg-hover: lighten($gray-base, 88%) !default;
 $gray-brand-lighter: lighten($gray-base, 96%) !default;
@@ -25,3 +25,5 @@ $published: state-color(published);
 $unpublished: state-color(unpublished);
 $paid: state-color(paid);
 $free: state-color(free);
+$slides-length: 5;
+$slide-interval: 5;
