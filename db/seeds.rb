@@ -17,7 +17,7 @@ end
   Category.create! name: Faker::Commerce.department(1)
 end
 
-10.times do |count|
+12.times do |count|
   Deck.create! title: Faker::Book.title, subtitle: Faker::Lorem.sentence(3),
                author: Faker::Name.name, status: rand(0...Deck.statuses.count),
                tier: rand(0...Deck.tiers.count)
@@ -29,14 +29,14 @@ end
     end
   end
 
-  10.times do
-    Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
+  3.times do
+    Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph, difficulty: rand(1..10))
   end
 
   quotes = Quote.where(deck_id: Deck.last.id).map &:id
   content = 'The *first* man to walk on the moon was *Neil Armstrong*.'
   
-  100.times do
+  500.times do
     Deck.last.cards << Card.new(card_type: 2, difficulty: rand(1..10), content: content,
                                 status: rand(0...Card.statuses.count))
     
