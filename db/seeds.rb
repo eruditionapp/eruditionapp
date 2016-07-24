@@ -1,3 +1,6 @@
+puts 'Begin seeding database..'
+start = Time.now
+
 # Seed Users
 
 [ {email: 'superadmin@test.com', password: 'password', role: 4},
@@ -17,7 +20,7 @@ end
   Category.create! name: Faker::Commerce.department(1)
 end
 
-10.times do |count|
+12.times do |count|
   Deck.create! title: Faker::Book.title, subtitle: Faker::Lorem.sentence(3),
                author: Faker::Name.name, status: rand(0...Deck.statuses.count),
                tier: rand(0...Deck.tiers.count)
@@ -29,7 +32,7 @@ end
     end
   end
 
-  10.times do
+  3.times do
     Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
   end
 
@@ -69,3 +72,5 @@ User.find_each do |user|
     end
   end
 end
+
+puts "Finished seeding after #{Time.now - start} seconds"

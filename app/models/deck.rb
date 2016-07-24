@@ -5,6 +5,7 @@ class Deck < ActiveRecord::Base
   has_many :cards
   has_many :card_responses
   has_many :users, through: :card_responses
+  has_many :users, through: :current_difficulty
 
   validates_presence_of :title, :author
 
