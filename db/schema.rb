@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709232921) do
+ActiveRecord::Schema.define(version: 20160626171442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20160709232921) do
   create_table "quotes", force: :cascade do |t|
     t.integer "deck_id"
     t.string  "content"
-    t.integer "difficulty"
   end
 
   add_index "quotes", ["deck_id"], name: "index_quotes_on_deck_id", using: :btree

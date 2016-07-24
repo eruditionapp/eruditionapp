@@ -1,3 +1,6 @@
+puts 'Begin seeding database..'
+start = Time.now
+
 # Seed Users
 
 [ {email: 'superadmin@test.com', password: 'password', role: 4},
@@ -30,13 +33,13 @@ end
   end
 
   3.times do
-    Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph, difficulty: rand(1..10))
+    Deck.last.quotes << Quote.new(content: Faker::Lorem.paragraph)
   end
 
   quotes = Quote.where(deck_id: Deck.last.id).map &:id
   content = 'The *first* man to walk on the moon was *Neil Armstrong*.'
   
-  500.times do
+  100.times do
     Deck.last.cards << Card.new(card_type: 2, difficulty: rand(1..10), content: content,
                                 status: rand(0...Card.statuses.count))
     
@@ -69,3 +72,5 @@ User.find_each do |user|
     end
   end
 end
+
+puts "Finished seeding after #{Time.now - start} seconds"
